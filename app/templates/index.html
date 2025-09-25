@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Walkability — Inputs</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Walkability (MVP)</h1>
+        <form id="walk-form" class="card">
+            <label>Location label
+                <input type="text" name="location" placeholder="e.g., Home in Montréal" required>
+            </label>
+
+            <div class="grid">
+                <label>Latitude
+                    <input type="number" step="any" name="lat" value="45.5017" required>
+                </label>
+                <label>Longitude
+                    <input type="number" step="any" name="lon" value="-73.5673" required>
+                </label>
+            </div>
+
+            <label>Cutoff distance (meters)
+                <input type="number" name="cutoff_m" value="800" min="100" required>
+            </label>
+
+            <h3>Weights (0–5)</h3>
+            <div class="grid">
+                <label>Grocery
+                    <input type="number" step="0.5" name="w_grocery" value="3" min="0" max="5" required>
+                </label>
+                <label>Restaurants
+                    <input type="number" step="0.5" name="w_restaurants" value="2" min="0" max="5" required>
+                </label>
+                <label>Parks
+                    <input type="number" step="0.5" name="w_parks" value="2" min="0" max="5" required>
+                </label>
+                <label>Schools
+                    <input type="number" step="0.5" name="w_schools" value="2" min="0" max="5" required>
+                </label>
+                <label>Transit
+                    <input type="number" step="0.5" name="w_transit" value="3" min="0" max="5" required>
+                </label>
+                <label>Healthcare
+                    <input type="number" step="0.5" name="w_healthcare" value="2" min="0" max="5" required>
+                </label>
+            </div>
+
+            <h3>Best walking distance to each category (meters)</h3>
+            <div class="grid">
+                <label>Grocery <input type="number" name="grocery_m" value="500" min="0" required></label>
+                <label>Restaurants <input type="number" name="restaurants_m" value="300" min="0" required></label>
+                <label>Parks <input type="number" name="parks_m" value="400" min="0" required></label>
+                <label>Schools <input type="number" name="schools_m" value="800" min="0" required></label>
+                <label>Transit <input type="number" name="transit_m" value="200" min="0" required></label>
+                <label>Healthcare <input type="number" name="healthcare_m" value="1000" min="0" required></label>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+
+    <script>
+        // Simple score: s = max(0, 1 - d/R); Index = 100 * sum(w*s)/sum(w)
+        function normScore(d, R) { d = Number(d); R = Math.max(1, Number(R)); return Math.max(0, 1 - d / R); }
+
+        document.getElementById('walk-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const fd = new FormData(this);
+
+            const cutoff = fd.get('cutoff_m');
+
+            const cats = [
+                ['Grocery', 'grocery_m', 'w_grocery'],
+                ['Restaurants', 'restaurants_m', 'w_restaurants'],
+                ['Parks', 'parks_m', 'w_parks'],
+                ['Schools', 'schools_m', 'w_schools'],
+                ['Transit', 'transit_m', 'w_transit'],
+                ['Healthcare', 'healthcare_m', 'w_healthcare'],
+            ];
+
+            let wsum = 0, acc = 0, breakdown = [];
+            cats.forEach(([name, dKey, wKey]) => {
+                const d = fd.get(dKey);
+                const w = Number(fd.get(wKey) || 0);
+                const s = normScore(d, cutoff);
+                acc += w * s; wsum += w;
+                breakdown.push({ name, score: s, weight: w });
+            });
+            const index = wsum ? Math.round(1000 * (acc / wsum)) / 10 : 0;
+
+            // Build payload for result page
+            const payload = {
+                location: fd.get('location'),
+                center: { lat: Number(fd.get('lat')), lon: Number(fd.get('lon')) },
+                index, breakdown,
+                buffers_m: [400, 800, 1200]
+            };
+
+            // Pass data via sessionStorage (simplest); result.html will read it
+            sessionStorage.setItem('walkability_result', JSON.stringify(payload));
+            window.location.href = 'result.html';
+        });
+    </script>
+</body>
+
+</html>
