@@ -1,7 +1,7 @@
-import geopandas as gpd
 from pathlib import Path
+import geopandas as gpd
 
-def convert_to_geojson(shp_path: str, out_name: str, out_dir: str = "../data/processed"):
+def convert_to_geojson(shp_path: str, out_name: str, out_dir: str = "data/processed"):
     """
     Convert a shapefile dataset to GeoJSON in WGS84.
     
@@ -20,7 +20,7 @@ def convert_to_geojson(shp_path: str, out_name: str, out_dir: str = "../data/pro
     """
     
     out_dir = Path(out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(exist_ok=True)
 
     gdf = gpd.read_file(shp_path)
 
