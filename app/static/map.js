@@ -8,5 +8,21 @@ function initWalkabilityMap(DATA) {
 
     L.marker(center).addTo(map).bindPopup('Origin').openPopup();
     (DATA.buffers_m || []).forEach(r => L.circle(center, { radius: r }).addTo(map));
+
+    // 🔹 Load all transit stops (for now display everything)
+    fetch('/static/data/metro_bus_clean.geojson')
+        .then(r => r.json())
+        .then(geojson => {
+            L.geoJSON(geojson, {
+                pointToLayer: (f, latlng) =>
+                    L.circleMarker(latlng, {
+                        radius: 4,
+                        color: '#0077ff',
+                        fillColor: '#0077ff',
+                        fillOpacity: 0.8
+                    }).bindPopup(f.properties.stop_name)
+            }).addTo(map);
+        })
+        .catch(err => console.error('Failed to load GeoJSON:', err));
 }
   
