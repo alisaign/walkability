@@ -10,13 +10,13 @@ function initWalkabilityMap(DATA) {
     //(DATA.buffers_m || []).forEach(r => L.circle(center, { radius: r }).addTo(map));
 
     // 🔹 Load all transit stops (for now display everything)
-    fetch('/static/data/metro_bus_clean.geojson')
+    fetch('/data/processed/metro_bus_clean.geojson')
         .then(r => r.json())
         .then(geojson => {
             L.geoJSON(geojson, {
                 pointToLayer: (f, latlng) =>
                     L.circleMarker(latlng, {
-                        radius: 6,
+                        radius: 4,
                         color: '#ff0000',
                         fillColor: '#ff0000',
                         fillOpacity: 0.8
