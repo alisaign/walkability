@@ -7,7 +7,7 @@ function initWalkabilityMap(DATA) {
     }).addTo(map);
 
     L.marker(center).addTo(map).bindPopup('Origin').openPopup();
-    (DATA.buffers_m || []).forEach(r => L.circle(center, { radius: r }).addTo(map));
+    //(DATA.buffers_m || []).forEach(r => L.circle(center, { radius: r }).addTo(map));
 
     // 🔹 Load all transit stops (for now display everything)
     fetch('/static/data/metro_bus_clean.geojson')
@@ -16,9 +16,9 @@ function initWalkabilityMap(DATA) {
             L.geoJSON(geojson, {
                 pointToLayer: (f, latlng) =>
                     L.circleMarker(latlng, {
-                        radius: 4,
-                        color: '#0077ff',
-                        fillColor: '#0077ff',
+                        radius: 6,
+                        color: '#ff0000',
+                        fillColor: '#ff0000',
                         fillOpacity: 0.8
                     }).bindPopup(f.properties.stop_name)
             }).addTo(map);
