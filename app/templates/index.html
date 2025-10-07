@@ -141,143 +141,199 @@
                                 </h4>
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label for="locationName" class="form-label">Location Name</label>
-                                        <input type="text" class="form-control border-orange" id="locationName"
-                                            placeholder="e.g., Downtown Montreal" required>
+                                        <label for="location" class="form-label">Location Name</label>
+                                        <input type="text" class="form-control border-orange" id="location"
+                                            name="location" placeholder="e.g., Downtown Montreal" required>
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="latitude" class="form-label">Latitude</label>
-                                        <input type="number" class="form-control border-orange" id="latitude"
+                                        <label for="lat" class="form-label">Latitude</label>
+                                        <input type="number" class="form-control border-orange" id="lat" name="lat"
                                             step="0.000001" placeholder="45.5017" required>
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="longitude" class="form-label">Longitude</label>
-                                        <input type="number" class="form-control border-orange" id="longitude"
+                                        <label for="lon" class="form-label">Longitude</label>
+                                        <input type="number" class="form-control border-orange" id="lon" name="lon"
                                             step="0.000001" placeholder="-73.5673" required>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Transit Section -->
+                            <!-- Cutoff Distances Section -->
                             <div class="mb-5">
                                 <h4 class="section-title">
-                                    <i class="fas fa-bus me-2"></i>
-                                    Public Transit
+                                    <i class="fas fa-ruler me-2"></i>
+                                    Maximum Walking Distances (meters)
                                 </h4>
                                 <div class="row g-3">
-                                    <div class="col-md-4">
-                                        <label for="metro" class="form-label">
+                                    <div class="col-md-6">
+                                        <label for="metro_m" class="form-label">
                                             <i class="fas fa-subway me-2"></i>Metro Station
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="metro"
-                                                step="0.1" min="0" placeholder="0.3">
-                                            <span class="input-group-text">miles</span>
+                                            <input type="number" class="form-control border-orange" id="metro_m"
+                                                name="metro_m" step="50" min="0" placeholder="200">
+                                            <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="bus" class="form-label">
+                                    <div class="col-md-6">
+                                        <label for="bus_m" class="form-label">
                                             <i class="fas fa-bus me-2"></i>Bus Stop
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="bus" step="0.1"
-                                                min="0" placeholder="0.1">
-                                            <span class="input-group-text">miles</span>
+                                            <input type="number" class="form-control border-orange" id="bus_m"
+                                                name="bus_m" step="50" min="0" placeholder="1000">
+                                            <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="bixi" class="form-label">
-                                            <i class="fas fa-bicycle me-2"></i>Bixi Station
-                                        </label>
-                                        <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="bixi" step="0.1"
-                                                min="0" placeholder="0.2">
-                                            <span class="input-group-text">miles</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Essential Amenities Section -->
-                            <div class="mb-5">
-                                <h4 class="section-title">
-                                    <i class="fas fa-shopping-cart me-2"></i>
-                                    Essential Amenities
-                                </h4>
-                                <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label for="groceries" class="form-label">
+                                        <label for="grocery_m" class="form-label">
                                             <i class="fas fa-shopping-cart me-2"></i>Grocery Stores
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="groceries"
-                                                step="0.1" min="0" placeholder="0.5">
-                                            <span class="input-group-text">miles</span>
+                                            <input type="number" class="form-control border-orange" id="grocery_m"
+                                                name="grocery_m" step="50" min="0" placeholder="500">
+                                            <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="cafes" class="form-label">
-                                            <i class="fas fa-coffee me-2"></i>Cafes & Coffee
-                                        </label>
-                                        <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="cafes"
-                                                step="0.1" min="0" placeholder="0.2">
-                                            <span class="input-group-text">miles</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="restaurants" class="form-label">
+                                        <label for="restaurants_m" class="form-label">
                                             <i class="fas fa-utensils me-2"></i>Restaurants
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="restaurants"
-                                                step="0.1" min="0" placeholder="0.3">
-                                            <span class="input-group-text">miles</span>
+                                            <input type="number" class="form-control border-orange" id="restaurants_m"
+                                                name="restaurants_m" step="50" min="0" placeholder="300">
+                                            <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="parks" class="form-label">
+                                        <label for="parks_m" class="form-label">
                                             <i class="fas fa-tree me-2"></i>Parks & Recreation
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="parks"
-                                                step="0.1" min="0" placeholder="0.4">
-                                            <span class="input-group-text">miles</span>
+                                            <input type="number" class="form-control border-orange" id="parks_m"
+                                                name="parks_m" step="50" min="0" placeholder="400">
+                                            <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="healthcare" class="form-label">
+                                        <label for="schools_m" class="form-label">
+                                            <i class="fas fa-graduation-cap me-2"></i>Schools
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="schools_m"
+                                                name="schools_m" step="50" min="0" placeholder="800">
+                                            <span class="input-group-text">meters</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="healthcare_m" class="form-label">
                                             <i class="fas fa-hospital me-2"></i>Healthcare
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="healthcare"
-                                                step="0.1" min="0" placeholder="1.0">
-                                            <span class="input-group-text">miles</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="stores" class="form-label">
-                                            <i class="fas fa-store me-2"></i>General Stores
-                                        </label>
-                                        <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="stores"
-                                                step="0.1" min="0" placeholder="0.6">
-                                            <span class="input-group-text">miles</span>
+                                            <input type="number" class="form-control border-orange" id="healthcare_m"
+                                                name="healthcare_m" step="50" min="0" placeholder="1000">
+                                            <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Custom Places Section -->
+                            <!-- Weights Section -->
                             <div class="mb-5">
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <h4 class="section-title mb-0">Custom Places (Optional)</h4>
-                                    <button type="button" class="btn btn-outline-orange btn-sm" id="addCustomPlace">
-                                        <i class="fas fa-plus me-2"></i>Add Custom Place
-                                    </button>
+                                <h4 class="section-title">
+                                    <i class="fas fa-balance-scale me-2"></i>
+                                    Importance Weights (1-5 scale)
+                                </h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="w_metro" class="form-label">
+                                            <i class="fas fa-subway me-2"></i>Metro Station Weight
+                                        </label>
+                                        <select class="form-select border-orange" id="w_metro" name="w_metro">
+                                            <option value="1">1 - Low importance</option>
+                                            <option value="2">2 - Below average</option>
+                                            <option value="3" selected>3 - Average importance</option>
+                                            <option value="4">4 - High importance</option>
+                                            <option value="5">5 - Critical importance</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="w_bus" class="form-label">
+                                            <i class="fas fa-bus me-2"></i>Bus Stop Weight
+                                        </label>
+                                        <select class="form-select border-orange" id="w_bus" name="w_bus">
+                                            <option value="1">1 - Low importance</option>
+                                            <option value="2" selected>2 - Below average</option>
+                                            <option value="3">3 - Average importance</option>
+                                            <option value="4">4 - High importance</option>
+                                            <option value="5">5 - Critical importance</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="w_grocery" class="form-label">
+                                            <i class="fas fa-shopping-cart me-2"></i>Grocery Stores Weight
+                                        </label>
+                                        <select class="form-select border-orange" id="w_grocery" name="w_grocery">
+                                            <option value="1">1 - Low importance</option>
+                                            <option value="2">2 - Below average</option>
+                                            <option value="3" selected>3 - Average importance</option>
+                                            <option value="4">4 - High importance</option>
+                                            <option value="5">5 - Critical importance</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="w_restaurants" class="form-label">
+                                            <i class="fas fa-utensils me-2"></i>Restaurants Weight
+                                        </label>
+                                        <select class="form-select border-orange" id="w_restaurants"
+                                            name="w_restaurants">
+                                            <option value="1">1 - Low importance</option>
+                                            <option value="2" selected>2 - Below average</option>
+                                            <option value="3">3 - Average importance</option>
+                                            <option value="4">4 - High importance</option>
+                                            <option value="5">5 - Critical importance</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="w_parks" class="form-label">
+                                            <i class="fas fa-tree me-2"></i>Parks Weight
+                                        </label>
+                                        <select class="form-select border-orange" id="w_parks" name="w_parks">
+                                            <option value="1">1 - Low importance</option>
+                                            <option value="2" selected>2 - Below average</option>
+                                            <option value="3">3 - Average importance</option>
+                                            <option value="4">4 - High importance</option>
+                                            <option value="5">5 - Critical importance</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="w_schools" class="form-label">
+                                            <i class="fas fa-graduation-cap me-2"></i>Schools Weight
+                                        </label>
+                                        <select class="form-select border-orange" id="w_schools" name="w_schools">
+                                            <option value="1">1 - Low importance</option>
+                                            <option value="2" selected>2 - Below average</option>
+                                            <option value="3">3 - Average importance</option>
+                                            <option value="4">4 - High importance</option>
+                                            <option value="5">5 - Critical importance</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="w_healthcare" class="form-label">
+                                            <i class="fas fa-hospital me-2"></i>Healthcare Weight
+                                        </label>
+                                        <select class="form-select border-orange" id="w_healthcare" name="w_healthcare">
+                                            <option value="1">1 - Low importance</option>
+                                            <option value="2" selected>2 - Below average</option>
+                                            <option value="3">3 - Average importance</option>
+                                            <option value="4">4 - High importance</option>
+                                            <option value="5">5 - Critical importance</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div id="customPlacesContainer"></div>
                             </div>
+
+
 
                             <!-- Submit Button -->
                             <div class="text-center">
@@ -295,87 +351,71 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        let customPlaceCounter = 0;
-
-        // Add custom place functionality
-        document.getElementById('addCustomPlace').addEventListener('click', function () {
-            customPlaceCounter++;
-            const container = document.getElementById('customPlacesContainer');
-
-            const customPlaceDiv = document.createElement('div');
-            customPlaceDiv.className = 'custom-place-item rounded p-3 mb-3';
-            customPlaceDiv.id = `customPlace${customPlaceCounter}`;
-
-            customPlaceDiv.innerHTML = `
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label class="form-label">Place Name</label>
-                        <input type="text" class="form-control border-orange custom-place-name" 
-                               placeholder="e.g., Gym, Library, Church">
-                    </div>
-                    <div class="col-md-5">
-                        <label class="form-label">Distance (miles)</label>
-                        <input type="number" class="form-control border-orange custom-place-distance" 
-                               step="0.1" min="0" placeholder="0.5">
-                    </div>
-                    <div class="col-md-1">
-                        <label class="form-label">&nbsp;</label>
-                        <button type="button" class="btn btn-outline-danger btn-sm d-block" 
-                                onclick="removeCustomPlace('customPlace${customPlaceCounter}')">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-            `;
-
-            container.appendChild(customPlaceDiv);
-        });
-
-        function removeCustomPlace(id) {
-            document.getElementById(id).remove();
-        }
-
         // Form submission
-        document.getElementById('walkabilityForm').addEventListener('submit', function (e) {
+        document.getElementById('walkabilityForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            // Collect form data
-            const formData = {
-                locationName: document.getElementById('locationName').value,
-                latitude: parseFloat(document.getElementById('latitude').value) || 0,
-                longitude: parseFloat(document.getElementById('longitude').value) || 0,
-                metro: parseFloat(document.getElementById('metro').value) || 0,
-                bus: parseFloat(document.getElementById('bus').value) || 0,
-                bixi: parseFloat(document.getElementById('bixi').value) || 0,
-                groceries: parseFloat(document.getElementById('groceries').value) || 0,
-                cafes: parseFloat(document.getElementById('cafes').value) || 0,
-                restaurants: parseFloat(document.getElementById('restaurants').value) || 0,
-                parks: parseFloat(document.getElementById('parks').value) || 0,
-                healthcare: parseFloat(document.getElementById('healthcare').value) || 0,
-                stores: parseFloat(document.getElementById('stores').value) || 0,
-                customPlaces: []
-            };
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Calculating...';
+            submitButton.disabled = true;
 
-            // Collect custom places
-            const customPlaceItems = document.querySelectorAll('.custom-place-item');
-            customPlaceItems.forEach((item, index) => {
-                const name = item.querySelector('.custom-place-name').value;
-                const distance = parseFloat(item.querySelector('.custom-place-distance').value) || 0;
+            try {
+                // Build the API payload according to backend specification
+                const payload = {
+                    lat: parseFloat(document.getElementById('lat').value),
+                    lon: parseFloat(document.getElementById('lon').value),
+                    location: document.getElementById('location').value,
+                    thresholds: {
+                        metro: parseInt(document.getElementById('metro_m').value) || 200,
+                        bus: parseInt(document.getElementById('bus_m').value) || 1000,
+                        grocery: parseInt(document.getElementById('grocery_m').value) || 500,
+                        restaurants: parseInt(document.getElementById('restaurants_m').value) || 300,
+                        parks: parseInt(document.getElementById('parks_m').value) || 400,
+                        schools: parseInt(document.getElementById('schools_m').value) || 800,
+                        healthcare: parseInt(document.getElementById('healthcare_m').value) || 1000
+                    },
+                    weights: {
+                        metro: parseInt(document.getElementById('w_metro').value),
+                        bus: parseInt(document.getElementById('w_bus').value),
+                        grocery: parseInt(document.getElementById('w_grocery').value),
+                        restaurants: parseInt(document.getElementById('w_restaurants').value),
+                        parks: parseInt(document.getElementById('w_parks').value),
+                        schools: parseInt(document.getElementById('w_schools').value),
+                        healthcare: parseInt(document.getElementById('w_healthcare').value)
+                    }
+                };
 
-                if (name) {
-                    formData.customPlaces.push({
-                        id: index,
-                        name: name,
-                        distance: distance
-                    });
+                // Send to backend API
+                const response = await fetch('http://127.0.0.1:8000/api/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-            });
 
-            // Store data in localStorage for the results page
-            localStorage.setItem('walkabilityData', JSON.stringify(formData));
+                const result = await response.json();
 
-            // Redirect to results page
-            window.location.href = 'result.html';
+                // Store result in sessionStorage for the results page
+                sessionStorage.setItem('walkability_result', JSON.stringify(result));
+
+                // Redirect to results page
+                window.location.href = '/result';
+
+            } catch (error) {
+                console.error('Error calling backend API:', error);
+                alert('Sorry, there was an error calculating the walkability score. Please check that the backend is running and try again.');
+
+                // Reset button state
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }
         });
     </script>
 </body>
