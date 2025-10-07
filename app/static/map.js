@@ -1,28 +1,35 @@
 function initWalkabilityMap(DATA) {
     const center = [DATA.center.lat, DATA.center.lon];
-    const map = L.map('map').setView(center, 15);
+    const map = L.map('map').setView(center, 14);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
+    // --- show user location ---
     L.marker(center).addTo(map).bindPopup('Origin').openPopup();
-    //(DATA.buffers_m || []).forEach(r => L.circle(center, { radius: r }).addTo(map));
 
-    // 🔹 Load all transit stops (for now display everything)
-    fetch('/data/processed/metro_bus_clean.geojson')
-        .then(r => r.json())
-        .then(geojson => {
-            L.geoJSON(geojson, {
-                pointToLayer: (f, latlng) =>
-                    L.circleMarker(latlng, {
-                        radius: 4,
-                        color: '#ff0000',
-                        fillColor: '#ff0000',
-                        fillOpacity: 0.8
-                    }).bindPopup(f.properties.stop_name)
-            }).addTo(map);
-        })
-        .catch(err => console.error('Failed to load GeoJSON:', err));
+    // --- optional radius circles ---
+    (DATA.buffers_m || []).forEach(r =>
+        L.circle(center, { radius: r, color: '#0ea5e9', fillOpacity: 0.05 }).addTo(map)
+    );
+
+    // --- display nearby POIs (from backend) ---
+    if (DATA.nearby && DATA.nearby.length > 0) {
+        DATA.nearby.forEach(p => {
+            if (!p.geometry || !p.geometry.coordinates) return;
+            const [lon, lat] = p.geometry.coordinates;
+            const cat = p.category || "place";
+            const name = p.stop_name || p.name || cat;
+            L.circleMarker([lat, lon], {
+                radius: 5,
+                color: "#ff0000",
+                fillColor: "#ff0000",
+                fillOpacity: 0.8
+            }).bindPopup(`<strong>${name}</strong><br><small>${cat}</small>`).addTo(map);
+        });
+    } else {
+        console.log("No nearby points returned.");
+    }
 }
-  

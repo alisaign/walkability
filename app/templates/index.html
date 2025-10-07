@@ -66,47 +66,57 @@
     </div>
 
     <script>
-        // Simple score: s = max(0, 1 - d/R); Index = 100 * sum(w*s)/sum(w)
-        function normScore(d, R) { d = Number(d); R = Math.max(1, Number(R)); return Math.max(0, 1 - d / R); }
-
         document.getElementById('walk-form').addEventListener('submit', function (e) {
             e.preventDefault();
             const fd = new FormData(this);
 
-            const cutoff = fd.get('cutoff_m');
-
-            const cats = [
-                ['Grocery', 'grocery_m', 'w_grocery'],
-                ['Restaurants', 'restaurants_m', 'w_restaurants'],
-                ['Parks', 'parks_m', 'w_parks'],
-                ['Schools', 'schools_m', 'w_schools'],
-                ['Transit', 'transit_m', 'w_transit'],
-                ['Healthcare', 'healthcare_m', 'w_healthcare'],
-            ];
-
-            let wsum = 0, acc = 0, breakdown = [];
-            cats.forEach(([name, dKey, wKey]) => {
-                const d = fd.get(dKey);
-                const w = Number(fd.get(wKey) || 0);
-                const s = normScore(d, cutoff);
-                acc += w * s; wsum += w;
-                breakdown.push({ name, score: s, weight: w });
-            });
-            const index = wsum ? Math.round(1000 * (acc / wsum)) / 10 : 0;
-
-            // Build payload for result page
-            const payload = {
-                location: fd.get('location'),
-                center: { lat: Number(fd.get('lat')), lon: Number(fd.get('lon')) },
-                index, breakdown,
-                buffers_m: [400, 800, 1200]
+            // --- collect thresholds and weights from form ---
+            const thresholds = {
+                grocery: Number(fd.get("grocery_m")),
+                restaurants: Number(fd.get("restaurants_m")),
+                parks: Number(fd.get("parks_m")),
+                schools: Number(fd.get("schools_m")),
+                transit: Number(fd.get("transit_m")),
+                healthcare: Number(fd.get("healthcare_m")),
             };
 
-            // Pass data via sessionStorage (simplest); result.html will read it
-            sessionStorage.setItem('walkability_result', JSON.stringify(payload));
-            window.location.href = 'result.html';
+            const weights = {
+                grocery: Number(fd.get("w_grocery")),
+                restaurants: Number(fd.get("w_restaurants")),
+                parks: Number(fd.get("w_parks")),
+                schools: Number(fd.get("w_schools")),
+                transit: Number(fd.get("w_transit")),
+                healthcare: Number(fd.get("w_healthcare")),
+            };
+
+            const payload = {
+                lat: Number(fd.get("lat")),
+                lon: Number(fd.get("lon")),
+                thresholds,
+                weights
+            };
+
+            // --- send to FastAPI backend ---
+            fetch("/api/analyze", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            })
+                .then((r) => {
+                    if (!r.ok) throw new Error("Server error: " + r.status);
+                    return r.json();
+                })
+                .then((result) => {
+                    // store backend result for result.html
+                    sessionStorage.setItem("walkability_result", JSON.stringify(result));
+                    window.location.href = "/result";
+                })
+                .catch((err) => {
+                    console.error("Error calling backend:", err);
+                    alert("Failed to calculate walkability. See console for details.");
+                });
         });
-    </script>
+    </script>        
 </body>
 
 </html>

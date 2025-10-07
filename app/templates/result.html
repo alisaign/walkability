@@ -5,35 +5,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Walkability — Result</title>
-    <link rel="stylesheet" href="../static/site.css">
+
+    <link rel="stylesheet" href="/static/site.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <a class="back" href="index.html">&larr; Back</a>
+        <a class="back" href="/">&larr; Back</a>
         <h1>Result</h1>
         <div id="summary" class="card"></div>
         <div id="map" class="map"></div>
     </div>
 
-    <script src="../static/map.js"></script>
+    <script src="/static/map.js"></script>
     <script>
-        // Read payload and render summary
         const raw = sessionStorage.getItem('walkability_result');
         if (!raw) {
             document.getElementById('summary').innerHTML = '<p>No data. Go back and submit the form.</p>';
         } else {
             const DATA = JSON.parse(raw);
+            console.log("Backend data:", DATA);
+
             const lines = [
                 `<p><strong>Location:</strong> ${DATA.location}</p>`,
                 `<p class="score">Walkability Index: <span>${DATA.index}</span>/100</p>`,
                 `<details><summary>Breakdown</summary><ul>${DATA.breakdown.map(b => `<li>${b.name}: ${Math.round(b.score * 100)}% (w=${b.weight})</li>`).join('')
                 }</ul></details>`
             ];
+
             document.getElementById('summary').innerHTML = lines.join('');
-            // Initialize the map
             initWalkabilityMap(DATA);
         }
     </script>
