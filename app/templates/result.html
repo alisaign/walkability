@@ -1,43 +1,666 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Walkability — Result</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkability Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --orange-50: #fff7ed;
+            --orange-100: #ffedd5;
+            --orange-200: #fed7aa;
+            --orange-300: #fdba74;
+            --orange-400: #fb923c;
+            --orange-500: #f97316;
+            --orange-600: #ea580c;
+            --orange-700: #c2410c;
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+        }
 
-    <link rel="stylesheet" href="/static/site.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        body {
+            background: linear-gradient(135deg, var(--orange-50) 0%, #fef3c7 100%);
+            min-height: 100vh;
+        }
+
+        .bg-orange-gradient {
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+        }
+
+        .text-orange-gradient {
+            background: linear-gradient(135deg, var(--orange-600) 0%, var(--orange-500) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .border-orange {
+            border-color: var(--orange-200) !important;
+        }
+
+        .btn-orange {
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+            border: none;
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background: linear-gradient(135deg, var(--orange-600) 0%, var(--amber-600) 100%);
+            color: white;
+        }
+
+        .btn-outline-orange {
+            border-color: var(--orange-300);
+            color: var(--orange-600);
+        }
+
+        .btn-outline-orange:hover {
+            background-color: var(--orange-100);
+            border-color: var(--orange-300);
+            color: var(--orange-600);
+        }
+
+        .card-header-orange {
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+            color: white;
+        }
+
+        .text-orange-600 {
+            color: var(--orange-600) !important;
+        }
+
+        .text-orange-700 {
+            color: var(--orange-700) !important;
+        }
+
+        .bg-orange-50 {
+            background-color: var(--orange-50) !important;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            border: 4px solid var(--orange-300);
+            margin: 0 auto;
+        }
+
+        .score-circle-compact {
+            width: 60px;
+            height: 60px;
+            font-size: 1.2rem;
+        }
+
+        .score-circle-expanded {
+            width: 80px;
+            height: 80px;
+            font-size: 1.5rem;
+        }
+
+        .floating-score {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1050;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .progress-orange {
+            background-color: var(--orange-100);
+        }
+
+        .progress-orange .progress-bar {
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+        }
+
+        .map-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, #dcfce7 0%, #dbeafe 100%);
+            border-radius: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-street {
+            position: absolute;
+            background-color: #9ca3af;
+            opacity: 0.5;
+        }
+
+        .map-street-h {
+            height: 2px;
+            width: 100%;
+            top: 50%;
+        }
+
+        .map-street-v {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+        }
+
+        .map-marker {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-marker-center {
+            background-color: #ef4444;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .map-marker-1 {
+            background-color: #3b82f6;
+            top: 30%;
+            left: 30%;
+        }
+
+        .map-marker-2 {
+            background-color: #10b981;
+            top: 70%;
+            left: 70%;
+        }
+
+        .map-marker-3 {
+            background-color: #f59e0b;
+            top: 25%;
+            right: 25%;
+        }
+
+        .icon-orange {
+            color: var(--orange-500);
+        }
+
+        .badge-walker-paradise {
+            background-color: #10b981;
+        }
+
+        .badge-very-walkable {
+            background-color: #84cc16;
+        }
+
+        .badge-somewhat-walkable {
+            background-color: #eab308;
+        }
+
+        .badge-car-dependent {
+            background-color: #f97316;
+        }
+
+        .badge-car-dependent-low {
+            background-color: #ef4444;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <a class="back" href="/">&larr; Back</a>
-        <h1>Result</h1>
-        <div id="summary" class="card"></div>
-        <div id="map" class="map"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <!-- Header -->
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <button class="btn btn-outline-orange" onclick="goBack()">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Form
+                    </button>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-award fa-lg icon-orange"></i>
+                        <h1 class="text-orange-gradient mb-0">Your Walkability Results</h1>
+                    </div>
+                </div>
+
+                <!-- Location Display -->
+                <div class="text-center mb-4">
+                    <p class="text-muted mb-0" id="locationDisplay"></p>
+                </div>
+
+                <!-- Floating Score (initially hidden) -->
+                <div id="floatingScore" class="floating-score d-none">
+                    <div class="card shadow-lg border-2 border-orange">
+                        <div class="card-body p-2 text-center bg-orange-50">
+                            <div id="floatingScoreCircle" class="score-circle score-circle-compact mx-auto mb-0">
+                                <span id="floatingScoreValue">0</span>
+                            </div>
+                            <div id="floatingScoreDetails" class="d-none mt-2">
+                                <div id="floatingScoreBadge" class="badge mb-2">Label</div>
+                                <button class="btn btn-outline-orange btn-sm" onclick="minimizeScore()">
+                                    <i class="fas fa-minus"></i> Minimize
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Left Column: Map and Distance Summary -->
+                    <div class="col-lg-6">
+                        <!-- Map -->
+                        <div class="card shadow border-orange mb-4">
+                            <div class="card-header card-header-orange">
+                                <h4 class="card-title mb-1">
+                                    <i class="fas fa-map-marked-alt me-2"></i>
+                                    Walkability Map
+                                </h4>
+                                <p class="card-text mb-0 opacity-75">Visualization of nearby amenities and walking
+                                    routes</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="map-placeholder">
+                                    <!-- Mock street grid -->
+                                    <div class="map-street map-street-h"></div>
+                                    <div class="map-street map-street-v"></div>
+
+                                    <!-- Mock location markers -->
+                                    <div class="map-marker map-marker-center"></div>
+                                    <div class="map-marker map-marker-1"></div>
+                                    <div class="map-marker map-marker-2"></div>
+                                    <div class="map-marker map-marker-3"></div>
+
+                                    <!-- Mock walking paths (SVG) -->
+                                    <svg class="position-absolute top-0 start-0 w-100 h-100"
+                                        style="pointer-events: none;">
+                                        <defs>
+                                            <pattern id="dash" patternUnits="userSpaceOnUse" width="8" height="8">
+                                                <line x1="0" y1="0" x2="8" y2="0" stroke="#3b82f6" stroke-width="2"
+                                                    opacity="0.7" stroke-dasharray="2,2" />
+                                            </pattern>
+                                        </defs>
+                                        <path d="M50% 50% Q30% 30% 30% 30%" stroke="url(#dash)" stroke-width="2"
+                                            fill="none" />
+                                        <path d="M50% 50% Q70% 70% 70% 70%" stroke="#10b981" stroke-width="2"
+                                            fill="none" stroke-dasharray="3,3" opacity="0.7" />
+                                    </svg>
+
+                                    <!-- Map overlay text -->
+                                    <div
+                                        class="position-absolute top-50 start-50 translate-middle text-center bg-white bg-opacity-75 p-3 rounded">
+                                        <i class="fas fa-route fa-2x icon-orange mb-2"></i>
+                                        <p class="mb-1">Interactive Map</p>
+                                        <small class="text-muted">Showing walkable routes to nearby amenities</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Distance Summary -->
+                        <div class="card shadow border-orange">
+                            <div class="card-header">
+                                <h4 class="text-orange-700 mb-0">
+                                    <i class="fas fa-list me-2"></i>
+                                    Distance Summary
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="distanceSummary">
+                                    <!-- Will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Score and Breakdown -->
+                    <div class="col-lg-6">
+                        <!-- Overall Score Card -->
+                        <div class="card shadow border-orange mb-4" id="mainScoreCard">
+                            <div class="card-header card-header-orange text-center">
+                                <h4 class="card-title mb-1">
+                                    <i class="fas fa-chart-line me-2"></i>
+                                    Overall Walkability Score
+                                </h4>
+                                <p class="card-text mb-0 opacity-75">Based on your location and nearby amenities</p>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="score-circle mb-3">
+                                    <span id="mainScoreValue">0</span>
+                                </div>
+                                <div id="mainScoreBadge" class="badge fs-6 mb-0">Loading...</div>
+                            </div>
+                        </div>
+
+                        <!-- Category Breakdown -->
+                        <div class="card shadow border-orange">
+                            <div class="card-header">
+                                <h4 class="text-orange-700 mb-0">
+                                    <i class="fas fa-chart-bar me-2"></i>
+                                    Category Breakdown
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <!-- Daily Errands -->
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Daily Errands</span>
+                                        <span class="text-orange-700" id="dailyErrandsScore">0/100</span>
+                                    </div>
+                                    <div class="progress progress-orange">
+                                        <div class="progress-bar" id="dailyErrandsBar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Transit Access -->
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Transit Access</span>
+                                        <span class="text-orange-700" id="transitScore">0/100</span>
+                                    </div>
+                                    <div class="progress progress-orange">
+                                        <div class="progress-bar" id="transitBar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Recreation -->
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Recreation</span>
+                                        <span class="text-orange-700" id="recreationScore">0/100</span>
+                                    </div>
+                                    <div class="progress progress-orange">
+                                        <div class="progress-bar" id="recreationBar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Recommendations -->
+                                <div id="recommendationsSection" class="d-none">
+                                    <div class="bg-orange-50 border border-orange rounded p-3">
+                                        <h5 class="text-orange-700 mb-2">
+                                            <i class="fas fa-lightbulb me-2"></i>
+                                            Recommendations
+                                        </h5>
+                                        <ul id="recommendationsList" class="list-unstyled mb-0">
+                                            <!-- Will be populated by JavaScript -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="/static/map.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const raw = sessionStorage.getItem('walkability_result');
-        if (!raw) {
-            document.getElementById('summary').innerHTML = '<p>No data. Go back and submit the form.</p>';
-        } else {
-            const DATA = JSON.parse(raw);
-            console.log("Backend data:", DATA);
+        let walkabilityData = {};
+        let isScoreCompact = false;
+        let isScoreExpanded = false;
 
-            const lines = [
-                `<p><strong>Location:</strong> ${DATA.location}</p>`,
-                `<p class="score">Walkability Index: <span>${DATA.index}</span>/100</p>`,
-                `<details><summary>Breakdown</summary><ul>${DATA.breakdown.map(b => `<li>${b.name}: ${Math.round(b.score * 100)}% (w=${b.weight})</li>`).join('')
-                }</ul></details>`
-            ];
+        // Load data from localStorage
+        function loadData() {
+            const data = localStorage.getItem('walkabilityData');
+            if (!data) {
+                alert('No walkability data found. Redirecting to form...');
+                window.location.href = 'index.html';
+                return;
+            }
 
-            document.getElementById('summary').innerHTML = lines.join('');
-            initWalkabilityMap(DATA);
+            walkabilityData = JSON.parse(data);
+            displayResults();
         }
+
+        // Calculate walkability score
+        function calculateWalkabilityScore(data) {
+            const scoreDistance = (distance, maxDistance = 2) => {
+                if (distance === 0) return 0;
+                if (distance >= maxDistance) return 0;
+                return Math.max(0, Math.round((1 - distance / maxDistance) * 100));
+            };
+
+            const groceryScore = scoreDistance(data.groceries, 1);
+            const restaurantScore = scoreDistance(data.restaurants, 1);
+            const healthcareScore = scoreDistance(data.healthcare, 3);
+            const cafeScore = scoreDistance(data.cafes, 1);
+            const storeScore = scoreDistance(data.stores, 1.5);
+
+            const metroScore = scoreDistance(data.metro, 0.5);
+            const busScore = scoreDistance(data.bus, 0.3);
+            const bixiScore = scoreDistance(data.bixi, 0.4);
+
+            const parkScore = scoreDistance(data.parks, 1.5);
+
+            const customScores = data.customPlaces.map(place =>
+                place.name ? scoreDistance(place.distance, 2) : 0
+            );
+            const avgCustomScore = customScores.length > 0 ?
+                customScores.reduce((sum, score) => sum + score, 0) / customScores.length : 0;
+
+            const dailyErrands = Math.round((groceryScore + restaurantScore + healthcareScore + cafeScore + storeScore) / 5);
+            const transit = Math.round((metroScore * 0.5 + busScore * 0.3 + bixiScore * 0.2));
+            const recreation = parkScore;
+
+            const overall = Math.round((dailyErrands * 0.4 + transit * 0.4 + recreation * 0.15 + avgCustomScore * 0.05));
+
+            const recommendations = [];
+            if (groceryScore < 50) recommendations.push("Consider moving closer to grocery stores for daily convenience");
+            if (transit < 30) recommendations.push("Public transit access could be improved for better connectivity");
+            if (parkScore < 40) recommendations.push("Access to parks and green spaces would enhance quality of life");
+            if (overall > 80) recommendations.push("Excellent walkability! This location supports a car-free lifestyle");
+            if (overall < 30) recommendations.push("Consider supplementing with bike or car transportation");
+
+            return {
+                overall,
+                categories: { dailyErrands, transit, recreation },
+                recommendations
+            };
+        }
+
+        // Get score label and badge class
+        function getScoreLabel(score) {
+            if (score >= 90) return { label: "Walker's Paradise", class: "badge-walker-paradise" };
+            if (score >= 70) return { label: "Very Walkable", class: "badge-very-walkable" };
+            if (score >= 50) return { label: "Somewhat Walkable", class: "badge-somewhat-walkable" };
+            if (score >= 25) return { label: "Car-Dependent", class: "badge-car-dependent" };
+            return { label: "Car-Dependent", class: "badge-car-dependent-low" };
+        }
+
+        // Display results
+        function displayResults() {
+            const score = calculateWalkabilityScore(walkabilityData);
+            const { label, class: badgeClass } = getScoreLabel(score.overall);
+
+            // Update location display
+            let locationText = `Results for <span class="text-orange-600">${walkabilityData.locationName}</span>`;
+            if (walkabilityData.latitude && walkabilityData.longitude) {
+                locationText += ` <span class="small">(${walkabilityData.latitude.toFixed(4)}, ${walkabilityData.longitude.toFixed(4)})</span>`;
+            }
+            document.getElementById('locationDisplay').innerHTML = locationText;
+
+            // Update main score
+            document.getElementById('mainScoreValue').textContent = score.overall;
+            const mainBadge = document.getElementById('mainScoreBadge');
+            mainBadge.textContent = label;
+            mainBadge.className = `badge fs-6 ${badgeClass}`;
+
+            // Update floating score
+            document.getElementById('floatingScoreValue').textContent = score.overall;
+            const floatingBadge = document.getElementById('floatingScoreBadge');
+            floatingBadge.textContent = label;
+            floatingBadge.className = `badge ${badgeClass}`;
+
+            // Update category scores
+            updateCategoryScore('dailyErrands', score.categories.dailyErrands);
+            updateCategoryScore('transit', score.categories.transit);
+            updateCategoryScore('recreation', score.categories.recreation);
+
+            // Update distance summary
+            updateDistanceSummary();
+
+            // Update recommendations
+            updateRecommendations(score.recommendations);
+        }
+
+        function updateCategoryScore(category, score) {
+            document.getElementById(`${category}Score`).textContent = `${score}/100`;
+            document.getElementById(`${category}Bar`).style.width = `${score}%`;
+        }
+
+        function updateDistanceSummary() {
+            const container = document.getElementById('distanceSummary');
+            let html = '';
+
+            // Transit section
+            html += `
+                <div class="mb-3">
+                    <h6 class="text-orange-600 mb-2">Transit</h6>
+                    <div class="ms-3 small">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Metro:</span>
+                            <span class="text-orange-700">${walkabilityData.metro || 'Not specified'} miles</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Bus:</span>
+                            <span class="text-orange-700">${walkabilityData.bus || 'Not specified'} miles</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Bixi:</span>
+                            <span class="text-orange-700">${walkabilityData.bixi || 'Not specified'} miles</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Amenities section
+            html += `
+                <div class="mb-3">
+                    <h6 class="text-orange-600 mb-2">Amenities</h6>
+                    <div class="ms-3 small">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Groceries:</span>
+                            <span class="text-orange-700">${walkabilityData.groceries || 'Not specified'} miles</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Cafes:</span>
+                            <span class="text-orange-700">${walkabilityData.cafes || 'Not specified'} miles</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Restaurants:</span>
+                            <span class="text-orange-700">${walkabilityData.restaurants || 'Not specified'} miles</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Parks:</span>
+                            <span class="text-orange-700">${walkabilityData.parks || 'Not specified'} miles</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Healthcare:</span>
+                            <span class="text-orange-700">${walkabilityData.healthcare || 'Not specified'} miles</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Stores:</span>
+                            <span class="text-orange-700">${walkabilityData.stores || 'Not specified'} miles</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Custom places section
+            if (walkabilityData.customPlaces && walkabilityData.customPlaces.length > 0) {
+                html += `
+                    <div>
+                        <h6 class="text-orange-600 mb-2">Custom Places</h6>
+                        <div class="ms-3 small">
+                `;
+
+                walkabilityData.customPlaces.forEach(place => {
+                    if (place.name) {
+                        html += `
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>${place.name}:</span>
+                                <span class="text-orange-700">${place.distance} miles</span>
+                            </div>
+                        `;
+                    }
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        function updateRecommendations(recommendations) {
+            if (recommendations.length > 0) {
+                const container = document.getElementById('recommendationsList');
+                const section = document.getElementById('recommendationsSection');
+
+                let html = '';
+                recommendations.forEach(rec => {
+                    html += `<li class="text-orange-600 mb-1"><i class="fas fa-circle fa-xs me-2"></i>${rec}</li>`;
+                });
+
+                container.innerHTML = html;
+                section.classList.remove('d-none');
+            }
+        }
+
+        // Scroll handling for floating score
+        function handleScroll() {
+            const scrollY = window.scrollY;
+            const shouldBeCompact = scrollY > 200;
+
+            if (shouldBeCompact !== isScoreCompact && !isScoreExpanded) {
+                isScoreCompact = shouldBeCompact;
+                const floatingScore = document.getElementById('floatingScore');
+                const mainScoreCard = document.getElementById('mainScoreCard');
+
+                if (shouldBeCompact) {
+                    floatingScore.classList.remove('d-none');
+                    mainScoreCard.style.visibility = 'hidden';
+                } else {
+                    floatingScore.classList.add('d-none');
+                    mainScoreCard.style.visibility = 'visible';
+                    isScoreExpanded = false;
+                    document.getElementById('floatingScoreDetails').classList.add('d-none');
+                    document.getElementById('floatingScoreCircle').className = 'score-circle score-circle-compact mx-auto mb-0';
+                }
+            }
+        }
+
+        // Floating score interactions
+        document.getElementById('floatingScore').addEventListener('click', function () {
+            if (isScoreCompact && !isScoreExpanded) {
+                isScoreExpanded = true;
+                isScoreCompact = false;
+                document.getElementById('floatingScoreDetails').classList.remove('d-none');
+                document.getElementById('floatingScoreCircle').className = 'score-circle score-circle-expanded mx-auto mb-0';
+            }
+        });
+
+        function minimizeScore() {
+            isScoreExpanded = false;
+            isScoreCompact = true;
+            document.getElementById('floatingScoreDetails').classList.add('d-none');
+            document.getElementById('floatingScoreCircle').className = 'score-circle score-circle-compact mx-auto mb-0';
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        // Initialize page
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', loadData);
     </script>
 </body>
 

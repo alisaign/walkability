@@ -1,123 +1,383 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Walkability — Inputs</title>
-    <link rel="stylesheet" href="../static/site.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkability Index Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --orange-50: #fff7ed;
+            --orange-100: #ffedd5;
+            --orange-200: #fed7aa;
+            --orange-300: #fdba74;
+            --orange-400: #fb923c;
+            --orange-500: #f97316;
+            --orange-600: #ea580c;
+            --orange-700: #c2410c;
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--orange-50) 0%, #fef3c7 100%);
+            min-height: 100vh;
+        }
+
+        .bg-orange-gradient {
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+        }
+
+        .text-orange-gradient {
+            background: linear-gradient(135deg, var(--orange-600) 0%, var(--orange-500) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .border-orange {
+            border-color: var(--orange-200) !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--orange-400);
+            box-shadow: 0 0 0 0.2rem rgba(249, 115, 22, 0.25);
+        }
+
+        .btn-orange {
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+            border: none;
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background: linear-gradient(135deg, var(--orange-600) 0%, var(--amber-600) 100%);
+            color: white;
+        }
+
+        .btn-outline-orange {
+            border-color: var(--orange-300);
+            color: var(--orange-600);
+        }
+
+        .btn-outline-orange:hover {
+            background-color: var(--orange-100);
+            border-color: var(--orange-300);
+            color: var(--orange-600);
+        }
+
+        .card-header-orange {
+            background: linear-gradient(135deg, var(--orange-500) 0%, var(--amber-500) 100%);
+            color: white;
+        }
+
+        .text-orange-600 {
+            color: var(--orange-600) !important;
+        }
+
+        .text-orange-700 {
+            color: var(--orange-700) !important;
+        }
+
+        .bg-orange-50 {
+            background-color: var(--orange-50) !important;
+        }
+
+        .custom-place-item {
+            background-color: var(--orange-50);
+            border: 1px solid var(--orange-200);
+        }
+
+        .section-title {
+            color: var(--orange-700);
+            border-bottom: 2px solid var(--orange-200);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon-orange {
+            color: var(--orange-500);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Walkability (MVP)</h1>
-        <form id="walk-form" class="card">
-            <label>Location label
-                <input type="text" name="location" placeholder="e.g., Home in Montréal" required>
-            </label>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Header -->
+                <div class="text-center mb-5">
+                    <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
+                        <i class="fas fa-map-marker-alt fa-2x icon-orange"></i>
+                        <h1 class="text-orange-gradient mb-0">Walkability Index Calculator</h1>
+                    </div>
+                    <p class="text-muted lead">
+                        Calculate your neighborhood's walkability score by entering the walking distances to essential
+                        amenities.
+                        Our algorithm considers proximity, accessibility, and urban design factors to generate a
+                        comprehensive walkability rating.
+                    </p>
+                </div>
 
-            <div class="grid">
-                <label>Latitude
-                    <input type="number" step="any" name="lat" value="45.5017" required>
-                </label>
-                <label>Longitude
-                    <input type="number" step="any" name="lon" value="-73.5673" required>
-                </label>
+                <!-- Main Form Card -->
+                <div class="card shadow-lg border-orange">
+                    <div class="card-header card-header-orange">
+                        <h3 class="card-title mb-1">
+                            <i class="fas fa-walking me-2"></i>
+                            Location & Walking Distances
+                        </h3>
+                        <p class="card-text mb-0 opacity-75">Enter your location details and walking distances to nearby
+                            amenities.</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="walkabilityForm">
+                            <!-- Location Section -->
+                            <div class="mb-5">
+                                <h4 class="section-title">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Location Information
+                                </h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="locationName" class="form-label">Location Name</label>
+                                        <input type="text" class="form-control border-orange" id="locationName"
+                                            placeholder="e.g., Downtown Montreal" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="latitude" class="form-label">Latitude</label>
+                                        <input type="number" class="form-control border-orange" id="latitude"
+                                            step="0.000001" placeholder="45.5017" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="longitude" class="form-label">Longitude</label>
+                                        <input type="number" class="form-control border-orange" id="longitude"
+                                            step="0.000001" placeholder="-73.5673" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Transit Section -->
+                            <div class="mb-5">
+                                <h4 class="section-title">
+                                    <i class="fas fa-bus me-2"></i>
+                                    Public Transit
+                                </h4>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="metro" class="form-label">
+                                            <i class="fas fa-subway me-2"></i>Metro Station
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="metro"
+                                                step="0.1" min="0" placeholder="0.3">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="bus" class="form-label">
+                                            <i class="fas fa-bus me-2"></i>Bus Stop
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="bus" step="0.1"
+                                                min="0" placeholder="0.1">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="bixi" class="form-label">
+                                            <i class="fas fa-bicycle me-2"></i>Bixi Station
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="bixi" step="0.1"
+                                                min="0" placeholder="0.2">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Essential Amenities Section -->
+                            <div class="mb-5">
+                                <h4 class="section-title">
+                                    <i class="fas fa-shopping-cart me-2"></i>
+                                    Essential Amenities
+                                </h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="groceries" class="form-label">
+                                            <i class="fas fa-shopping-cart me-2"></i>Grocery Stores
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="groceries"
+                                                step="0.1" min="0" placeholder="0.5">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cafes" class="form-label">
+                                            <i class="fas fa-coffee me-2"></i>Cafes & Coffee
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="cafes"
+                                                step="0.1" min="0" placeholder="0.2">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="restaurants" class="form-label">
+                                            <i class="fas fa-utensils me-2"></i>Restaurants
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="restaurants"
+                                                step="0.1" min="0" placeholder="0.3">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="parks" class="form-label">
+                                            <i class="fas fa-tree me-2"></i>Parks & Recreation
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="parks"
+                                                step="0.1" min="0" placeholder="0.4">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="healthcare" class="form-label">
+                                            <i class="fas fa-hospital me-2"></i>Healthcare
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="healthcare"
+                                                step="0.1" min="0" placeholder="1.0">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="stores" class="form-label">
+                                            <i class="fas fa-store me-2"></i>General Stores
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control border-orange" id="stores"
+                                                step="0.1" min="0" placeholder="0.6">
+                                            <span class="input-group-text">miles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Custom Places Section -->
+                            <div class="mb-5">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="section-title mb-0">Custom Places (Optional)</h4>
+                                    <button type="button" class="btn btn-outline-orange btn-sm" id="addCustomPlace">
+                                        <i class="fas fa-plus me-2"></i>Add Custom Place
+                                    </button>
+                                </div>
+                                <div id="customPlacesContainer"></div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-orange btn-lg px-5">
+                                    <i class="fas fa-calculator me-2"></i>
+                                    Calculate Walkability Index
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <label>Cutoff distance (meters)
-                <input type="number" name="cutoff_m" value="800" min="100" required>
-            </label>
-
-            <h3>Weights (0–5)</h3>
-            <div class="grid">
-                <label>Metro
-                    <input type="number" step="0.5" name="w_metro" value="3" min="0" max="5" required>
-                </label>
-                <label>Bus
-                    <input type="number" step="0.5" name="w_bus" value="2" min="0" max="5" required>
-                </label>
-                <label>Grocery
-                    <input type="number" step="0.5" name="w_grocery" value="3" min="0" max="5" required>
-                </label>
-                <label>Restaurants
-                    <input type="number" step="0.5" name="w_restaurants" value="2" min="0" max="5" required>
-                </label>
-                <label>Parks
-                    <input type="number" step="0.5" name="w_parks" value="2" min="0" max="5" required>
-                </label>
-                <label>Schools
-                    <input type="number" step="0.5" name="w_schools" value="2" min="0" max="5" required>
-                </label>
-            </div>
-
-            <h3>Best walking distance to each category (meters)</h3>
-            <div class="grid">
-                <label>Metro <input type="number" name="metro_m" value="200" min="0" required></label>
-                <label>Bus <input type="number" name="bus_m" value="1000" min="0" required></label>
-                <label>Grocery <input type="number" name="grocery_m" value="500" min="0" required></label>
-                <label>Restaurants <input type="number" name="restaurants_m" value="300" min="0" required></label>
-                <label>Parks <input type="number" name="parks_m" value="400" min="0" required></label>
-                <label>Schools <input type="number" name="schools_m" value="800" min="0" required></label>
-            </div>
-
-            <button type="submit">Calculate</button>
-        </form>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById('walk-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const fd = new FormData(this);
+        let customPlaceCounter = 0;
 
-            // --- collect thresholds and weights from form ---
-            const thresholds = {
-                metro: Number(fd.get("metro_m")),
-                bus: Number(fd.get("bus_m")),
-                grocery: Number(fd.get("grocery_m")),
-                restaurants: Number(fd.get("restaurants_m")),
-                parks: Number(fd.get("parks_m")),
-                schools: Number(fd.get("schools_m")),
-            };
+        // Add custom place functionality
+        document.getElementById('addCustomPlace').addEventListener('click', function () {
+            customPlaceCounter++;
+            const container = document.getElementById('customPlacesContainer');
 
-            const weights = {
-                metro: Number(fd.get("w_metro")),
-                bus: Number(fd.get("w_bus")),
-                grocery: Number(fd.get("w_grocery")),
-                restaurants: Number(fd.get("w_restaurants")),
-                parks: Number(fd.get("w_parks")),
-                schools: Number(fd.get("w_schools")),
-            };
+            const customPlaceDiv = document.createElement('div');
+            customPlaceDiv.className = 'custom-place-item rounded p-3 mb-3';
+            customPlaceDiv.id = `customPlace${customPlaceCounter}`;
 
-            const payload = {
-                location: fd.get("location"),
-                lat: Number(fd.get("lat")),
-                lon: Number(fd.get("lon")),
-                thresholds,
-                weights
-            };
+            customPlaceDiv.innerHTML = `
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Place Name</label>
+                        <input type="text" class="form-control border-orange custom-place-name" 
+                               placeholder="e.g., Gym, Library, Church">
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-label">Distance (miles)</label>
+                        <input type="number" class="form-control border-orange custom-place-distance" 
+                               step="0.1" min="0" placeholder="0.5">
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label">&nbsp;</label>
+                        <button type="button" class="btn btn-outline-danger btn-sm d-block" 
+                                onclick="removeCustomPlace('customPlace${customPlaceCounter}')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
 
-            // --- send to FastAPI backend ---
-            fetch("/api/analyze", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-            })
-                .then((r) => {
-                    if (!r.ok) throw new Error("Server error: " + r.status);
-                    return r.json();
-                })
-                .then((result) => {
-                    // store backend result for result.html
-                    sessionStorage.setItem("walkability_result", JSON.stringify(result));
-                    window.location.href = "/result";
-                })
-                .catch((err) => {
-                    console.error("Error calling backend:", err);
-                    alert("Failed to calculate walkability. See console for details.");
-                });
+            container.appendChild(customPlaceDiv);
         });
-    </script>        
+
+        function removeCustomPlace(id) {
+            document.getElementById(id).remove();
+        }
+
+        // Form submission
+        document.getElementById('walkabilityForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = {
+                locationName: document.getElementById('locationName').value,
+                latitude: parseFloat(document.getElementById('latitude').value) || 0,
+                longitude: parseFloat(document.getElementById('longitude').value) || 0,
+                metro: parseFloat(document.getElementById('metro').value) || 0,
+                bus: parseFloat(document.getElementById('bus').value) || 0,
+                bixi: parseFloat(document.getElementById('bixi').value) || 0,
+                groceries: parseFloat(document.getElementById('groceries').value) || 0,
+                cafes: parseFloat(document.getElementById('cafes').value) || 0,
+                restaurants: parseFloat(document.getElementById('restaurants').value) || 0,
+                parks: parseFloat(document.getElementById('parks').value) || 0,
+                healthcare: parseFloat(document.getElementById('healthcare').value) || 0,
+                stores: parseFloat(document.getElementById('stores').value) || 0,
+                customPlaces: []
+            };
+
+            // Collect custom places
+            const customPlaceItems = document.querySelectorAll('.custom-place-item');
+            customPlaceItems.forEach((item, index) => {
+                const name = item.querySelector('.custom-place-name').value;
+                const distance = parseFloat(item.querySelector('.custom-place-distance').value) || 0;
+
+                if (name) {
+                    formData.customPlaces.push({
+                        id: index,
+                        name: name,
+                        distance: distance
+                    });
+                }
+            });
+
+            // Store data in localStorage for the results page
+            localStorage.setItem('walkabilityData', JSON.stringify(formData));
+
+            // Redirect to results page
+            window.location.href = 'result.html';
+        });
+    </script>
 </body>
 
 </html>
