@@ -18,6 +18,7 @@ pois_gdf = gpd.read_file("data/processed/pois_all.geojson")
 
 # --- Define the structure of input data coming from frontend ---
 class WalkabilityInput(BaseModel):
+    location: str
     lat: float
     lon: float
     thresholds: dict
@@ -37,7 +38,9 @@ def read_result(request: Request):
 # 2. Endpoint that runs your scoring logic
 @app.post("/api/analyze")
 def analyze_walkability_api(data: WalkabilityInput):
+    print("received data: ", data)
     result = analyze_walkability(
+        location=data.location,
         user_lat=data.lat,
         user_lon=data.lon,
         thresholds=data.thresholds,

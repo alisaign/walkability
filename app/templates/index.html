@@ -31,6 +31,12 @@
 
             <h3>Weights (0–5)</h3>
             <div class="grid">
+                <label>Metro
+                    <input type="number" step="0.5" name="w_metro" value="3" min="0" max="5" required>
+                </label>
+                <label>Bus
+                    <input type="number" step="0.5" name="w_bus" value="2" min="0" max="5" required>
+                </label>
                 <label>Grocery
                     <input type="number" step="0.5" name="w_grocery" value="3" min="0" max="5" required>
                 </label>
@@ -43,22 +49,16 @@
                 <label>Schools
                     <input type="number" step="0.5" name="w_schools" value="2" min="0" max="5" required>
                 </label>
-                <label>Transit
-                    <input type="number" step="0.5" name="w_transit" value="3" min="0" max="5" required>
-                </label>
-                <label>Healthcare
-                    <input type="number" step="0.5" name="w_healthcare" value="2" min="0" max="5" required>
-                </label>
             </div>
 
             <h3>Best walking distance to each category (meters)</h3>
             <div class="grid">
+                <label>Metro <input type="number" name="metro_m" value="200" min="0" required></label>
+                <label>Bus <input type="number" name="bus_m" value="1000" min="0" required></label>
                 <label>Grocery <input type="number" name="grocery_m" value="500" min="0" required></label>
                 <label>Restaurants <input type="number" name="restaurants_m" value="300" min="0" required></label>
                 <label>Parks <input type="number" name="parks_m" value="400" min="0" required></label>
                 <label>Schools <input type="number" name="schools_m" value="800" min="0" required></label>
-                <label>Transit <input type="number" name="transit_m" value="200" min="0" required></label>
-                <label>Healthcare <input type="number" name="healthcare_m" value="1000" min="0" required></label>
             </div>
 
             <button type="submit">Calculate</button>
@@ -72,24 +72,25 @@
 
             // --- collect thresholds and weights from form ---
             const thresholds = {
+                metro: Number(fd.get("metro_m")),
+                bus: Number(fd.get("bus_m")),
                 grocery: Number(fd.get("grocery_m")),
                 restaurants: Number(fd.get("restaurants_m")),
                 parks: Number(fd.get("parks_m")),
                 schools: Number(fd.get("schools_m")),
-                transit: Number(fd.get("transit_m")),
-                healthcare: Number(fd.get("healthcare_m")),
             };
 
             const weights = {
+                metro: Number(fd.get("w_metro")),
+                bus: Number(fd.get("w_bus")),
                 grocery: Number(fd.get("w_grocery")),
                 restaurants: Number(fd.get("w_restaurants")),
                 parks: Number(fd.get("w_parks")),
                 schools: Number(fd.get("w_schools")),
-                transit: Number(fd.get("w_transit")),
-                healthcare: Number(fd.get("w_healthcare")),
             };
 
             const payload = {
+                location: fd.get("location"),
                 lat: Number(fd.get("lat")),
                 lon: Number(fd.get("lon")),
                 thresholds,
