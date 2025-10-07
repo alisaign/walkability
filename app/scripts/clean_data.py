@@ -61,6 +61,8 @@ def prepare_transit_data():
             return "metro"
         return "bus"
     gdf["category"] = gdf["routes"].apply(classify_route)
+    
+    gdf = gdf[["category", "stop_name", "geometry"]]
 
     out_dir = Path("data/processed")
     out_dir.mkdir(exist_ok=True)

@@ -1,6 +1,6 @@
 {
 "type": "FeatureCollection",
-"name": "metro_bus_clean",
+"name": "pois_all",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "category": "metro", "stop_name": "Station Angrignon" }, "geometry": { "type": "Point", "coordinates": [ -73.603118, 45.446465999995141 ] } },
