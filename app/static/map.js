@@ -1,33 +1,45 @@
 function initWalkabilityMap(DATA) {
     const center = [DATA.center.lat, DATA.center.lon];
-    const map = L.map('map').setView(center, 14);
+    const map = L.map('map').setView(center, 15); // zoom like fallback
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; OpenStreetMap contributors'
+        attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // --- show user location ---
-    L.marker(center).addTo(map).bindPopup('Origin').openPopup();
+    // Center marker
+    L.marker(center).addTo(map).bindPopup('Your Location');
 
-    // --- optional radius circles ---
-    (DATA.buffers_m || []).forEach(r =>
-        L.circle(center, { radius: r, color: '#0ea5e9', fillOpacity: 0.05 }).addTo(map)
-    );
+    // Buffer circles – thicker & warmer like fallback
+    if (DATA.buffers_m) {
+        DATA.buffers_m.forEach(r => {
+            L.circle(center, {
+                radius: r,
+                color: '#ea580c',
+                fillColor: '#f97316',
+                weight: 1,
+                opacity: 0.3,
+                fillOpacity: 0.1
+            }).addTo(map);
+        });
+    }
 
-    // --- display nearby POIs (from backend) ---
+    // Nearby points
     if (DATA.nearby && DATA.nearby.length > 0) {
         DATA.nearby.forEach(p => {
             if (!p.geometry || !p.geometry.coordinates) return;
             const [lon, lat] = p.geometry.coordinates;
-            const cat = p.category || "place";
-            const name = p.stop_name || p.name || cat;
+            const name = p.name || p.category || "place";
             L.circleMarker([lat, lon], {
-                radius: 5,
-                color: "#ff0000",
-                fillColor: "#ff0000",
+                radius: 6,
+                fillColor: '#f97316',
+                color: '#ea580c',
+                weight: 2,
+                opacity: 1,
                 fillOpacity: 0.8
-            }).bindPopup(`<strong>${name}</strong><br><small>${cat}</small>`).addTo(map);
+            })
+                .addTo(map)
+                .bindPopup(`<strong>${name}</strong>`);
         });
     } else {
         console.log("No nearby points returned.");
