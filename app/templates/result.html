@@ -100,27 +100,7 @@
             box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
         }
 
-        .score-floating {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1050;
-            transition: all 0.3s ease;
-        }
 
-        .score-floating .score-circle {
-            width: 60px;
-            height: 60px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .score-floating.expanded .score-circle {
-            width: 80px;
-            height: 80px;
-            font-size: 1.5rem;
-        }
 
         .progress-orange {
             background-color: var(--orange-100);
@@ -170,14 +150,6 @@
             border-radius: 1rem;
             padding: 1.5rem;
         }
-
-        .nearby-item {
-            background-color: white;
-            border: 1px solid var(--orange-200);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin: 0.5rem 0;
-        }
     </style>
 </head>
 
@@ -199,15 +171,47 @@
             <!-- Will be populated by JavaScript -->
         </div>
 
-        <!-- Score Display (Static/Non-floating initially) -->
-        <div class="row justify-content-center mb-4" id="scoreDisplay">
-            <div class="col-md-6">
+        <!-- Main Content -->
+        <div class="row">
+            <!-- Map Column - 2/3 width -->
+            <div class="col-lg-8 mb-4">
+                <!-- Map Section -->
+                <div class="card border-orange shadow-lg mb-4">
+                    <div class="card-header card-header-orange">
+                        <h4 class="card-title mb-0">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Walkability Map
+                        </h4>
+                        <p class="mb-0 opacity-75">Visualization of nearby amenities and walking routes</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="map"></div>
+                    </div>
+                </div>
+
+                <!-- Distance Summary Section -->
                 <div class="card border-orange shadow-lg">
+                    <div class="card-header bg-orange-50 border-bottom border-orange-200">
+                        <h5 class="card-title mb-0 text-orange-700">
+                            Distance Summary
+                        </h5>
+                    </div>
+                    <div class="card-body" id="distanceSummary">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Column - 1/3 width -->
+            <div class="col-lg-4">
+                <!-- Overall Walkability Score -->
+                <div class="card border-orange shadow-lg mb-4">
                     <div class="card-header card-header-orange text-center">
-                        <h3 class="card-title mb-0">
+                        <h4 class="card-title mb-0">
                             <i class="fas fa-trophy me-2"></i>
                             Overall Walkability Score
-                        </h3>
+                        </h4>
+                        <p class="mb-0 opacity-75">Based on your location and nearby amenities</p>
                     </div>
                     <div class="card-body text-center">
                         <div class="score-circle mx-auto mb-3" id="mainScoreCircle">
@@ -217,71 +221,27 @@
                         <p class="text-muted mb-0">Based on proximity to essential amenities</p>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Floating Score (Hidden initially) -->
-        <div class="score-floating d-none" id="floatingScore">
-            <div class="card border-orange shadow-lg">
-                <div class="card-body text-center p-2">
-                    <div class="score-circle mx-auto" id="floatingScoreCircle">
-                        <span id="floatingScoreValue">--</span>
-                    </div>
-                    <div class="mt-2 d-none" id="floatingDetails">
-                        <div id="floatingScoreLabel" class="badge fs-6 mb-2">--</div>
-                        <button class="btn btn-outline-orange btn-sm" onclick="minimizeFloatingScore()">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="row">
-            <!-- Map Column -->
-            <div class="col-lg-8 mb-4">
-                <div class="card border-orange shadow-lg h-100">
-                    <div class="card-header card-header-orange">
-                        <h4 class="card-title mb-0">
-                            <i class="fas fa-map-marker-alt me-2"></i>
-                            Walkability Map
-                        </h4>
-                    </div>
-                    <div class="card-body">
-                        <div id="map"></div>
-                        <div class="mt-3" id="nearbyPlaces">
-                            <h6 class="text-orange-600 mb-3">Nearby Places</h6>
-                            <div id="nearbyList">
-                                <!-- Will be populated by JavaScript -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results Column -->
-            <div class="col-lg-4">
+                <!-- Category Breakdown -->
                 <div class="card border-orange shadow-lg mb-4">
-                    <div class="card-header card-header-orange">
-                        <h4 class="card-title mb-0">
-                            <i class="fas fa-chart-bar me-2"></i>
+                    <div class="card-header bg-orange-50 border-bottom border-orange-200">
+                        <h5 class="card-title mb-0 text-orange-700">
                             Category Breakdown
-                        </h4>
+                        </h5>
                     </div>
                     <div class="card-body" id="categoryBreakdown">
                         <!-- Will be populated by JavaScript -->
                     </div>
                 </div>
 
+                <!-- Recommendations -->
                 <div class="card border-orange shadow-lg">
-                    <div class="card-header card-header-orange">
-                        <h4 class="card-title mb-0">
-                            <i class="fas fa-info-circle me-2"></i>
-                            Analysis Details
-                        </h4>
+                    <div class="card-header bg-orange-50 border-bottom border-orange-200">
+                        <h5 class="card-title mb-0 text-orange-700">
+                            Recommendations
+                        </h5>
                     </div>
-                    <div class="card-body" id="analysisDetails">
+                    <div class="card-body" id="recommendationsSection">
                         <!-- Will be populated by JavaScript -->
                     </div>
                 </div>
@@ -294,8 +254,6 @@
     <script src="app/static/map.js"></script>
     <script>
         let map;
-        let floatingVisible = false;
-        let floatingExpanded = false;
 
         // Get score label and badge class
         function getScoreLabel(score) {
@@ -334,57 +292,6 @@
             return icons[category] || 'fas fa-map-marker-alt';
         }
 
-        // Handle scroll for floating score
-        function handleScroll() {
-            const scrollY = window.scrollY;
-            const shouldFloat = scrollY > 200;
-
-            if (shouldFloat && !floatingVisible) {
-                showFloatingScore();
-            } else if (!shouldFloat && floatingVisible) {
-                hideFloatingScore();
-            }
-        }
-
-        function showFloatingScore() {
-            const scoreDisplay = document.getElementById('scoreDisplay');
-            const floatingScore = document.getElementById('floatingScore');
-
-            scoreDisplay.style.display = 'none';
-            floatingScore.classList.remove('d-none');
-            floatingVisible = true;
-        }
-
-        function hideFloatingScore() {
-            const scoreDisplay = document.getElementById('scoreDisplay');
-            const floatingScore = document.getElementById('floatingScore');
-
-            scoreDisplay.style.display = 'block';
-            floatingScore.classList.add('d-none');
-            floatingVisible = false;
-            floatingExpanded = false;
-        }
-
-        function toggleFloatingScore() {
-            const floatingScore = document.getElementById('floatingScore');
-            const floatingDetails = document.getElementById('floatingDetails');
-
-            if (!floatingExpanded) {
-                floatingScore.classList.add('expanded');
-                floatingDetails.classList.remove('d-none');
-                floatingExpanded = true;
-            }
-        }
-
-        function minimizeFloatingScore() {
-            const floatingScore = document.getElementById('floatingScore');
-            const floatingDetails = document.getElementById('floatingDetails');
-
-            floatingScore.classList.remove('expanded');
-            floatingDetails.classList.add('d-none');
-            floatingExpanded = false;
-        }
-
         // Initialize page
         function initializePage() {
             // Get data from sessionStorage
@@ -420,15 +327,10 @@
             const scoreInfo = getScoreLabel(score);
 
             document.getElementById('scoreValue').textContent = score;
-            document.getElementById('floatingScoreValue').textContent = score;
 
             const scoreLabel = document.getElementById('scoreLabel');
-            const floatingScoreLabel = document.getElementById('floatingScoreLabel');
-
             scoreLabel.textContent = scoreInfo.label;
             scoreLabel.className = `badge fs-6 mb-2 ${scoreInfo.class}`;
-            floatingScoreLabel.textContent = scoreInfo.label;
-            floatingScoreLabel.className = `badge fs-6 mb-2 ${scoreInfo.class}`;
 
             // Update category breakdown
             if (data.breakdown) {
@@ -457,41 +359,103 @@
                 categoryBreakdown.innerHTML = breakdownHTML;
             }
 
-            // Update nearby places
-            if (data.nearby) {
-                const nearbyList = document.getElementById('nearbyList');
-                let nearbyHTML = '';
+            // Update distance summary
+            const distanceSummary = document.getElementById('distanceSummary');
+            let distanceHTML = '';
 
-                data.nearby.forEach(place => {
-                    const icon = getCategoryIcon(place.category);
-                    nearbyHTML += `
-                        <div class="nearby-item">
-                            <div class="d-flex align-items-center">
-                                <i class="${icon} me-3 icon-orange"></i>
-                                <div>
-                                    <strong>${place.name}</strong>
-                                    <br>
-                                    <small class="text-muted">${formatCategoryName(place.category)}</small>
-                                </div>
+            // Transit section
+            const transitCategories = ['metro', 'bus'];
+            const transitFound = transitCategories.some(cat =>
+                data.breakdown && data.breakdown.find(item => item.name === cat)
+            );
+
+            if (transitFound) {
+                distanceHTML += `
+                    <div class="mb-4">
+                        <h6 class="text-orange-600 mb-3">Transit</h6>
+                        <div class="ms-3">
+                `;
+
+                transitCategories.forEach(category => {
+                    const item = data.breakdown && data.breakdown.find(b => b.name === category);
+                    if (item) {
+                        const distance = item.score > 0 ? `${(400 * (1 - item.score)).toFixed(0)}m` : 'Not specified';
+                        distanceHTML += `
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>${formatCategoryName(category)}:</span>
+                                <span class="text-orange-700">${distance}</span>
                             </div>
-                        </div>
-                    `;
+                        `;
+                    }
                 });
 
-                nearbyList.innerHTML = nearbyHTML || '<p class="text-muted">No nearby places found</p>';
+                distanceHTML += '</div></div>';
             }
 
-            // Update analysis details
-            const analysisDetails = document.getElementById('analysisDetails');
-            analysisDetails.innerHTML = `
-                <div class="score-detail">
-                    <h6 class="text-orange-600 mb-3">Analysis Summary</h6>
-                    <p class="mb-2"><strong>Overall Score:</strong> ${score}/100</p>
-                    <p class="mb-2"><strong>Categories Analyzed:</strong> ${data.breakdown ? data.breakdown.length : 0}</p>
-                    <p class="mb-2"><strong>Nearby Places Found:</strong> ${data.nearby ? data.nearby.length : 0}</p>
-                    <p class="mb-0"><strong>Search Buffers:</strong> ${data.buffers_m ? data.buffers_m.join('m, ') + 'm' : 'N/A'}</p>
-                </div>
-            `;
+            // Amenities section
+            const amenityCategories = ['grocery', 'restaurants', 'parks', 'schools', 'healthcare'];
+            const amenitiesFound = amenityCategories.some(cat =>
+                data.breakdown && data.breakdown.find(item => item.name === cat)
+            );
+
+            if (amenitiesFound) {
+                distanceHTML += `
+                    <div class="mb-4">
+                        <h6 class="text-orange-600 mb-3">Amenities</h6>
+                        <div class="ms-3">
+                `;
+
+                amenityCategories.forEach(category => {
+                    const item = data.breakdown && data.breakdown.find(b => b.name === category);
+                    if (item) {
+                        const distance = item.score > 0 ? `${(800 * (1 - item.score)).toFixed(0)}m` : 'Not specified';
+                        distanceHTML += `
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>${formatCategoryName(category)}:</span>
+                                <span class="text-orange-700">${distance}</span>
+                            </div>
+                        `;
+                    }
+                });
+
+                distanceHTML += '</div></div>';
+            }
+
+            distanceSummary.innerHTML = distanceHTML || '<p class="text-muted">No distance data available</p>';
+
+            // Update recommendations section
+            const recommendationsSection = document.getElementById('recommendationsSection');
+            let recommendationsHTML = '';
+
+            // Generate recommendations based on score
+            const recommendations = [];
+            if (score >= 80) {
+                recommendations.push("Consider moving closer to grocery stores for daily convenience");
+                recommendations.push("Public transit access could be improved for better connectivity");
+                recommendations.push("Access to parks and green spaces would enhance quality of life");
+                recommendations.push("Consider supplementing with bike or car transportation");
+            } else if (score >= 60) {
+                recommendations.push("Consider moving closer to grocery stores for daily convenience");
+                recommendations.push("Public transit access could be improved for better connectivity");
+                recommendations.push("Access to parks and green spaces would enhance quality of life");
+                recommendations.push("Consider supplementing with bike or car transportation");
+            } else {
+                recommendations.push("Consider moving closer to grocery stores for daily convenience");
+                recommendations.push("Public transit access could be improved for better connectivity");
+                recommendations.push("Access to parks and green spaces would enhance quality of life");
+                recommendations.push("Consider supplementing with bike or car transportation");
+            }
+
+            recommendations.forEach(rec => {
+                recommendationsHTML += `
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fas fa-arrow-right me-2 mt-1 icon-orange" style="font-size: 0.75rem;"></i>
+                        <span>${rec}</span>
+                    </div>
+                `;
+            });
+
+            recommendationsSection.innerHTML = recommendationsHTML;
 
             // Initialize map
             try {
@@ -505,12 +469,6 @@
                 console.error('Error initializing map:', error);
                 initSimpleMap(data);
             }
-
-            // Add scroll listener
-            window.addEventListener('scroll', handleScroll);
-
-            // Add click handler for floating score
-            document.getElementById('floatingScoreCircle').addEventListener('click', toggleFloatingScore);
         }
 
         // Fallback simple map initialization
