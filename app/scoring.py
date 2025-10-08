@@ -94,11 +94,12 @@ def analyze_walkability(location, user_lat, user_lon, thresholds, weights, gdf):
     breakdown, all_nearby = [], []
 
     for category, threshold in thresholds.items():
-        score = category_score(user_point, gdf, category, threshold)
-        nearby = get_nearby_points(user_point, gdf, category, threshold)
         w = float(weights.get(category, 1))
-        breakdown.append({"name": category, "score": score, "weight": w})
-        all_nearby.extend(nearby)
+        if w > 0:
+            score = category_score(user_point, gdf, category, threshold)
+            nearby = get_nearby_points(user_point, gdf, category, threshold)
+            breakdown.append({"name": category, "score": score, "weight": w})
+            all_nearby.extend(nearby)
 
     index = combine_scores(breakdown)
 

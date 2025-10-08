@@ -7,24 +7,23 @@ function initWalkabilityMap(DATA) {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Center marker
     L.marker(center).addTo(map).bindPopup('Your Location');
 
-    // Buffer circles – thicker & warmer like fallback
-    if (DATA.buffers_m) {
-        DATA.buffers_m.forEach(r => {
-            L.circle(center, {
-                radius: r,
-                color: '#ea580c',
-                fillColor: '#f97316',
-                weight: 1,
-                opacity: 0.3,
-                fillOpacity: 0.1
-            }).addTo(map);
+    if (DATA.buffers_m && DATA.breakdown) {
+        DATA.breakdown.forEach((item, i) => {
+            if (item.weight > 0) {
+                L.circle(center, {
+                    radius: DATA.buffers_m[i],
+                    color: '#ea580c',
+                    fillColor: '#f97316',
+                    weight: 1,
+                    opacity: 0.3,
+                    fillOpacity: 0.1
+                }).addTo(map).bindPopup(`${item.name} buffer (${DATA.buffers_m[i]} m)`);
+            }
         });
     }
 
-    // Nearby points
     if (DATA.nearby && DATA.nearby.length > 0) {
         DATA.nearby.forEach(p => {
             if (!p.geometry || !p.geometry.coordinates) return;
