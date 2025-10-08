@@ -34,16 +34,19 @@ def category_score(user_point, gdf, category, threshold):
     subset = gdf[gdf["category"] == category]
     if subset.empty:
         logger.debug(f"{category}: no data")
-        return 0.0
+        return 0.0, None, None
 
     # project both to meters
     subset_m = subset.to_crs(epsg=LOCAL_EPSG)
     user_point_m = gpd.GeoSeries([user_point], crs=4326).to_crs(epsg=LOCAL_EPSG).iloc[0]
 
-    nearest = subset_m.geometry.distance(user_point_m).min()
-    score = float(sigmoid(nearest, threshold))
-    logger.info(f"{category}: nearest={nearest:.1f} m  score={score:.3f}")
-    return score
+    subset_m["dist"] = subset_m.geometry.distance(user_point_m)
+    nearest_row = subset_m.loc[subset_m["dist"].idxmin()]
+    nearest_dist = round(nearest_row["dist"], 1)
+    nearest_name = nearest_row.get("stop_name") or nearest_row.get("name")
+    score = float(sigmoid(nearest_dist, threshold))
+    logger.info(f"{category}: nearest={nearest_dist:.1f} m  score={score:.3f}")
+    return score, nearest_dist, nearest_name
 
 
 def get_nearby_points(user_point, gdf, category, threshold):
@@ -51,7 +54,7 @@ def get_nearby_points(user_point, gdf, category, threshold):
     subset = gdf[gdf["category"] == category].copy()
     if subset.empty:
         logger.debug(f"{category}: no nearby candidates")
-        return []
+        return [], None
 
     # project to metric CRS for distance
     subset_m = subset.to_crs(epsg=LOCAL_EPSG)
@@ -71,8 +74,9 @@ def get_nearby_points(user_point, gdf, category, threshold):
         }
         for _, row in nearby_geo.iterrows()
     ]
-    logger.info(f"{category}: {len(results)} nearby features ≤ {threshold} m")
-    return results
+    nearby_count = len(results)
+    logger.info(f"{category}: {nearby_count} nearby features ≤ {threshold} m")
+    return results, nearby_count
 
 
 
@@ -96,9 +100,9 @@ def analyze_walkability(location, user_lat, user_lon, thresholds, weights, gdf):
     for category, threshold in thresholds.items():
         w = float(weights.get(category, 1))
         if w > 0:
-            score = category_score(user_point, gdf, category, threshold)
-            nearby = get_nearby_points(user_point, gdf, category, threshold)
-            breakdown.append({"name": category, "score": score, "weight": w})
+            score, nearest_dist, nearest_name = category_score(user_point, gdf, category, threshold)
+            nearby, nearby_count = get_nearby_points(user_point, gdf, category, threshold)
+            breakdown.append({"name": category, "score": score, "weight": w, "nearest_dist": nearest_dist, "nearest_name": nearest_name, "nearby_count": nearby_count})
             all_nearby.extend(nearby)
 
     index = combine_scores(breakdown)
