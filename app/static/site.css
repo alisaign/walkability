@@ -3,17 +3,6 @@
     --muted: #6b7280;
 }
 
-* {
-    box-sizing: border-box
-}
-
-body {
-    margin: 0;
-    font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
-    background: #f7f8fb;
-    color: #0f172a
-}
-
 .custom-marker-icon {
     background: none;
     border: none;
@@ -22,83 +11,4 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.container {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 16px
-}
-
-.card {
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 16px;
-    margin: 16px 0
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    gap: 6px
-}
-
-input {
-    padding: 10px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px
-}
-
-button {
-    padding: 10px 16px;
-    border-radius: 10px;
-    border: 1px solid #0ea5e9;
-    background: #0ea5e9;
-    color: #fff;
-    cursor: pointer
-}
-
-button:hover {
-    filter: brightness(0.95)
-}
-
-.score span {
-    font-size: 1.4rem;
-    font-weight: 700
-}
-
-.map {
-    height: 70vh;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    margin-top: 12px
-}
-
-.back {
-    color: #2563eb;
-    text-decoration: none
-}
-
-@media(max-width:640px) {
-    .grid {
-        grid-template-columns: 1fr
-    }
-}
-
-/* readable tooltips */
-.leaflet-tooltip {
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    box-shadow: none;
-    color: #ff0000;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 1px 3px;
 }
