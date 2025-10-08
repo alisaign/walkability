@@ -14,6 +14,16 @@ body {
     color: #0f172a
 }
 
+.custom-marker-icon {
+    background: none;
+    border: none;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
     max-width: var(--max);
     margin: 0 auto;
