@@ -35,10 +35,10 @@ function initWalkabilityMap(DATA) {
                 }).addTo(map).bindPopup(`${item.name} buffer (${DATA.buffers_m[i]} m)`);
 
                 const iconClass = getCategoryIconClass(item.name);
-                const nearby = DATA.nearby.filter(p => p.category === item.name);
-                nearby.forEach(p => {
-                    if (p.geometry && p.geometry.coordinates) {
-                        const [lon, lat] = p.geometry.coordinates;
+                const nearby = DATA.nearby.filter(poi => poi.category === item.name);
+                nearby.forEach(poi => {
+                    if (poi.geometry && poi.geometry.coordinates) {
+                        const [lon, lat] = poi.geometry.coordinates;
                         const customIcon = L.divIcon({
                             html: `<i class="fas ${iconClass}" style="color:#f97316;font-size:18px;"></i>`,
                             className: 'custom-marker-icon',
@@ -47,7 +47,7 @@ function initWalkabilityMap(DATA) {
                         });
                         L.marker([lat, lon], { icon: customIcon })
                             .addTo(map)
-                            .bindPopup(`<strong>${p.name || item.name}</strong><br><small>${item.name}</small>`);
+                            .bindPopup(`<strong>${poi.name || item.name}</strong><br><small>${item.name}</small>`);
                     }
                 });
             }

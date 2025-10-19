@@ -1,3 +1,4 @@
+import logging
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -5,6 +6,12 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import geopandas as gpd
 from app.scoring import analyze_walkability
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="[%(asctime)s] %(levelname)s %(name)s:%(funcName)s — %(message)s",
+    datefmt="%H:%M:%S"
+)
 
 # --- Initialize FastAPI ---
 app = FastAPI()
