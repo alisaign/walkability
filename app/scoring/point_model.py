@@ -20,12 +20,14 @@ logger = logging.getLogger(__name__)
 def calculate_category_score(user_point: Point, pois_m: gpd.GeoDataFrame, category: str, threshold: float):
     """Calculate a 0-1 score for given category."""
     subset_m = pois_m[pois_m["category"] == category]
+    if subset_m.empty:
+        logger.info(f"{category}: no POIs, score=0.000")
+        return 0.0
     nearest = float(subset_m["distance"].min())
     score = linear_decay(nearest, threshold)
     logger.info(f"{category}: nearest={nearest:.1f} m, score={score:.3f}" if nearest is not None
                 else f"{category}: no POIs, score=0.000")
     return score
-
 
 def get_nearby_pois(user_point: Point, pois_m: gpd.GeoDataFrame, category: str, threshold: float):
     """Return list of POIs within threshold meters of user_point."""
@@ -35,9 +37,7 @@ def get_nearby_pois(user_point: Point, pois_m: gpd.GeoDataFrame, category: str, 
     ]
     if nearby_pois_m.empty:
         return []
-    
     nearby_pois = convert_to_geo_crs(nearby_pois_m)
-    
     nearby_pois_list = []
     for _, row in nearby_pois.iterrows():
         nearby_pois_list.append({
@@ -50,29 +50,29 @@ def get_nearby_pois(user_point: Point, pois_m: gpd.GeoDataFrame, category: str, 
     return nearby_pois_list
 
 
-def find_nearest_pois(pois_with_dist, thresholds):
+def find_nearest_pois(pois_with_dist, categories):
     """Return nearest POI info (name + distance) for each category."""
-    nearest_all = []
-    for category in thresholds.keys():
+    nearest_pois_names, nearest_pois_distances = [], []
+    for category in categories():
         subset = pois_with_dist[pois_with_dist["category"] == category]
         if subset.empty:
-            nearest_all.append({"category": category, "name": None, "distance": None})
+            nearest_pois_names.append(None)
+            nearest_pois_distances.append(None)
             continue
         nearest_row = subset.loc[subset["distance"].idxmin()]
-        nearest_all.append({
-            "category": category,
-            "name": nearest_row.get("name") or nearest_row.get("stop_name"),
-            "distance": round(float(nearest_row["distance"]), 1),
-        })
-    return nearest_all
+        nearest_pois_names.append(nearest_row.get("name"))
+        nearest_pois_distances.append(round(float(nearest_row["distance"]), 1))
+    return nearest_pois_names, nearest_pois_distances
 
 
-def analyze_walkability_at_location(lat, lon, thresholds, weights, pois):
+def analyze_walkability_at_location(lat, lon, categories, thresholds, weights, pois):
     """Compute walkability index for a given location.
       1. Calculates category scores (linear decay).
-      2. Finds nearby POIs for each category.
-      3. Combines scores with weights.
-      4. Returns overall index + breakdown + nearby + nearest.
+      2. Finds nearby POIs for each category: 
+        name and distance of the nearest poi, 
+        and number of pois within the buffer.
+      3. Calculates walkability score
+      4. Returns parallel lists for all metrics
     """
     logger.info(f"Analyzing walkability for lat={lat}, lon={lon}")
     user_point = Point(lon, lat)
@@ -82,35 +82,41 @@ def analyze_walkability_at_location(lat, lon, thresholds, weights, pois):
     user_point_m = convert_to_metric_crs(user_point)
     pois_m["distance"] = pois_m.distance(user_point_m)
     
-    categories_breakdown, all_pois_nearby = [], []
+    category_scores = []
+    nearest_pois_names = []
+    nearest_pois_distances = []
+    nearby_pois_counts = []
+    all_pois_nearby = []
 
-    for category, threshold in thresholds.items():
-        weight = float(weights.get(category, 1))
+    for i, category in enumerate(categories):
+        threshold = thresholds[i]
+        weight = weights[i]
         if weight <= 0:
+            category_scores.append(0.0)
+            nearest_pois_names.append(None)
+            nearest_pois_distances.append(None)
+            nearby_pois_counts.append(0)
             continue
 
         score = calculate_category_score(user_point, pois_m, category, threshold)
         nearby_pois = get_nearby_pois(user_point, pois_m, category, threshold)
-
-        categories_breakdown.append({
-            "category": category,
-            "score": score,
-            "weight": weight,
-            "threshold": threshold,
-            "nearby_count": len(nearby_pois),
-        })
         
+        category_scores.append(score)
+        nearby_pois_counts.append(len(nearby_pois))
         all_pois_nearby.extend(nearby_pois)
+        
+    nearest_pois_names, nearest_pois_distances = find_nearest_pois(pois_m, categories)
 
-    index = combine_scores(categories_breakdown)
-    nearest_pois = find_nearest_pois(pois_m, thresholds)
+    walkability_index = combine_scores(category_scores, weights)
+    
 
     result = {
-        "center": {"lat": lat, "lon": lon},
-        "index": index,
-        "breakdown": categories_breakdown,
-        "nearby_pois": all_pois_nearby,
-        "nearest_pois": nearest_pois,
+        "walkability_index": walkability_index,
+        "category_scores": category_scores,
+        "nearest_pois_names_by_category": nearest_pois_names,
+        "nearest_pois_distances_by_category": nearest_pois_distances,
+        "nearby_pois_counts_by_category": nearby_pois_counts,
+        "all_pois_nearby": all_pois_nearby
     }
     logger.info(f"Analysis complete: {len(all_pois_nearby)} total nearby POIs")
     return result

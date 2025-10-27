@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import geopandas as gpd
-from app.scoring import analyze_walkability
+from app.scoring.point_model import analyze_walkability_at_location
 
 logging.basicConfig(
     level=logging.INFO,
@@ -24,12 +24,16 @@ templates = Jinja2Templates(directory="app/templates")
 pois_gdf = gpd.read_file("data/processed/pois_all.geojson")
 
 # --- Define the structure of input data coming from frontend ---
-class WalkabilityInput(BaseModel):
-    location: str
+class Location(BaseModel):
+    name: str
     lat: float
     lon: float
-    thresholds: dict
-    weights: dict
+    
+class WalkabilityInput(BaseModel):
+    location: Location
+    categories: list
+    thresholds: list
+    weights: list
 
 # --- Routes ---
 
@@ -46,12 +50,23 @@ def read_result(request: Request):
 @app.post("/api/analyze")
 def analyze_walkability_api(data: WalkabilityInput):
     print("received data: ", data)
-    result = analyze_walkability(
-        location=data.location,
-        user_lat=data.lat,
-        user_lon=data.lon,
+    # TODO: make frontend return categories
+    result = analyze_walkability_at_location(
+        lat=Location.lat,
+        lon=Location.lon,
+        categories=data.categories, 
         thresholds=data.thresholds,
         weights=data.weights,
-        gdf=pois_gdf
+        pois=pois_gdf
     )
+    # TODO: format result to match frontend 
+    # previous working returned result
+    # result = {
+    #     "location": location,
+    #     "center": {"lat": user_lat, "lon": user_lon},
+    #     "index": index,
+    #     "breakdown": breakdown,
+    #     "buffers_m": list(thresholds.values()),
+    #     "nearby": all_nearby,
+    # }
     return result

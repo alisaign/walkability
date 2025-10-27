@@ -27,12 +27,12 @@ def linear_decay(distance, threshold):
     return 1 - (distance / threshold)
 
 
-def combine_scores(breakdown):
+def combine_scores(scores, weights)):
     """Weighted mean of category scores (0–100)."""
-    total_w = sum(r["weight"] for r in breakdown)
+    total_w = sum(weights)
     if not total_w:
         return 0.0
-    weighted_sum = sum(r["score"] * r["weight"] for r in breakdown)
+    weighted_sum = sum(s * w for s, w in zip(scores, weights))
     index = round(100 * weighted_sum / total_w, 1)
     logger.info(f"Combined index={index}")
     return index
