@@ -175,7 +175,7 @@
         <div class="row">
             <!-- Map Column - 2/3 width -->
             <div class="col-lg-8 mb-4">
-                <!-- Map Section -->
+                <!-- Location Map Section -->
                 <div class="card border-orange shadow-lg mb-4">
                     <div class="card-header card-header-orange">
                         <h4 class="card-title mb-0">
@@ -188,6 +188,28 @@
                         <div id="map"></div>
                     </div>
                 </div>
+
+                <!-- Neighborhood Gradient Map Section -->
+                <div class="card border-orange shadow-lg mb-4">
+                    <div class="card-header card-header-orange">
+                        <h4 class="card-title mb-0">
+                            <i class="fas fa-map me-2"></i>
+                            Neighborhood Walkability Map
+                        </h4>
+                        <p class="mb-0 opacity-75">Gradient view of walkability across your neighborhood</p>
+                    </div>
+                    <div class="card-body">
+                        <h5 id="neighborhoodTitle" class="text-orange-700 mb-3"></h5>
+                        <div id="gradientMap"></div>
+                    </div>
+                </div>
+                <style>
+                    #gradientMap {
+                        height: 400px;
+                        border-radius: 0.5rem;
+                        border: 2px solid var(--orange-200);
+                    }
+                </style>
 
                 <!-- Distance Summary Section -->
                 <div class="card border-orange mb-4 shadow-lg">
@@ -513,6 +535,17 @@
             } catch (error) {
                 console.error('Error initializing map:', error);
             }
+            // Initialize neighborhood gradient map
+            try {
+                if (data.gradient_layer) {
+                    document.getElementById('neighborhoodTitle').textContent =
+                        `Neighborhood: ${data.neighborhood}`;
+                    initNeighborhoodGradientMap(data);
+                }
+            } catch (error) {
+                console.error('Error initializing gradient map:', error);
+            }
+
         }
 
         // Initialize when page loads
