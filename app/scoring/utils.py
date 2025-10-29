@@ -26,13 +26,10 @@ def linear_decay(distance, threshold):
         return 0.0
     return 1 - (distance / threshold)
 
-
-def combine_scores(scores, weights)):
-    """Weighted mean of category scores (0–100)."""
-    total_w = sum(weights)
-    if not total_w:
-        return 0.0
-    weighted_sum = sum(s * w for s, w in zip(scores, weights))
-    index = round(100 * weighted_sum / total_w, 1)
-    logger.info(f"Combined index={index}")
-    return index
+def load_neighborhoods():
+    """Load neighborhood polygons for Montréal from GeoJSON or shapefile."""
+    path = "data/neighborhoods.geojson"  # adjust later
+    neighborhoods = gpd.read_file(path)
+    if neighborhoods.crs is None or neighborhoods.crs.to_epsg() != 4326:
+        neighborhoods = neighborhoods.set_crs(epsg=4326)
+    return neighborhoods

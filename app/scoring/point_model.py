@@ -10,7 +10,6 @@ from app.scoring.utils import (
     convert_to_geo_crs,
     convert_to_metric_crs,
     linear_decay,
-    combine_scores,
 )
 
 logger = logging.getLogger(__name__)
@@ -29,11 +28,21 @@ def calculate_category_score(user_point: Point, pois_m: gpd.GeoDataFrame, catego
                 else f"{category}: no POIs, score=0.000")
     return score
 
-def get_nearby_pois(user_point: Point, pois_m: gpd.GeoDataFrame, category: str, threshold: float):
-    """Return list of POIs within threshold meters of user_point."""
-    nearby_pois_m = pois_m[
-        (pois_m["category"] == category)
-        & (pois_m["distance"] <= threshold)
+def combine_scores(scores, weights):
+    """Weighted mean of category scores (0–100)."""
+    total_w = sum(weights)
+    if not total_w:
+        return 0.0
+    weighted_sum = sum(s * w for s, w in zip(scores, weights))
+    index = round(100 * weighted_sum / total_w, 1)
+    logger.info(f"Combined index={index}")
+    return index
+
+def get_nearby_pois(pois_with_dist: gpd.GeoDataFrame, category: str, threshold: float):
+    """Return list of POIs in geo crs within threshold meters of user_point."""
+    nearby_pois_m = pois_with_dist[
+        (pois_with_dist["category"] == category)
+        & (pois_with_dist["distance"] <= threshold)
     ]
     if nearby_pois_m.empty:
         return []
@@ -50,7 +59,7 @@ def get_nearby_pois(user_point: Point, pois_m: gpd.GeoDataFrame, category: str, 
     return nearby_pois_list
 
 
-def find_nearest_pois(pois_with_dist, categories):
+def find_nearest_pois(pois_with_dist: gpd.GeoDataFrame, categories: list):
     """Return nearest POI info (name + distance) for each category."""
     nearest_pois_names, nearest_pois_distances = [], []
     for category in categories():
@@ -65,7 +74,7 @@ def find_nearest_pois(pois_with_dist, categories):
     return nearest_pois_names, nearest_pois_distances
 
 
-def analyze_walkability_at_location(lat, lon, categories, thresholds, weights, pois):
+def analyze_walkability_at_location(lat:float, lon:float, categories:list, thresholds:list, weights:list, pois:gpd.GeoDataFrame):
     """Compute walkability index for a given location.
       1. Calculates category scores (linear decay).
       2. Finds nearby POIs for each category: 
@@ -107,8 +116,7 @@ def analyze_walkability_at_location(lat, lon, categories, thresholds, weights, p
         
     nearest_pois_names, nearest_pois_distances = find_nearest_pois(pois_m, categories)
 
-    walkability_index = combine_scores(category_scores, weights)
-    
+    walkability_index = combine_scores(category_scores, weights)  
 
     result = {
         "walkability_index": walkability_index,
