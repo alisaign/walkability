@@ -370,30 +370,44 @@
             submitButton.disabled = true;
 
             try {
-                // Build the API payload according to backend specification
+                // Define consistent category order
+                const categories = ["metro", "bus", "grocery", "restaurants", "parks", "schools", "healthcare"];
+
+                // Build arrays in the same order
+                const thresholds = [
+                    parseInt(document.getElementById('metro_m').value) || 200,
+                    parseInt(document.getElementById('bus_m').value) || 1000,
+                    parseInt(document.getElementById('grocery_m').value) || 500,
+                    parseInt(document.getElementById('restaurants_m').value) || 300,
+                    parseInt(document.getElementById('parks_m').value) || 400,
+                    parseInt(document.getElementById('schools_m').value) || 800,
+                    parseInt(document.getElementById('healthcare_m').value) || 1000
+                ];
+
+                const weights = [
+                    parseInt(document.getElementById('w_metro').value),
+                    parseInt(document.getElementById('w_bus').value),
+                    parseInt(document.getElementById('w_grocery').value),
+                    parseInt(document.getElementById('w_restaurants').value),
+                    parseInt(document.getElementById('w_parks').value),
+                    parseInt(document.getElementById('w_schools').value),
+                    parseInt(document.getElementById('w_healthcare').value)
+                ];
+
+                // Build the payload in backend's expected format
                 const payload = {
-                    lat: parseFloat(document.getElementById('lat').value),
-                    lon: parseFloat(document.getElementById('lon').value),
-                    location: document.getElementById('location').value,
-                    thresholds: {
-                        metro: parseInt(document.getElementById('metro_m').value) || 200,
-                        bus: parseInt(document.getElementById('bus_m').value) || 1000,
-                        grocery: parseInt(document.getElementById('grocery_m').value) || 500,
-                        restaurants: parseInt(document.getElementById('restaurants_m').value) || 300,
-                        parks: parseInt(document.getElementById('parks_m').value) || 400,
-                        schools: parseInt(document.getElementById('schools_m').value) || 800,
-                        healthcare: parseInt(document.getElementById('healthcare_m').value) || 1000
+                    location: {
+                        name: document.getElementById('location').value,
+                        lat: parseFloat(document.getElementById('lat').value),
+                        lon: parseFloat(document.getElementById('lon').value)
                     },
-                    weights: {
-                        metro: parseInt(document.getElementById('w_metro').value),
-                        bus: parseInt(document.getElementById('w_bus').value),
-                        grocery: parseInt(document.getElementById('w_grocery').value),
-                        restaurants: parseInt(document.getElementById('w_restaurants').value),
-                        parks: parseInt(document.getElementById('w_parks').value),
-                        schools: parseInt(document.getElementById('w_schools').value),
-                        healthcare: parseInt(document.getElementById('w_healthcare').value)
-                    }
+                    categories: categories,
+                    thresholds: thresholds,
+                    weights: weights
                 };
+
+                console.log("Payload being sent:", payload);
+
 
                 // Send to backend API
                 const response = await fetch('http://127.0.0.1:8000/api/analyze', {

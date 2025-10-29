@@ -1,3 +1,8 @@
+from fastapi.responses import JSONResponse
+from fastapi.exceptions import RequestValidationError
+import traceback
+import json
+
 import logging
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
@@ -17,6 +22,27 @@ logging.basicConfig(
 
 # --- Initialize FastAPI ---
 app = FastAPI()
+
+@app.exception_handler(Exception)
+async def debug_exception_handler(request, exc):
+    print("\n=== FULL EXCEPTION TRACEBACK ===")
+    traceback.print_exc()
+    print("================================\n")
+    return JSONResponse(
+        status_code=500,
+        content={"detail": str(exc)},
+    )
+    
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request, exc):
+    print("\n=== VALIDATION ERROR DETAIL ===")
+    print(json.dumps(exc.errors(), indent=2))
+    print("Raw body:", await request.body())
+    print("================================\n")
+    return JSONResponse(
+        status_code=422,
+        content={"detail": exc.errors()},
+    )
 
 # --- Serve static and template files ---
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
@@ -53,8 +79,8 @@ def read_result(request: Request):
 def analyze_walkability_api(data: WalkabilityInput):
     print("received data: ", data)
     result_point = analyze_walkability_at_location(
-        lat=Location.lat,
-        lon=Location.lon,
+        lat=data.location.lat,
+        lon=data.location.lon,
         categories=data.categories,
         thresholds=data.thresholds,
         weights=data.weights,

@@ -2,6 +2,7 @@
 
 to run the app:
 uvicorn app.main:app --reload
+uvicorn app.main:app --reload --log-level debug
 from cmd
 
 
