@@ -16,9 +16,9 @@ logger = logging.getLogger(__name__)
 
 
 
-def calculate_category_score(user_point: Point, pois_m: gpd.GeoDataFrame, category: str, threshold: float):
+def calculate_category_score(pois_with_dist: gpd.GeoDataFrame, category: str, threshold: float):
     """Calculate a 0-1 score for given category."""
-    subset_m = pois_m[pois_m["category"] == category]
+    subset_m = pois_with_dist[pois_with_dist["category"] == category]
     if subset_m.empty:
         logger.info(f"{category}: no POIs, score=0.000")
         return 0.0
@@ -107,8 +107,8 @@ def analyze_walkability_at_location(lat:float, lon:float, categories:list, thres
             nearby_pois_counts.append(0)
             continue
 
-        score = calculate_category_score(user_point, pois_m, category, threshold)
-        nearby_pois = get_nearby_pois(user_point, pois_m, category, threshold)
+        score = calculate_category_score(pois_m, category, threshold)
+        nearby_pois = get_nearby_pois(pois_m, category, threshold)
         
         category_scores.append(score)
         nearby_pois_counts.append(len(nearby_pois))

@@ -6,6 +6,8 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import geopandas as gpd
 from app.scoring.point_model import analyze_walkability_at_location
+from app.scoring.area_model import analyze_walkability_by_neighborhood
+from app.scoring.utils import get_neighborhood_for_location
 
 logging.basicConfig(
     level=logging.INFO,
@@ -50,23 +52,45 @@ def read_result(request: Request):
 @app.post("/api/analyze")
 def analyze_walkability_api(data: WalkabilityInput):
     print("received data: ", data)
-    # TODO: make frontend return categories
-    result = analyze_walkability_at_location(
+    result_point = analyze_walkability_at_location(
         lat=Location.lat,
         lon=Location.lon,
-        categories=data.categories, 
+        categories=data.categories,
         thresholds=data.thresholds,
         weights=data.weights,
         pois=pois_gdf
     )
-    # TODO: format result to match frontend 
-    # previous working returned result
-    # result = {
-    #     "location": location,
-    #     "center": {"lat": user_lat, "lon": user_lon},
-    #     "index": index,
-    #     "breakdown": breakdown,
-    #     "buffers_m": list(thresholds.values()),
-    #     "nearby": all_nearby,
-    # }
-    return result
+    neighborhood_name = get_neighborhood_for_location(Location.lat, Location.lon)
+    gradient_layer = analyze_walkability_by_neighborhood(
+        neighborhood_name=neighborhood_name,
+        pois=pois_gdf,
+        categories=data.categories,
+        thresholds=data.thresholds,
+        weights=data.weights,
+    )
+    
+    # --- build frontend JSON format ---
+    breakdown = []
+    for i, category in enumerate(data.categories):
+        breakdown.append({
+            "name": category,
+            "score": result_point["category_scores"][i],
+            "weight": data.weights[i],
+            "buffer": data.thresholds[i],  
+            "nearest_dist": result_point["nearest_pois_distances_by_category"][i],
+            "nearest_name": result_point["nearest_pois_names_by_category"][i],
+            "nearby_count": result_point["nearby_pois_counts_by_category"][i],
+        })
+    print("formatted breakdown: ", breakdown)
+    formatted_output = {
+        "location": neighborhood_name,                   # name of neighborhood you found earlier
+        "center": {"lat": data.lat, "lon": data.lon},
+        "index": result_point["walkability_index"],
+        "breakdown": breakdown,
+        "buffers_m": data.thresholds,
+        "nearby": result_point["all_pois_nearby"],
+        "neighborhood": neighborhood_name,
+        "gradient_layer": gradient_layer.__geo_interface__,  # optional: if you return gradient map too
+    }
+    print("formatted output: ", formatted_output)
+    return formatted_output

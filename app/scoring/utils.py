@@ -26,6 +26,17 @@ def linear_decay(distance, threshold):
         return 0.0
     return 1 - (distance / threshold)
 
+def get_neighborhood_for_location(lat, lon):
+    user_point = Point(lon, lat)
+    neighborhoods = load_neighborhoods()
+    neighborhood_row = neighborhoods[neighborhoods.contains(user_point)]
+
+    if not neighborhood_row.empty:
+        return neighborhood_row.iloc[0]["name"]
+    else:
+        logger.warning(f"no neighborhood found for the location {user_point} (assumed CRS: EPSG:4326)")
+        return "Unknown"
+
 def load_neighborhoods():
     """Load neighborhood polygons for Montréal from GeoJSON or shapefile."""
     path = "data/neighborhoods.geojson"  # adjust later

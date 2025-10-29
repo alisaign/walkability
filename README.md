@@ -46,7 +46,7 @@ Key	Type	Description	Example
       "nearby_count": 2
     }
   ],
-  "buffers_m": [1000, 800, 600], - remove
+  "buffers_m": [1000, 800, 600], 
   "nearby": [
     {
       "category": "parks",
