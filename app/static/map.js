@@ -62,32 +62,28 @@ function initNeighborhoodGradientMap(DATA) {
     const center = [DATA.center.lat, DATA.center.lon];
     const map2 = L.map('gradientMap').setView(center, 14);
 
+    // Add base map ---
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap contributors'
     }).addTo(map2);
 
-    // Color scale: orange gradient based on score value 0–1
-    function getColor(score) {
-        return score > 0.8 ? '#ea580c' :
-            score > 0.6 ? '#f97316' :
-                score > 0.4 ? '#fb923c' :
-                    score > 0.2 ? '#fdba74' :
-                        '#ffedd5';
-    }
+    // Convert GeoJSON points into heat layer input ---
+    const heatPoints = geojson.features.map(f => {
+        const [lon, lat] = f.geometry.coordinates;
+        const score = f.properties?.score ?? 0;
+        return [lat, lon, score]; // Leaflet.heat expects [lat, lon, intensity]
+    });
 
-    L.geoJSON(geojson, {
-        pointToLayer: (feature, latlng) => {
-            const s = feature.properties?.score ?? 0;
-            return L.circleMarker(latlng, {
-                radius: 4,
-                fillColor: getColor(s),
-                color: getColor(s),
-                weight: 0,
-                opacity: 0.8,
-                fillOpacity: 0.6
-            });
+    // Add heat layer with red→green gradient ---
+    L.heatLayer(heatPoints, {
+        radius: 25,         // controls how wide each point spreads
+        blur: 20,           // softens the edges for smoother gradient
+        minOpacity: 0.4,    // overall transparency floor
+        gradient: {
+            0.0: 'red',
+            0.5: 'yellow',
+            1.0: 'green'
         }
     }).addTo(map2);
 }
-

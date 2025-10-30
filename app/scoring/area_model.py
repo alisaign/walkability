@@ -80,7 +80,7 @@ def combine_category_layers(category_layers, weights):
 
 def get_polygon_geometry(neighborhood_name):
     neighborhoods = load_neighborhoods()
-    polygon = neighborhoods[neighborhoods["name"] == neighborhood_name]
+    polygon = neighborhoods[neighborhoods["NOM"] == neighborhood_name]
     if polygon.empty:
         logger.error(f"Neighborhood '{neighborhood_name}' not found")
         return None
@@ -105,12 +105,12 @@ def analyze_walkability_by_neighborhood(neighborhood_name:str, pois:gpd.GeoDataF
     pois_neighborhood = pois_m[pois_m.within(neighborhood_polygon.unary_union)]
 
     # Build per-category layers
-    category_layers = {}
+    category_layers = []
     for i, category in enumerate(categories):
         threshold = thresholds[i]
         pois_category = pois_neighborhood[pois_neighborhood["category"] == category]
         score_layer = calculate_distance_scores(pois_category, neighborhood_polygon, threshold)
-        category_layers[category] = score_layer
+        category_layers.append(score_layer)
         logger.info(f"Built layer for '{category}' ({len(score_layer)} points)")
 
     # 4. Combine weighted layers

@@ -86,7 +86,7 @@ def analyze_walkability_api(data: WalkabilityInput):
         weights=data.weights,
         pois=pois_gdf
     )
-    neighborhood_name = get_neighborhood_for_location(Location.lat, Location.lon)
+    neighborhood_name = get_neighborhood_for_location(data.location.lat, data.location.lon)
     gradient_layer = analyze_walkability_by_neighborhood(
         neighborhood_name=neighborhood_name,
         pois=pois_gdf,
@@ -110,7 +110,7 @@ def analyze_walkability_api(data: WalkabilityInput):
     print("formatted breakdown: ", breakdown)
     formatted_output = {
         "location": neighborhood_name,                   # name of neighborhood you found earlier
-        "center": {"lat": data.lat, "lon": data.lon},
+        "center": {"lat": data.location.lat, "lon": data.location.lon},
         "index": result_point["walkability_index"],
         "breakdown": breakdown,
         "buffers_m": data.thresholds,

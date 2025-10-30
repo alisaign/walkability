@@ -32,15 +32,15 @@ def get_neighborhood_for_location(lat, lon):
     neighborhood_row = neighborhoods[neighborhoods.contains(user_point)]
 
     if not neighborhood_row.empty:
-        return neighborhood_row.iloc[0]["name"]
+        return neighborhood_row.iloc[0]["NOM"]
     else:
         logger.warning(f"no neighborhood found for the location {user_point} (assumed CRS: EPSG:4326)")
         return "Unknown"
 
 def load_neighborhoods():
-    """Load neighborhood polygons for Montréal from GeoJSON or shapefile."""
-    path = "data/neighborhoods.geojson"  # adjust later
+    """Load neighborhood polygons for Montréal from GeoJSON."""
+    path = "data/processed/limites-administratives-agglomeration-nad83.geojson"
     neighborhoods = gpd.read_file(path)
     if neighborhoods.crs is None or neighborhoods.crs.to_epsg() != 4326:
-        neighborhoods = neighborhoods.set_crs(epsg=4326)
+        neighborhoods = neighborhoods.to_crs(epsg=4326)
     return neighborhoods

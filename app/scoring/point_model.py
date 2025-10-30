@@ -62,7 +62,7 @@ def get_nearby_pois(pois_with_dist: gpd.GeoDataFrame, category: str, threshold: 
 def find_nearest_pois(pois_with_dist: gpd.GeoDataFrame, categories: list):
     """Return nearest POI info (name + distance) for each category."""
     nearest_pois_names, nearest_pois_distances = [], []
-    for category in categories():
+    for category in categories:
         subset = pois_with_dist[pois_with_dist["category"] == category]
         if subset.empty:
             nearest_pois_names.append(None)
