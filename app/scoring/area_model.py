@@ -7,7 +7,7 @@ then combines them into one overlay for gradient map visualization.
 
 import logging
 import geopandas as gpd
-from shapely.geometry import Point
+from shapely.geometry import box
 import numpy as np
 
 from app.scoring.utils import (
@@ -26,30 +26,34 @@ def calculate_distance_scores(pois_category_m, polygon_m, threshold, spacing_m=1
     Create a vector layer of walkability scores within a neighborhood
     for one category, using linear decay with distance from nearest POI.
     """
-    # Generate grid of sample points across polygon (100m spacing)
+    # Generate grid of square cells across the neighborhood (100m spacing)
     minx, miny, maxx, maxy = polygon_m.total_bounds
     xs = np.arange(minx, maxx, spacing_m)
     ys = np.arange(miny, maxy, spacing_m)
 
-    grid_points = [Point(x, y) for x in xs for y in ys]
-    grid_gdf = gpd.GeoDataFrame(geometry=grid_points, crs=LOCAL_EPSG)
-    grid_gdf = grid_gdf[grid_gdf.within(polygon_m.unary_union)]
-
-    if grid_gdf.empty:
-        logger.warning("No grid points inside neighborhood polygon")
-        return gpd.GeoDataFrame(columns=["score", "geometry"], crs=LOCAL_EPSG)
-
-    # For each point, compute distance to nearest POI and apply linear decay
+    cells = []
     scores = []
-    for pt in grid_gdf.geometry:
-        if pois_category_m.empty:
-            scores.append(0.0)
-            continue
-        distance_to_nearest_poi = pois_category_m.distance(pt).min()
-        score = linear_decay(distance_to_nearest_poi, threshold)
-        scores.append(score)
 
-    grid_gdf["score"] = scores
+    for x in xs:
+        for y in ys:
+            # create square cell
+            cell = box(x, y, x + spacing_m, y + spacing_m)
+            if not cell.intersects(polygon_m.unary_union):
+                continue
+
+            # measure distance from the cell's center to the nearest POI
+            center_pt = cell.centroid
+            if pois_category_m.empty:
+                score = 0.0
+            else:
+                dist = pois_category_m.distance(center_pt).min()
+                score = linear_decay(dist, threshold)
+
+            cells.append(cell)
+            scores.append(score)
+
+    # create GeoDataFrame of polygons with scores
+    grid_gdf = gpd.GeoDataFrame({"score": scores, "geometry": cells}, crs=LOCAL_EPSG)
     return grid_gdf
 
 

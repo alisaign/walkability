@@ -56,34 +56,63 @@ function initWalkabilityMap(DATA) {
 }
 
 function initNeighborhoodGradientMap(DATA) {
+    console.log("Gradient map JS loaded");
+
     if (!DATA.gradient_layer || !DATA.gradient_layer.features) return;
 
     const geojson = DATA.gradient_layer;
     const center = [DATA.center.lat, DATA.center.lon];
     const map2 = L.map('gradientMap').setView(center, 14);
 
-    // Add base map ---
+    // --- Base map ---
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap contributors'
     }).addTo(map2);
 
-    // Convert GeoJSON points into heat layer input ---
-    const heatPoints = geojson.features.map(f => {
-        const [lon, lat] = f.geometry.coordinates;
-        const score = f.properties?.score ?? 0;
-        return [lat, lon, score]; // Leaflet.heat expects [lat, lon, intensity]
-    });
-
-    // Add heat layer with red→green gradient ---
-    L.heatLayer(heatPoints, {
-        radius: 25,         // controls how wide each point spreads
-        blur: 20,           // softens the edges for smoother gradient
-        minOpacity: 0.4,    // overall transparency floor
-        gradient: {
-            0.0: 'red',
-            0.5: 'yellow',
-            1.0: 'green'
+    // --- Stronger color contrast 
+    function getColor(score) {
+        let r, g, b = 0;
+        if (score < 0.5) {
+            // red → yellow (increase green)
+            r = 255;
+            g = Math.round(510 * score); // 0→255 as score goes 0→0.5
+        } else {
+            // yellow → green (decrease red)
+            g = 255;
+            r = Math.round(510 * (1 - score)); // 255→0 as score goes 0.5→1
         }
+        return `rgba(${r}, ${g}, ${b}, 0.6)`; // alpha keeps blending smooth
+    }
+
+    // --- Style + interaction (hover to show score) ---
+    function styleFeature(feature) {
+        const s = feature.properties?.score ?? 0;
+        return {
+            fillColor: getColor(s),
+            color: 'transparent',
+            weight: 0,
+            opacity: 0,
+            fillOpacity: 0.65
+        };
+    }
+
+    function onEachFeature(feature, layer) {
+        const s = (feature.properties?.score ?? 0).toFixed(3);
+        // Tooltip on hover
+        layer.bindTooltip(`Score: ${s}`, {
+            permanent: false,
+            direction: 'top',
+            offset: [0, -2],
+            className: 'score-tooltip'
+        });
+        // Optional: console log on click
+        layer.on('click', () => console.log("Clicked score:", s));
+    }
+
+    // --- Add polygons ---
+    L.geoJSON(geojson, {
+        style: styleFeature,
+        onEachFeature: onEachFeature
     }).addTo(map2);
 }
