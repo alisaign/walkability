@@ -10,7 +10,7 @@ import geopandas as gpd
 from shapely.geometry import box
 import numpy as np
 
-from app.scoring.utils import (
+from scoring.utils import (
     convert_to_geo_crs,
     convert_to_metric_crs,
     linear_decay,

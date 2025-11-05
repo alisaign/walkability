@@ -11,9 +11,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import geopandas as gpd
-from app.scoring.point_model import analyze_walkability_at_location
-from app.scoring.area_model import analyze_walkability_by_neighborhood
-from app.scoring.utils import get_neighborhood_for_location
+from scoring.point_model import analyze_walkability_at_location
+from scoring.area_model import analyze_walkability_by_neighborhood
+from scoring.utils import get_neighborhood_for_location
 
 logging.basicConfig(
     level=logging.INFO,
@@ -46,8 +46,8 @@ async def validation_exception_handler(request, exc):
     )
 
 # --- Serve static and template files ---
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
-templates = Jinja2Templates(directory="app/templates")
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+templates = Jinja2Templates(directory="frontend")
 
 # --- Load your dataset once ---
 pois_gdf = gpd.read_file("data/processed/pois_all.geojson")

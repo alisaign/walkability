@@ -6,7 +6,7 @@ import logging
 import geopandas as gpd
 from shapely.geometry import Point
 
-from app.scoring.utils import (
+from scoring.utils import (
     convert_to_geo_crs,
     convert_to_metric_crs,
     linear_decay,
