@@ -1,3 +1,4 @@
 /.venv
 __pycache__/
 /walkability-key.pem
+/walkability-key-2.pem
