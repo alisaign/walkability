@@ -80,6 +80,8 @@ async def validation_exception_handler(request, exc):
 
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
 templates = Jinja2Templates(directory="frontend")
+# app.mount("/js", StaticFiles(directory=frontend_dir / "js"), name="js")
+# app.mount("/css", StaticFiles(directory=frontend_dir / "css"), name="css")
 
 # --- Load your dataset once ---
 pois_gdf = gpd.read_file("data/processed/pois_all.geojson")
