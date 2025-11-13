@@ -1,6 +1,7 @@
 import json
 import geopandas as gpd
 from pathlib import Path
+from shapely.geometry import mapping
 
 RAW = Path("data/raw")
 OUT = Path("data/processed")
@@ -108,9 +109,12 @@ def clean_food():
 
         name = row["name"]
         geom = row["geometry"]
+        if geom is None:
+            continue
+
 
         # Convert shapely geometry to dict
-        geom_json = json.loads(geom.to_json())
+        geom_json = mapping(geom)
 
         features.append({
             "type": "Feature",
@@ -129,11 +133,13 @@ def clean_food():
     with open(OUT / "food_clean.geojson", "w", encoding="utf8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)
 
-
+# clean_parks()
+clean_food()
+# clean_bixi()
 # ----------------------------------------
 # RUN EVERYTHING
 # ----------------------------------------
-if __name__ == "__main__":
-    clean_parks()
-    clean_bixi()
-    clean_food()
+# if __name__ == "__main__":
+#     clean_parks()
+#     clean_bixi()
+#     clean_food()
