@@ -15,6 +15,9 @@ from scoring.point_model import analyze_walkability_at_location
 from scoring.area_model import analyze_walkability_by_neighborhood
 from scoring.utils import get_neighborhood_for_location
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] %(levelname)s %(name)s:%(funcName)s — %(message)s",
@@ -24,30 +27,58 @@ logging.basicConfig(
 # --- Initialize FastAPI ---
 app = FastAPI()
 
+# --- Enable CORS for your GitHub Pages frontend ---
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://alisaign.github.io",  # your GitHub Pages URL
+        "http://127.0.0.1:8000",      # optional, for local testing
+        "http://localhost:8000"       # optional, for local testing
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# --- Exception handlers (for debugging) ---
 @app.exception_handler(Exception)
 async def debug_exception_handler(request, exc):
-    print("\n=== FULL EXCEPTION TRACEBACK ===")
     traceback.print_exc()
-    print("================================\n")
-    return JSONResponse(
-        status_code=500,
-        content={"detail": str(exc)},
-    )
-    
+    return JSONResponse(status_code=500, content={"detail": str(exc)})
+
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request, exc):
-    print("\n=== VALIDATION ERROR DETAIL ===")
-    print(json.dumps(exc.errors(), indent=2))
-    print("Raw body:", await request.body())
-    print("================================\n")
-    return JSONResponse(
-        status_code=422,
-        content={"detail": exc.errors()},
-    )
+    return JSONResponse(status_code=422, content={"detail": exc.errors()})
+# @app.exception_handler(Exception)
+# async def debug_exception_handler(request, exc):
+#     print("\n=== FULL EXCEPTION TRACEBACK ===")
+#     traceback.print_exc()
+#     print("================================\n")
+#     return JSONResponse(
+#         status_code=500,
+#         content={"detail": str(exc)},
+#     )
+    
+# @app.exception_handler(RequestValidationError)
+# async def validation_exception_handler(request, exc):
+#     print("\n=== VALIDATION ERROR DETAIL ===")
+#     print(json.dumps(exc.errors(), indent=2))
+#     print("Raw body:", await request.body())
+#     print("================================\n")
+#     return JSONResponse(
+#         status_code=422,
+#         content={"detail": exc.errors()},
+#     )
 
-# --- Serve static and template files ---
-frontend_dir = Path(__file__).resolve().parent.parent / "frontend"
-app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+# # --- Serve static and template files ---
+# frontend_dir = Path(__file__).resolve().parent.parent / "frontend"
+# app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+# templates = Jinja2Templates(directory="frontend")
+# frontend_dir = Path(__file__).resolve().parent / "frontend"
+# app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+# templates = Jinja2Templates(directory=frontend_dir)
+
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
 templates = Jinja2Templates(directory="frontend")
 
 # --- Load your dataset once ---
