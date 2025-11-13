@@ -46,6 +46,8 @@ data/
 Start FastAPI backend:
 ```bash
 uvicorn app.main:app --reload
+uvicorn main:app --reload
+
 ```
 
 Default address: `http://127.0.0.1:8000/`

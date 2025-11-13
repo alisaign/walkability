@@ -46,7 +46,8 @@ async def validation_exception_handler(request, exc):
     )
 
 # --- Serve static and template files ---
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+frontend_dir = Path(__file__).resolve().parent.parent / "frontend"
+app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
 templates = Jinja2Templates(directory="frontend")
 
 # --- Load your dataset once ---
