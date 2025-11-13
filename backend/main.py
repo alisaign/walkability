@@ -84,7 +84,7 @@ templates = Jinja2Templates(directory="frontend")
 # app.mount("/css", StaticFiles(directory=frontend_dir / "css"), name="css")
 
 # --- Load your dataset once ---
-pois_gdf = gpd.read_file("data/processed/pois_all.geojson")
+pois_gdf = gpd.read_file("data/pois.geojson")
 
 # --- Define the structure of input data coming from frontend ---
 class Location(BaseModel):

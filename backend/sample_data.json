@@ -4,7 +4,7 @@
     "lat": 45.5017,
     "lon": -73.5673
   },
-  "index": 12.0,
+  "index": 30.2,
   "breakdown": [
     {
       "name": "metro",
@@ -12,7 +12,7 @@
       "weight": 3,
       "buffer": 200,
       "nearest_dist": 329.0,
-      "nearest_name": null,
+      "nearest_name": "Station Square-Victoria\u2013OACI",
       "nearby_count": 0
     },
     {
@@ -21,17 +21,17 @@
       "weight": 2,
       "buffer": 1000,
       "nearest_dist": 43.4,
-      "nearest_name": null,
+      "nearest_name": "Ren\u00e9-L\u00e9vesque / Robert-Bourassa",
       "nearby_count": 125
     },
     {
       "name": "grocery",
-      "score": 0.0,
+      "score": 0.970785416985156,
       "weight": 3,
       "buffer": 500,
-      "nearest_dist": null,
-      "nearest_name": null,
-      "nearby_count": 0
+      "nearest_dist": 14.6,
+      "nearest_name": "DEPANNEUR DE LA GARE",
+      "nearby_count": 162
     },
     {
       "name": "restaurants",
@@ -1579,6 +1579,1950 @@
           45.495169999995134
         ]
       }
+    },
+    {
+      "category": "grocery",
+      "name": "VARIETES SUPER-MAG",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "VARIETES EXTRA MAG (CENTRE EATON)",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "VOILA",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE HOYODA",
+      "distance": 439.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57112200954546,
+          45.504600370278034
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE C.M.L.",
+      "distance": 236.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57031567234866,
+          45.50151323806628
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMAPRIX",
+      "distance": 402.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56779668746155,
+          45.505308498865155
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE DE LA TOUR C.I.B.C.",
+      "distance": 487.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57096815087307,
+          45.498151918925714
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MULTIMAGS",
+      "distance": 497.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56704549956687,
+          45.50617090146339
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "SOUVENIRS JANNAT",
+      "distance": 461.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56732051752928,
+          45.505852825338124
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "AM & T",
+      "distance": 275.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5708233493416,
+          45.50186044389736
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR P.N.J.",
+      "distance": 478.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.566154525045,
+          45.5059275635927
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMAPRIX",
+      "distance": 423.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5676300442934,
+          45.50550107399241
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR PIZZA PEEL",
+      "distance": 452.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57241332478058,
+          45.49979295670437
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CHOCOLAT BELGE LEONIDAS",
+      "distance": 450.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57096079804776,
+          45.5048275908527
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATEWAY",
+      "distance": 60.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56697603441178,
+          45.50219813600894
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE ECLAIR",
+      "distance": 89.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56802190197297,
+          45.50232169636267
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CHOCOLATS DEBAUVE ET GALLAIS",
+      "distance": 353.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5669137234195,
+          45.49853140041451
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE LE WINDSOR",
+      "distance": 419.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57149645609896,
+          45.49935036128156
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PLACE PICCADILY",
+      "distance": 152.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56847050863469,
+          45.50060389746697
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CINEMA PARISIEN",
+      "distance": 351.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56824754725656,
+          45.50479478013328
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LA BAIE CONFISERIE",
+      "distance": 296.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56886022093327,
+          45.50412861875125
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "ESMOGALO GOURMANDISES",
+      "distance": 365.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5627546846398,
+          45.502466616695784
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "VARIETES DAVID CHO & FILS ENR.",
+      "distance": 434.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.571677542616,
+          45.504111408387715
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "GOURMET EXPRESS BONJOUR",
+      "distance": 194.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544929118716,
+          45.50053359098813
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CENTRE DE CONDITIONNEMENT NAUTILUS",
+      "distance": 469.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56134154375084,
+          45.501141105350854
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE YING",
+      "distance": 181.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56625122283799,
+          45.50315824134056
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "STATION METRO VICTORIA",
+      "distance": 469.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56134154375084,
+          45.501141105350854
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "HDS RETAIL NORTH AMERICA",
+      "distance": 424.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56295831950139,
+          45.499405957382066
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE METRO MC GILL EST",
+      "distance": 499.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5723661830998,
+          45.50444607567916
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE METRO MC GILL OUEST",
+      "distance": 499.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5723661830998,
+          45.50444607567916
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPAN-ESCOMPTE COUCHE-TARD #206",
+      "distance": 469.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56134154375084,
+          45.501141105350854
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMAPRIX",
+      "distance": 219.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57009038412328,
+          45.50145281706903
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LE MARCHE BEAVER HALL",
+      "distance": 177.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56549297253873,
+          45.50267114362342
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABATOUT STE-CATHERINE",
+      "distance": 270.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5692625480457,
+          45.50370769895921
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATEWAY",
+      "distance": 363.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5714729044379,
+          45.500254628802864
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR BEAVER HALL & VIGER",
+      "distance": 339.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56300128773283,
+          45.5021367784233
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE MAISONNEUVE",
+      "distance": 449.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57097702280744,
+          45.504805804577984
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GUANRONG",
+      "distance": 449.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57097702280744,
+          45.504805804577984
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE L'EXPRESS +",
+      "distance": 283.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5637232669285,
+          45.50214492646189
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATEWAY (THE GAZETTE)",
+      "distance": 363.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5714729044379,
+          45.500254628802864
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATE WAY",
+      "distance": 248.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56618755975167,
+          45.499608846357795
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE MORGAN ET HAMEL",
+      "distance": 253.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56991641297691,
+          45.50304969537296
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE VOILA",
+      "distance": 253.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56991641297691,
+          45.50304969537296
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "EL MOMENTO",
+      "distance": 253.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57000434269534,
+          45.50296046707522
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MAGAZINES PLUS",
+      "distance": 497.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56704549956687,
+          45.50617090146339
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE JEAN-COUTU #250",
+      "distance": 452.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57241332478058,
+          45.49979295670437
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DOLLARAMA",
+      "distance": 305.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5711889039839,
+          45.50193400381185
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PICCADILLY PLACE CHAMPLAIN #2024",
+      "distance": 407.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56732539733373,
+          45.498029495611036
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE BONAVENTURE",
+      "distance": 194.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544929118716,
+          45.50053359098813
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR METCALFE",
+      "distance": 363.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57157315750175,
+          45.50040376007834
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "NOUVELLE INTERNATIONALES",
+      "distance": 347.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57123232414982,
+          45.50024119144137
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MAISON DE LA PRESSE (2401)",
+      "distance": 219.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57009038412328,
+          45.50145281706903
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE EDDY BISHARA",
+      "distance": 228.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56478442180605,
+          45.50065391912272
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE DE LA TOUR CIBC",
+      "distance": 487.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57096815087307,
+          45.498151918925714
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "GYM BODY QUEST",
+      "distance": 253.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57000434269534,
+          45.50296046707522
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR DE LA GARE",
+      "distance": 14.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56747957243978,
+          45.501663512764985
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE B.L.",
+      "distance": 419.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57035042333155,
+          45.49859232463781
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "AM & T",
+      "distance": 275.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5708233493416,
+          45.50186044389736
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CHEZ SOHINI",
+      "distance": 257.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56409008627185,
+          45.50221184954482
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "SOUVENIRS MAG",
+      "distance": 270.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5692625480457,
+          45.50370769895921
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LE DRUGSTORE",
+      "distance": 353.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5669137234195,
+          45.49853140041451
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE JOCELYN LACROIX",
+      "distance": 256.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56627124904935,
+          45.499503966058
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LA PETITE CLOCHE 1",
+      "distance": 228.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56478442180605,
+          45.50065391912272
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "SUGAR HEAVEN",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TAB-MAG",
+      "distance": 391.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57213874151498,
+          45.500806714124344
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR PEEL",
+      "distance": 463.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57266107736073,
+          45.499912298602354
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DIONA",
+      "distance": 275.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5708233493416,
+          45.50186044389736
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LE DEPANNEGIE",
+      "distance": 353.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5669137234195,
+          45.49853140041451
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE PLUS",
+      "distance": 86.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56800239338678,
+          45.50110422006583
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "SOUVENIRS MAG",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "D.W.G. LEONIDAS INC.",
+      "distance": 256.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56627124904935,
+          45.499503966058
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MARCHE ARTISAN",
+      "distance": 152.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56847050863469,
+          45.50060389746697
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE NATHALIE HAMEL",
+      "distance": 253.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56991641297691,
+          45.50304969537296
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABATOUT",
+      "distance": 256.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56627124904935,
+          45.499503966058
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "COUCHE-TARD #1084",
+      "distance": 256.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56627124904935,
+          45.499503966058
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LE BOUDDHA D'CUISINE",
+      "distance": 190.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5696992594539,
+          45.50201590833647
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LE DRUGSTORE LOCAL #29-30-31",
+      "distance": 353.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5669137234195,
+          45.49853140041451
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CARREFOUR DU DOLLAR",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE JEAN COUTU",
+      "distance": 383.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5720625760832,
+          45.5008843286985
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MARCELLO'S MARKET AND DELI",
+      "distance": 194.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544929118716,
+          45.50053359098813
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "EXPRESS NO 2411",
+      "distance": 219.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57009038412328,
+          45.50145281706903
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "STATION METRO VICTORIA",
+      "distance": 469.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56134154375084,
+          45.501141105350854
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE AM & T",
+      "distance": 275.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5708233493416,
+          45.50186044389736
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE MAISONNEUVE",
+      "distance": 449.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57097702280744,
+          45.504805804577984
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "VARIETES EXTRA MAG (CENTRE EATON)",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATEWAY",
+      "distance": 194.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544929118716,
+          45.50053359098813
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE 2020",
+      "distance": 493.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57230356739647,
+          45.50441561065794
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "KERNELS POPCORN",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "WINNERS #42",
+      "distance": 305.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5711889039839,
+          45.50193400381185
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PAUSE CAFE GUIMAT (FIDO SOLUTIONS)",
+      "distance": 194.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544929118716,
+          45.50053359098813
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE MAISONNEUVE",
+      "distance": 449.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57097702280744,
+          45.504805804577984
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE DEL SOL",
+      "distance": 236.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57031567234866,
+          45.50151323806628
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABATOUT BELL TOUR",
+      "distance": 228.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56478442180605,
+          45.50065391912272
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LES THES DAVID'S TEA",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PRESOTEA",
+      "distance": 391.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57213874151498,
+          45.500806714124344
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE JASMINE",
+      "distance": 257.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56409008627185,
+          45.50221184954482
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CAFE PERLE NOIRE",
+      "distance": 147.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544436828518,
+          45.501917282885735
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATEWAY",
+      "distance": 363.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5714729044379,
+          45.500254628802864
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "GOURMET EXPRESS",
+      "distance": 194.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544929118716,
+          45.50053359098813
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE SHAO",
+      "distance": 315.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56326297131635,
+          45.50179244377243
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE LE DRUGSTORE",
+      "distance": 353.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5669137234195,
+          45.49853140041451
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATEWAY",
+      "distance": 363.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5714729044379,
+          45.500254628802864
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "JEAN COUTU #250",
+      "distance": 393.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57216110538324,
+          45.50078384397681
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PRESSE GATEWAY",
+      "distance": 219.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57009038412328,
+          45.50145281706903
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "GODIVA VIA VIVOLI",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE CARRE PHILLIPS",
+      "distance": 292.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56874146868616,
+          45.504130309992306
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE ELAINE BEAUDIN ET DORIA",
+      "distance": 253.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56991641297691,
+          45.50304969537296
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "A LA FOLIE",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR MOSAIQUE",
+      "distance": 452.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56299859037708,
+          45.50442238112313
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "OMAI PRET A MANGER",
+      "distance": 341.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56834659158405,
+          45.50468565997278
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DAVIDSTEA",
+      "distance": 227.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5701997271659,
+          45.50150395100825
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR PAYER",
+      "distance": 493.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57230356739647,
+          45.50441561065794
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PRESSE GATEWAY",
+      "distance": 219.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57009038412328,
+          45.50145281706903
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DOLLARAMA",
+      "distance": 340.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56836346096938,
+          45.504667023132775
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "PHARMACIE DORIA BOUKHEROUFA",
+      "distance": 253.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56991641297691,
+          45.50304969537296
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "EXTRA-MAG/FRERE CHEN",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "NOUVELLES INTERNATIONALES",
+      "distance": 347.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57123232414982,
+          45.50024119144137
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "KIOSQUES MR.PRETZELS MC",
+      "distance": 305.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5711889039839,
+          45.50193400381185
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE SIBON",
+      "distance": 236.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57031567234866,
+          45.50151323806628
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE BONAVENTURE",
+      "distance": 194.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56544929118716,
+          45.50053359098813
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR C&C",
+      "distance": 424.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56295831950139,
+          45.499405957382066
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DOLLARAMA",
+      "distance": 270.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5692625480457,
+          45.50370769895921
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TEAVANA",
+      "distance": 305.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5711889039839,
+          45.50193400381185
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "JUS DOSE",
+      "distance": 227.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5701997271659,
+          45.50150395100825
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE GATEWAY",
+      "distance": 60.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56697603441178,
+          45.50219813600894
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE PLUS 2",
+      "distance": 86.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56800239338678,
+          45.50110422006583
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MARCHE ARTISAN",
+      "distance": 152.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56847050863469,
+          45.50060389746697
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR DE LA GARE",
+      "distance": 14.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56747957243978,
+          45.501663512764985
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE 2020",
+      "distance": 493.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57230356739647,
+          45.50441561065794
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MON BISCUIT #1244",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "VARIETES DAVID CHO & FILS",
+      "distance": 434.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.571677542616,
+          45.504111408387715
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE VOILA",
+      "distance": 253.6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56991641297691,
+          45.50304969537296
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE LA TOUR",
+      "distance": 487.5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57096815087307,
+          45.498151918925714
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE MAISONNEUVE",
+      "distance": 449.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57097702280744,
+          45.504805804577984
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE AM-T",
+      "distance": 275.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5708233493416,
+          45.50186044389736
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "SOUVENIRS JANNAT",
+      "distance": 442.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56747464115972,
+          45.50567663520581
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "JEFF DE BRUGES",
+      "distance": 391.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57213874151498,
+          45.500806714124344
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CHOCOLATERIE LEONIDAS",
+      "distance": 450.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57096079804776,
+          45.5048275908527
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "STATION VITAMINE",
+      "distance": 275.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5708233493416,
+          45.50186044389736
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "1X1 CAF\u00c9  (WEWORK PVM3)",
+      "distance": 223.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57014505556398,
+          45.50147833905965
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE JASMINE TANG",
+      "distance": 257.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56409008627185,
+          45.50221184954482
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MY LITTLE CUP COMPTOIR CAFE",
+      "distance": 499.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5723661830998,
+          45.50444607567916
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MACOGEP INC.",
+      "distance": 204.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56926272796434,
+          45.50291520712556
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CHOCOLATO MONTREAL",
+      "distance": 473.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56722863175389,
+          45.50595870094043
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MUSEE GREVIN MONTREAL",
+      "distance": 255.3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57018748646252,
+          45.50277489703659
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR MCGILL EXPRESS",
+      "distance": 275.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5708233493416,
+          45.50186044389736
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "AVRIL SUPERMARCHE SANTE",
+      "distance": 455.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56202778042315,
+          45.50345405155832
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LES ALIMENTS GODLEY",
+      "distance": 219.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57009038412328,
+          45.50145281706903
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MICRO KITCHEN (GOOGLE)",
+      "distance": 427.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56224141897178,
+          45.50316238622275
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "COFEE FRIDGE 10TH FLOOR",
+      "distance": 427.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56224141897178,
+          45.50316238622275
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "MISTER SNAX",
+      "distance": 190.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5696992594539,
+          45.50201590833647
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR MOSAIQUE",
+      "distance": 452.2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56299859037708,
+          45.50442238112313
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "NAUTILUS PLUS INC.",
+      "distance": 219.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57009038412328,
+          45.50145281706903
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "NAUTILUS PLUS",
+      "distance": 305.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5711889039839,
+          45.50193400381185
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LE PARADIS DES BONBONS",
+      "distance": 305.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5711889039839,
+          45.50193400381185
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "SUSHI SHOP",
+      "distance": 270.8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.56401296148391,
+          45.502470597694554
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "TABAGIE  2020",
+      "distance": 493.9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57230356739647,
+          45.50441561065794
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "CARREFOUR INDUSTRIEL IA",
+      "distance": 391.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57213874151498,
+          45.500806714124344
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "DEPANNEUR MAISON NEUF",
+      "distance": 449.1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57097702280744,
+          45.504805804577984
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "BLOOMBERG NATIONAL",
+      "distance": 364.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57189632750884,
+          45.50227010210525
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "LA CABANE A CHICHIS",
+      "distance": 353.4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5669137234195,
+          45.49853140041451
+        ]
+      }
+    },
+    {
+      "category": "grocery",
+      "name": "9391-9108 QUEBEC INC",
+      "distance": 427.7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57177506115818,
+          45.49948435324652
+        ]
+      }
     }
   ],
   "neighborhood": "Ren\u00e9-L\u00e9vesque",
@@ -1589,7 +3533,7 @@
         "id": "0",
         "type": "Feature",
         "properties": {
-          "score": 0.11243832047452787
+          "score": 0.2868538925914482
         },
         "geometry": {
           "type": "Polygon",
@@ -1629,7 +3573,7 @@
         "id": "1",
         "type": "Feature",
         "properties": {
-          "score": 0.11149332594004945
+          "score": 0.2917875273007245
         },
         "geometry": {
           "type": "Polygon",
@@ -1669,7 +3613,7 @@
         "id": "2",
         "type": "Feature",
         "properties": {
-          "score": 0.12124239256045113
+          "score": 0.2937658541783451
         },
         "geometry": {
           "type": "Polygon",
@@ -1709,7 +3653,7 @@
         "id": "3",
         "type": "Feature",
         "properties": {
-          "score": 0.11770245114961753
+          "score": 0.28166986653060516
         },
         "geometry": {
           "type": "Polygon",
@@ -1749,7 +3693,7 @@
         "id": "4",
         "type": "Feature",
         "properties": {
-          "score": 0.11563624426147057
+          "score": 0.29098421787938966
         },
         "geometry": {
           "type": "Polygon",
@@ -1789,7 +3733,7 @@
         "id": "5",
         "type": "Feature",
         "properties": {
-          "score": 0.12075042935162042
+          "score": 0.28724737268960776
         },
         "geometry": {
           "type": "Polygon",
@@ -1829,7 +3773,7 @@
         "id": "6",
         "type": "Feature",
         "properties": {
-          "score": 0.11376875344336242
+          "score": 0.25215618747416213
         },
         "geometry": {
           "type": "Polygon",
@@ -1869,7 +3813,7 @@
         "id": "7",
         "type": "Feature",
         "properties": {
-          "score": 0.11526313244705287
+          "score": 0.28119412106057995
         },
         "geometry": {
           "type": "Polygon",
@@ -1909,7 +3853,7 @@
         "id": "8",
         "type": "Feature",
         "properties": {
-          "score": 0.11963884047973067
+          "score": 0.2907123699034433
         },
         "geometry": {
           "type": "Polygon",
@@ -1949,7 +3893,7 @@
         "id": "9",
         "type": "Feature",
         "properties": {
-          "score": 0.1113911279007049
+          "score": 0.28434143985072435
         },
         "geometry": {
           "type": "Polygon",
@@ -1989,7 +3933,7 @@
         "id": "10",
         "type": "Feature",
         "properties": {
-          "score": 0.10752345575063695
+          "score": 0.2873996498162864
         },
         "geometry": {
           "type": "Polygon",
@@ -2029,7 +3973,7 @@
         "id": "11",
         "type": "Feature",
         "properties": {
-          "score": 0.10964394164947687
+          "score": 0.29053897197727163
         },
         "geometry": {
           "type": "Polygon",
@@ -2069,7 +4013,7 @@
         "id": "12",
         "type": "Feature",
         "properties": {
-          "score": 0.12139697691045043
+          "score": 0.2779628564643719
         },
         "geometry": {
           "type": "Polygon",
@@ -2109,7 +4053,7 @@
         "id": "13",
         "type": "Feature",
         "properties": {
-          "score": 0.11550621639951304
+          "score": 0.2883593799866504
         },
         "geometry": {
           "type": "Polygon",
@@ -2149,7 +4093,7 @@
         "id": "14",
         "type": "Feature",
         "properties": {
-          "score": 0.12029631637603633
+          "score": 0.2839327750709848
         },
         "geometry": {
           "type": "Polygon",
@@ -2189,7 +4133,7 @@
         "id": "15",
         "type": "Feature",
         "properties": {
-          "score": 0.11522020087324197
+          "score": 0.2988692118088609
         },
         "geometry": {
           "type": "Polygon",
@@ -2229,7 +4173,7 @@
         "id": "16",
         "type": "Feature",
         "properties": {
-          "score": 0.10319449096459671
+          "score": 0.27469281022753944
         },
         "geometry": {
           "type": "Polygon",
@@ -2269,7 +4213,7 @@
         "id": "17",
         "type": "Feature",
         "properties": {
-          "score": 0.09609188217353044
+          "score": 0.26500106959935765
         },
         "geometry": {
           "type": "Polygon",
@@ -2309,7 +4253,7 @@
         "id": "18",
         "type": "Feature",
         "properties": {
-          "score": 0.10384172738897092
+          "score": 0.27941604393768016
         },
         "geometry": {
           "type": "Polygon",
@@ -2349,7 +4293,7 @@
         "id": "19",
         "type": "Feature",
         "properties": {
-          "score": 0.11042870453419905
+          "score": 0.27670997275645925
         },
         "geometry": {
           "type": "Polygon",
@@ -2389,7 +4333,7 @@
         "id": "20",
         "type": "Feature",
         "properties": {
-          "score": 0.10798609970580764
+          "score": 0.27094151295926694
         },
         "geometry": {
           "type": "Polygon",
@@ -2429,7 +4373,7 @@
         "id": "21",
         "type": "Feature",
         "properties": {
-          "score": 0.11534946632346146
+          "score": 0.29875739512559685
         },
         "geometry": {
           "type": "Polygon",
@@ -2469,7 +4413,7 @@
         "id": "22",
         "type": "Feature",
         "properties": {
-          "score": 0.1171061745172669
+          "score": 0.2842050556768009
         },
         "geometry": {
           "type": "Polygon",
@@ -2509,7 +4453,7 @@
         "id": "23",
         "type": "Feature",
         "properties": {
-          "score": 0.11867071651870814
+          "score": 0.2568778170318959
         },
         "geometry": {
           "type": "Polygon",
@@ -2549,7 +4493,7 @@
         "id": "24",
         "type": "Feature",
         "properties": {
-          "score": 0.11878392423443192
+          "score": 0.27359424125622644
         },
         "geometry": {
           "type": "Polygon",
@@ -2589,7 +4533,7 @@
         "id": "25",
         "type": "Feature",
         "properties": {
-          "score": 0.10668436403368842
+          "score": 0.27066364697901607
         },
         "geometry": {
           "type": "Polygon",
@@ -2629,7 +4573,7 @@
         "id": "26",
         "type": "Feature",
         "properties": {
-          "score": 0.09813957647065408
+          "score": 0.2780217338774123
         },
         "geometry": {
           "type": "Polygon",
@@ -2669,7 +4613,7 @@
         "id": "27",
         "type": "Feature",
         "properties": {
-          "score": 0.08853657637509685
+          "score": 0.26255637981562574
         },
         "geometry": {
           "type": "Polygon",
@@ -2709,7 +4653,7 @@
         "id": "28",
         "type": "Feature",
         "properties": {
-          "score": 0.09402398708596493
+          "score": 0.24953760613193438
         },
         "geometry": {
           "type": "Polygon",
@@ -2749,7 +4693,7 @@
         "id": "29",
         "type": "Feature",
         "properties": {
-          "score": 0.09907474789306482
+          "score": 0.2574593911218871
         },
         "geometry": {
           "type": "Polygon",
@@ -2789,7 +4733,7 @@
         "id": "30",
         "type": "Feature",
         "properties": {
-          "score": 0.17845814241353242
+          "score": 0.35604752750636887
         },
         "geometry": {
           "type": "Polygon",
@@ -2829,7 +4773,7 @@
         "id": "31",
         "type": "Feature",
         "properties": {
-          "score": 0.20758071570298037
+          "score": 0.38063848320231014
         },
         "geometry": {
           "type": "Polygon",
@@ -2869,7 +4813,7 @@
         "id": "32",
         "type": "Feature",
         "properties": {
-          "score": 0.1593627723807291
+          "score": 0.3283210762941266
         },
         "geometry": {
           "type": "Polygon",
@@ -2909,7 +4853,7 @@
         "id": "33",
         "type": "Feature",
         "properties": {
-          "score": 0.110320894514413
+          "score": 0.28666982016654763
         },
         "geometry": {
           "type": "Polygon",
@@ -2949,7 +4893,7 @@
         "id": "34",
         "type": "Feature",
         "properties": {
-          "score": 0.11372715922879996
+          "score": 0.24060579142648597
         },
         "geometry": {
           "type": "Polygon",
@@ -2989,7 +4933,7 @@
         "id": "35",
         "type": "Feature",
         "properties": {
-          "score": 0.12357841461131774
+          "score": 0.28653519930537363
         },
         "geometry": {
           "type": "Polygon",
@@ -3029,7 +4973,7 @@
         "id": "36",
         "type": "Feature",
         "properties": {
-          "score": 0.11435853083443479
+          "score": 0.2970053313846228
         },
         "geometry": {
           "type": "Polygon",
@@ -3069,7 +5013,7 @@
         "id": "37",
         "type": "Feature",
         "properties": {
-          "score": 0.11424863879370532
+          "score": 0.2909889166111023
         },
         "geometry": {
           "type": "Polygon",
@@ -3109,7 +5053,7 @@
         "id": "38",
         "type": "Feature",
         "properties": {
-          "score": 0.10598631155663203
+          "score": 0.290269499929089
         },
         "geometry": {
           "type": "Polygon",
@@ -3149,7 +5093,7 @@
         "id": "39",
         "type": "Feature",
         "properties": {
-          "score": 0.10018888075034246
+          "score": 0.26959802701835517
         },
         "geometry": {
           "type": "Polygon",
@@ -3189,7 +5133,7 @@
         "id": "40",
         "type": "Feature",
         "properties": {
-          "score": 0.09518803703059688
+          "score": 0.2786259704108706
         },
         "geometry": {
           "type": "Polygon",
@@ -3229,7 +5173,7 @@
         "id": "41",
         "type": "Feature",
         "properties": {
-          "score": 0.12541081839110804
+          "score": 0.29664454176361665
         },
         "geometry": {
           "type": "Polygon",
@@ -3269,7 +5213,7 @@
         "id": "42",
         "type": "Feature",
         "properties": {
-          "score": 0.23153821927043955
+          "score": 0.39974223412544596
         },
         "geometry": {
           "type": "Polygon",
@@ -3309,7 +5253,7 @@
         "id": "43",
         "type": "Feature",
         "properties": {
-          "score": 0.28646440827437547
+          "score": 0.4575959906045244
         },
         "geometry": {
           "type": "Polygon",
@@ -3349,7 +5293,7 @@
         "id": "44",
         "type": "Feature",
         "properties": {
-          "score": 0.18958790207629272
+          "score": 0.35127346149594235
         },
         "geometry": {
           "type": "Polygon",
@@ -3389,7 +5333,7 @@
         "id": "45",
         "type": "Feature",
         "properties": {
-          "score": 0.1162376790134096
+          "score": 0.28149595947584866
         },
         "geometry": {
           "type": "Polygon",
@@ -3429,7 +5373,7 @@
         "id": "46",
         "type": "Feature",
         "properties": {
-          "score": 0.12116926074773827
+          "score": 0.28857804902495005
         },
         "geometry": {
           "type": "Polygon",
@@ -3469,7 +5413,7 @@
         "id": "47",
         "type": "Feature",
         "properties": {
-          "score": 0.1129381847990505
+          "score": 0.24464379913302953
         },
         "geometry": {
           "type": "Polygon",
@@ -3509,7 +5453,7 @@
         "id": "48",
         "type": "Feature",
         "properties": {
-          "score": 0.10766920694951401
+          "score": 0.22960162993234837
         },
         "geometry": {
           "type": "Polygon",
@@ -3549,7 +5493,7 @@
         "id": "49",
         "type": "Feature",
         "properties": {
-          "score": 0.11175989600783821
+          "score": 0.26423809794959396
         },
         "geometry": {
           "type": "Polygon",
@@ -3589,7 +5533,7 @@
         "id": "50",
         "type": "Feature",
         "properties": {
-          "score": 0.13939729894900033
+          "score": 0.29580959201260926
         },
         "geometry": {
           "type": "Polygon",
@@ -3629,7 +5573,7 @@
         "id": "51",
         "type": "Feature",
         "properties": {
-          "score": 0.12070355565685019
+          "score": 0.2829398246380133
         },
         "geometry": {
           "type": "Polygon",
@@ -3669,7 +5613,7 @@
         "id": "52",
         "type": "Feature",
         "properties": {
-          "score": 0.11487489387851162
+          "score": 0.27792009952455643
         },
         "geometry": {
           "type": "Polygon",
@@ -3709,7 +5653,7 @@
         "id": "53",
         "type": "Feature",
         "properties": {
-          "score": 0.11048103266316925
+          "score": 0.2521174523717117
         },
         "geometry": {
           "type": "Polygon",
@@ -3749,7 +5693,7 @@
         "id": "54",
         "type": "Feature",
         "properties": {
-          "score": 0.10143679444672354
+          "score": 0.27076367747376323
         },
         "geometry": {
           "type": "Polygon",
@@ -3789,7 +5733,7 @@
         "id": "55",
         "type": "Feature",
         "properties": {
-          "score": 0.11276469525359377
+          "score": 0.2929276319110823
         },
         "geometry": {
           "type": "Polygon",
@@ -3829,7 +5773,7 @@
         "id": "56",
         "type": "Feature",
         "properties": {
-          "score": 0.18593043666026196
+          "score": 0.36791155305016865
         },
         "geometry": {
           "type": "Polygon",
@@ -3869,7 +5813,7 @@
         "id": "57",
         "type": "Feature",
         "properties": {
-          "score": 0.2043832893207087
+          "score": 0.3635003396716585
         },
         "geometry": {
           "type": "Polygon",
@@ -3909,7 +5853,7 @@
         "id": "58",
         "type": "Feature",
         "properties": {
-          "score": 0.15795879725360806
+          "score": 0.3244816128825537
         },
         "geometry": {
           "type": "Polygon",
@@ -3949,7 +5893,7 @@
         "id": "59",
         "type": "Feature",
         "properties": {
-          "score": 0.12446690472891384
+          "score": 0.30034756231436166
         },
         "geometry": {
           "type": "Polygon",
@@ -3989,7 +5933,7 @@
         "id": "60",
         "type": "Feature",
         "properties": {
-          "score": 0.16563141461194827
+          "score": 0.32607235618184016
         },
         "geometry": {
           "type": "Polygon",
@@ -4029,7 +5973,7 @@
         "id": "61",
         "type": "Feature",
         "properties": {
-          "score": 0.1670244976732178
+          "score": 0.32191980158648403
         },
         "geometry": {
           "type": "Polygon",
@@ -4069,7 +6013,7 @@
         "id": "62",
         "type": "Feature",
         "properties": {
-          "score": 0.1149584653181523
+          "score": 0.25621870476283504
         },
         "geometry": {
           "type": "Polygon",
@@ -4109,7 +6053,7 @@
         "id": "63",
         "type": "Feature",
         "properties": {
-          "score": 0.09696188600378554
+          "score": 0.20666484263752916
         },
         "geometry": {
           "type": "Polygon",
@@ -4149,7 +6093,7 @@
         "id": "64",
         "type": "Feature",
         "properties": {
-          "score": 0.17691961962559932
+          "score": 0.31075964487782415
         },
         "geometry": {
           "type": "Polygon",
@@ -4189,7 +6133,7 @@
         "id": "65",
         "type": "Feature",
         "properties": {
-          "score": 0.23192948897177648
+          "score": 0.3692407868234586
         },
         "geometry": {
           "type": "Polygon",
@@ -4229,7 +6173,7 @@
         "id": "66",
         "type": "Feature",
         "properties": {
-          "score": 0.1825112631475995
+          "score": 0.3462611204816317
         },
         "geometry": {
           "type": "Polygon",
@@ -4269,7 +6213,7 @@
         "id": "67",
         "type": "Feature",
         "properties": {
-          "score": 0.12409815234423616
+          "score": 0.3038135529901432
         },
         "geometry": {
           "type": "Polygon",
@@ -4309,7 +6253,7 @@
         "id": "68",
         "type": "Feature",
         "properties": {
-          "score": 0.11809570998318424
+          "score": 0.2859776738731271
         },
         "geometry": {
           "type": "Polygon",
@@ -4349,7 +6293,7 @@
         "id": "69",
         "type": "Feature",
         "properties": {
-          "score": 0.11371182987612327
+          "score": 0.2670310338386601
         },
         "geometry": {
           "type": "Polygon",
@@ -4389,7 +6333,7 @@
         "id": "70",
         "type": "Feature",
         "properties": {
-          "score": 0.11365653482861933
+          "score": 0.2878895321542265
         },
         "geometry": {
           "type": "Polygon",
@@ -4429,7 +6373,7 @@
         "id": "71",
         "type": "Feature",
         "properties": {
-          "score": 0.11902905129934964
+          "score": 0.288023798642343
         },
         "geometry": {
           "type": "Polygon",
@@ -4469,7 +6413,7 @@
         "id": "72",
         "type": "Feature",
         "properties": {
-          "score": 0.11917521336602861
+          "score": 0.2977274403792109
         },
         "geometry": {
           "type": "Polygon",
@@ -4509,7 +6453,7 @@
         "id": "73",
         "type": "Feature",
         "properties": {
-          "score": 0.11249593805797549
+          "score": 0.2863890345293068
         },
         "geometry": {
           "type": "Polygon",
@@ -4549,7 +6493,7 @@
         "id": "74",
         "type": "Feature",
         "properties": {
-          "score": 0.16813934385990947
+          "score": 0.3287511818369646
         },
         "geometry": {
           "type": "Polygon",
@@ -4589,7 +6533,7 @@
         "id": "75",
         "type": "Feature",
         "properties": {
-          "score": 0.2564154680485005
+          "score": 0.424868634803796
         },
         "geometry": {
           "type": "Polygon",
@@ -4629,7 +6573,7 @@
         "id": "76",
         "type": "Feature",
         "properties": {
-          "score": 0.23719021055011372
+          "score": 0.412550219668401
         },
         "geometry": {
           "type": "Polygon",
@@ -4669,7 +6613,7 @@
         "id": "77",
         "type": "Feature",
         "properties": {
-          "score": 0.14566447701950797
+          "score": 0.3124787965161184
         },
         "geometry": {
           "type": "Polygon",
@@ -4709,7 +6653,7 @@
         "id": "78",
         "type": "Feature",
         "properties": {
-          "score": 0.1169451378586696
+          "score": 0.2601807022017967
         },
         "geometry": {
           "type": "Polygon",
@@ -4749,7 +6693,7 @@
         "id": "79",
         "type": "Feature",
         "properties": {
-          "score": 0.11089061490402326
+          "score": 0.2687379039486754
         },
         "geometry": {
           "type": "Polygon",
@@ -4789,7 +6733,7 @@
         "id": "80",
         "type": "Feature",
         "properties": {
-          "score": 0.11612370161449442
+          "score": 0.2802855097313641
         },
         "geometry": {
           "type": "Polygon",
@@ -4829,7 +6773,7 @@
         "id": "81",
         "type": "Feature",
         "properties": {
-          "score": 0.09472510175974835
+          "score": 0.22023589400372642
         },
         "geometry": {
           "type": "Polygon",
@@ -4869,7 +6813,7 @@
         "id": "82",
         "type": "Feature",
         "properties": {
-          "score": 0.1986914763455468
+          "score": 0.36031340045841903
         },
         "geometry": {
           "type": "Polygon",
@@ -4909,7 +6853,7 @@
         "id": "83",
         "type": "Feature",
         "properties": {
-          "score": 0.28095175947659046
+          "score": 0.4508680242357312
         },
         "geometry": {
           "type": "Polygon",
@@ -4949,7 +6893,7 @@
         "id": "84",
         "type": "Feature",
         "properties": {
-          "score": 0.20011793767641461
+          "score": 0.36920529096602095
         },
         "geometry": {
           "type": "Polygon",
@@ -4989,7 +6933,7 @@
         "id": "85",
         "type": "Feature",
         "properties": {
-          "score": 0.11407519572315401
+          "score": 0.28324491543392927
         },
         "geometry": {
           "type": "Polygon",
@@ -5029,7 +6973,7 @@
         "id": "86",
         "type": "Feature",
         "properties": {
-          "score": 0.11962183130436183
+          "score": 0.28825488235971075
         },
         "geometry": {
           "type": "Polygon",
@@ -5069,7 +7013,7 @@
         "id": "87",
         "type": "Feature",
         "properties": {
-          "score": 0.12201427626374883
+          "score": 0.2989197115007181
         },
         "geometry": {
           "type": "Polygon",
@@ -5109,7 +7053,7 @@
         "id": "88",
         "type": "Feature",
         "properties": {
-          "score": 0.11789329491240375
+          "score": 0.2864980011920366
         },
         "geometry": {
           "type": "Polygon",
@@ -5149,7 +7093,7 @@
         "id": "89",
         "type": "Feature",
         "properties": {
-          "score": 0.11146638248677437
+          "score": 0.28781434174221815
         },
         "geometry": {
           "type": "Polygon",
@@ -5189,7 +7133,7 @@
         "id": "90",
         "type": "Feature",
         "properties": {
-          "score": 0.10883862758746365
+          "score": 0.2726695780066751
         },
         "geometry": {
           "type": "Polygon",
@@ -5229,7 +7173,7 @@
         "id": "91",
         "type": "Feature",
         "properties": {
-          "score": 0.10443567388489296
+          "score": 0.28631090664049796
         },
         "geometry": {
           "type": "Polygon",
@@ -5269,7 +7213,7 @@
         "id": "92",
         "type": "Feature",
         "properties": {
-          "score": 0.16404167996122257
+          "score": 0.33119290667883017
         },
         "geometry": {
           "type": "Polygon",
@@ -5309,7 +7253,7 @@
         "id": "93",
         "type": "Feature",
         "properties": {
-          "score": 0.2375129734329668
+          "score": 0.3976810776274359
         },
         "geometry": {
           "type": "Polygon",
@@ -5349,7 +7293,7 @@
         "id": "94",
         "type": "Feature",
         "properties": {
-          "score": 0.22305270762791624
+          "score": 0.40477592146337427
         },
         "geometry": {
           "type": "Polygon",
@@ -5389,7 +7333,7 @@
         "id": "95",
         "type": "Feature",
         "properties": {
-          "score": 0.14292700714454978
+          "score": 0.30716835227379974
         },
         "geometry": {
           "type": "Polygon",
@@ -5429,7 +7373,7 @@
         "id": "96",
         "type": "Feature",
         "properties": {
-          "score": 0.11434234114189629
+          "score": 0.2924633254325628
         },
         "geometry": {
           "type": "Polygon",
@@ -5469,7 +7413,7 @@
         "id": "97",
         "type": "Feature",
         "properties": {
-          "score": 0.11332305832500926
+          "score": 0.2729583741450028
         },
         "geometry": {
           "type": "Polygon",
@@ -5509,7 +7453,7 @@
         "id": "98",
         "type": "Feature",
         "properties": {
-          "score": 0.12995035289403173
+          "score": 0.30498549916990086
         },
         "geometry": {
           "type": "Polygon",
@@ -5549,7 +7493,7 @@
         "id": "99",
         "type": "Feature",
         "properties": {
-          "score": 0.12383284625590996
+          "score": 0.28733698704442073
         },
         "geometry": {
           "type": "Polygon",
@@ -5589,7 +7533,7 @@
         "id": "100",
         "type": "Feature",
         "properties": {
-          "score": 0.11210841156220644
+          "score": 0.23885711163657275
         },
         "geometry": {
           "type": "Polygon",
@@ -5629,7 +7573,7 @@
         "id": "101",
         "type": "Feature",
         "properties": {
-          "score": 0.11634270279493548
+          "score": 0.22773325126519572
         },
         "geometry": {
           "type": "Polygon",
@@ -5669,7 +7613,7 @@
         "id": "102",
         "type": "Feature",
         "properties": {
-          "score": 0.1381907020651595
+          "score": 0.2900191905565618
         },
         "geometry": {
           "type": "Polygon",
@@ -5709,7 +7653,7 @@
         "id": "103",
         "type": "Feature",
         "properties": {
-          "score": 0.17544635930879313
+          "score": 0.3407058524046911
         },
         "geometry": {
           "type": "Polygon",
@@ -5749,7 +7693,7 @@
         "id": "104",
         "type": "Feature",
         "properties": {
-          "score": 0.13897838074369645
+          "score": 0.2990393012993692
         },
         "geometry": {
           "type": "Polygon",
@@ -5789,7 +7733,7 @@
         "id": "105",
         "type": "Feature",
         "properties": {
-          "score": 0.10482555106998415
+          "score": 0.26250001927019645
         },
         "geometry": {
           "type": "Polygon",
@@ -5829,7 +7773,7 @@
         "id": "106",
         "type": "Feature",
         "properties": {
-          "score": 0.12062777452298439
+          "score": 0.25895828407596655
         },
         "geometry": {
           "type": "Polygon",
@@ -5869,7 +7813,7 @@
         "id": "107",
         "type": "Feature",
         "properties": {
-          "score": 0.13741773234299445
+          "score": 0.30077216662227224
         },
         "geometry": {
           "type": "Polygon",
@@ -5909,7 +7853,7 @@
         "id": "108",
         "type": "Feature",
         "properties": {
-          "score": 0.12084861876351102
+          "score": 0.2713500204476028
         },
         "geometry": {
           "type": "Polygon",
@@ -5949,7 +7893,7 @@
         "id": "109",
         "type": "Feature",
         "properties": {
-          "score": 0.11981572754190375
+          "score": 0.27062926128294607
         },
         "geometry": {
           "type": "Polygon",
@@ -5989,7 +7933,7 @@
         "id": "110",
         "type": "Feature",
         "properties": {
-          "score": 0.11320885727705712
+          "score": 0.27954349711012716
         },
         "geometry": {
           "type": "Polygon",
@@ -6029,7 +7973,7 @@
         "id": "111",
         "type": "Feature",
         "properties": {
-          "score": 0.10807512912044079
+          "score": 0.2919760735431227
         },
         "geometry": {
           "type": "Polygon",
@@ -6069,7 +8013,7 @@
         "id": "112",
         "type": "Feature",
         "properties": {
-          "score": 0.11702283159808326
+          "score": 0.2951321531993694
         },
         "geometry": {
           "type": "Polygon",
@@ -6109,7 +8053,7 @@
         "id": "113",
         "type": "Feature",
         "properties": {
-          "score": 0.15557294292549798
+          "score": 0.33303196662764445
         },
         "geometry": {
           "type": "Polygon",
@@ -6149,7 +8093,7 @@
         "id": "114",
         "type": "Feature",
         "properties": {
-          "score": 0.13561054937592387
+          "score": 0.2914348849054784
         },
         "geometry": {
           "type": "Polygon",
@@ -6189,7 +8133,7 @@
         "id": "115",
         "type": "Feature",
         "properties": {
-          "score": 0.1099167697175987
+          "score": 0.276886378877259
         },
         "geometry": {
           "type": "Polygon",
@@ -6229,7 +8173,7 @@
         "id": "116",
         "type": "Feature",
         "properties": {
-          "score": 0.11402306847346322
+          "score": 0.2789788804380332
         },
         "geometry": {
           "type": "Polygon",
@@ -6269,7 +8213,7 @@
         "id": "117",
         "type": "Feature",
         "properties": {
-          "score": 0.19022833454052565
+          "score": 0.37225230962895983
         },
         "geometry": {
           "type": "Polygon",
@@ -6309,7 +8253,7 @@
         "id": "118",
         "type": "Feature",
         "properties": {
-          "score": 0.22111682090017987
+          "score": 0.38558516161838724
         },
         "geometry": {
           "type": "Polygon",
@@ -6349,7 +8293,7 @@
         "id": "119",
         "type": "Feature",
         "properties": {
-          "score": 0.17163359105132253
+          "score": 0.32011254598673006
         },
         "geometry": {
           "type": "Polygon",
@@ -6389,7 +8333,7 @@
         "id": "120",
         "type": "Feature",
         "properties": {
-          "score": 0.11268978368244162
+          "score": 0.23349224893547235
         },
         "geometry": {
           "type": "Polygon",
@@ -6429,7 +8373,7 @@
         "id": "121",
         "type": "Feature",
         "properties": {
-          "score": 0.12103339586164946
+          "score": 0.24979515845337946
         },
         "geometry": {
           "type": "Polygon",
@@ -6469,7 +8413,7 @@
         "id": "122",
         "type": "Feature",
         "properties": {
-          "score": 0.11848599388945673
+          "score": 0.2824978379970777
         },
         "geometry": {
           "type": "Polygon",
@@ -6509,7 +8453,7 @@
         "id": "123",
         "type": "Feature",
         "properties": {
-          "score": 0.1184332033917602
+          "score": 0.28435297168264495
         },
         "geometry": {
           "type": "Polygon",
@@ -6549,7 +8493,7 @@
         "id": "124",
         "type": "Feature",
         "properties": {
-          "score": 0.11062647450157845
+          "score": 0.24162674588264163
         },
         "geometry": {
           "type": "Polygon",
@@ -6589,7 +8533,7 @@
         "id": "125",
         "type": "Feature",
         "properties": {
-          "score": 0.08787334547259326
+          "score": 0.24909151583655736
         },
         "geometry": {
           "type": "Polygon",
@@ -6629,7 +8573,7 @@
         "id": "126",
         "type": "Feature",
         "properties": {
-          "score": 0.09573957438908146
+          "score": 0.2524337713250757
         },
         "geometry": {
           "type": "Polygon",
@@ -6669,7 +8613,7 @@
         "id": "127",
         "type": "Feature",
         "properties": {
-          "score": 0.11980599741708732
+          "score": 0.243904416712668
         },
         "geometry": {
           "type": "Polygon",
@@ -6709,7 +8653,7 @@
         "id": "128",
         "type": "Feature",
         "properties": {
-          "score": 0.2092532028649274
+          "score": 0.36064151276350115
         },
         "geometry": {
           "type": "Polygon",
@@ -6749,7 +8693,7 @@
         "id": "129",
         "type": "Feature",
         "properties": {
-          "score": 0.22893015304013228
+          "score": 0.3841457009718432
         },
         "geometry": {
           "type": "Polygon",
@@ -6789,7 +8733,7 @@
         "id": "130",
         "type": "Feature",
         "properties": {
-          "score": 0.16193647611566978
+          "score": 0.29788492485026125
         },
         "geometry": {
           "type": "Polygon",
@@ -6829,7 +8773,7 @@
         "id": "131",
         "type": "Feature",
         "properties": {
-          "score": 0.1174827894293981
+          "score": 0.2872057683556061
         },
         "geometry": {
           "type": "Polygon",
@@ -6869,7 +8813,7 @@
         "id": "132",
         "type": "Feature",
         "properties": {
-          "score": 0.12420328672325862
+          "score": 0.3029765368766405
         },
         "geometry": {
           "type": "Polygon",
@@ -6909,7 +8853,7 @@
         "id": "133",
         "type": "Feature",
         "properties": {
-          "score": 0.11849355858475465
+          "score": 0.2900924309026254
         },
         "geometry": {
           "type": "Polygon",
@@ -6949,7 +8893,7 @@
         "id": "134",
         "type": "Feature",
         "properties": {
-          "score": 0.1143170912593403
+          "score": 0.276581649021675
         },
         "geometry": {
           "type": "Polygon",
@@ -6989,7 +8933,7 @@
         "id": "135",
         "type": "Feature",
         "properties": {
-          "score": 0.11422588054981775
+          "score": 0.2827189891066951
         },
         "geometry": {
           "type": "Polygon",
@@ -7029,7 +8973,7 @@
         "id": "136",
         "type": "Feature",
         "properties": {
-          "score": 0.1083876089524036
+          "score": 0.2945982241170931
         },
         "geometry": {
           "type": "Polygon",
@@ -7069,7 +9013,7 @@
         "id": "137",
         "type": "Feature",
         "properties": {
-          "score": 0.10970331743276604
+          "score": 0.2781368708908443
         },
         "geometry": {
           "type": "Polygon",
@@ -7109,7 +9053,7 @@
         "id": "138",
         "type": "Feature",
         "properties": {
-          "score": 0.12737869780881245
+          "score": 0.28406336338137217
         },
         "geometry": {
           "type": "Polygon",
@@ -7149,7 +9093,7 @@
         "id": "139",
         "type": "Feature",
         "properties": {
-          "score": 0.21834832451838454
+          "score": 0.3776729471429513
         },
         "geometry": {
           "type": "Polygon",
@@ -7189,7 +9133,7 @@
         "id": "140",
         "type": "Feature",
         "properties": {
-          "score": 0.29570196196589205
+          "score": 0.47216838486594487
         },
         "geometry": {
           "type": "Polygon",
@@ -7229,7 +9173,7 @@
         "id": "141",
         "type": "Feature",
         "properties": {
-          "score": 0.20536478099961647
+          "score": 0.3721814814656543
         },
         "geometry": {
           "type": "Polygon",
@@ -7269,7 +9213,7 @@
         "id": "142",
         "type": "Feature",
         "properties": {
-          "score": 0.11845458868603881
+          "score": 0.24804329390685248
         },
         "geometry": {
           "type": "Polygon",
@@ -7309,7 +9253,7 @@
         "id": "143",
         "type": "Feature",
         "properties": {
-          "score": 0.10915757950657162
+          "score": 0.24698510264428147
         },
         "geometry": {
           "type": "Polygon",
@@ -7349,7 +9293,7 @@
         "id": "144",
         "type": "Feature",
         "properties": {
-          "score": 0.11273211170858544
+          "score": 0.268267672265711
         },
         "geometry": {
           "type": "Polygon",
@@ -7389,7 +9333,7 @@
         "id": "145",
         "type": "Feature",
         "properties": {
-          "score": 0.11270399962522686
+          "score": 0.2696141594443499
         },
         "geometry": {
           "type": "Polygon",
@@ -7429,7 +9373,7 @@
         "id": "146",
         "type": "Feature",
         "properties": {
-          "score": 0.11549155119424248
+          "score": 0.2424750141511664
         },
         "geometry": {
           "type": "Polygon",
@@ -7469,7 +9413,7 @@
         "id": "147",
         "type": "Feature",
         "properties": {
-          "score": 0.12148579631981905
+          "score": 0.23133190944421494
         },
         "geometry": {
           "type": "Polygon",
@@ -7509,7 +9453,7 @@
         "id": "148",
         "type": "Feature",
         "properties": {
-          "score": 0.10929049153156334
+          "score": 0.22938040420450326
         },
         "geometry": {
           "type": "Polygon",
@@ -7549,7 +9493,7 @@
         "id": "149",
         "type": "Feature",
         "properties": {
-          "score": 0.11545934587246633
+          "score": 0.26615408170448385
         },
         "geometry": {
           "type": "Polygon",
@@ -7589,7 +9533,7 @@
         "id": "150",
         "type": "Feature",
         "properties": {
-          "score": 0.12975616894848652
+          "score": 0.25683438562270855
         },
         "geometry": {
           "type": "Polygon",
@@ -7629,7 +9573,7 @@
         "id": "151",
         "type": "Feature",
         "properties": {
-          "score": 0.22967077855619233
+          "score": 0.3931598730415003
         },
         "geometry": {
           "type": "Polygon",
@@ -7669,7 +9613,7 @@
         "id": "152",
         "type": "Feature",
         "properties": {
-          "score": 0.2705435169096039
+          "score": 0.4516340375095621
         },
         "geometry": {
           "type": "Polygon",
@@ -7709,7 +9653,7 @@
         "id": "153",
         "type": "Feature",
         "properties": {
-          "score": 0.18499317196441717
+          "score": 0.34894682700436414
         },
         "geometry": {
           "type": "Polygon",
@@ -7749,7 +9693,7 @@
         "id": "154",
         "type": "Feature",
         "properties": {
-          "score": 0.11036629663734572
+          "score": 0.2633442430904335
         },
         "geometry": {
           "type": "Polygon",
@@ -7789,7 +9733,7 @@
         "id": "155",
         "type": "Feature",
         "properties": {
-          "score": 0.11178113252287235
+          "score": 0.2720457608940507
         },
         "geometry": {
           "type": "Polygon",
@@ -7829,7 +9773,7 @@
         "id": "156",
         "type": "Feature",
         "properties": {
-          "score": 0.12144944145760182
+          "score": 0.30038958563820933
         },
         "geometry": {
           "type": "Polygon",
@@ -7869,7 +9813,7 @@
         "id": "157",
         "type": "Feature",
         "properties": {
-          "score": 0.11817612085113542
+          "score": 0.2805564479723751
         },
         "geometry": {
           "type": "Polygon",
@@ -7909,7 +9853,7 @@
         "id": "158",
         "type": "Feature",
         "properties": {
-          "score": 0.11554584640261477
+          "score": 0.26817360244106897
         },
         "geometry": {
           "type": "Polygon",
@@ -7949,7 +9893,7 @@
         "id": "159",
         "type": "Feature",
         "properties": {
-          "score": 0.10644232474509221
+          "score": 0.2597925865025251
         },
         "geometry": {
           "type": "Polygon",
@@ -7989,7 +9933,7 @@
         "id": "160",
         "type": "Feature",
         "properties": {
-          "score": 0.11460062730525056
+          "score": 0.2885049382178929
         },
         "geometry": {
           "type": "Polygon",
@@ -8029,7 +9973,7 @@
         "id": "161",
         "type": "Feature",
         "properties": {
-          "score": 0.12251060534017402
+          "score": 0.3029432201903034
         },
         "geometry": {
           "type": "Polygon",
@@ -8069,7 +10013,7 @@
         "id": "162",
         "type": "Feature",
         "properties": {
-          "score": 0.16434074168012539
+          "score": 0.3411522870322733
         },
         "geometry": {
           "type": "Polygon",
@@ -8109,7 +10053,7 @@
         "id": "163",
         "type": "Feature",
         "properties": {
-          "score": 0.19380080882413994
+          "score": 0.3524844767164441
         },
         "geometry": {
           "type": "Polygon",
@@ -8149,7 +10093,7 @@
         "id": "164",
         "type": "Feature",
         "properties": {
-          "score": 0.15902377363311193
+          "score": 0.3002047084299988
         },
         "geometry": {
           "type": "Polygon",
@@ -8189,7 +10133,7 @@
         "id": "165",
         "type": "Feature",
         "properties": {
-          "score": 0.12551895952698483
+          "score": 0.26802970176414154
         },
         "geometry": {
           "type": "Polygon",
@@ -8229,7 +10173,7 @@
         "id": "166",
         "type": "Feature",
         "properties": {
-          "score": 0.1551486981832228
+          "score": 0.3232351235687655
         },
         "geometry": {
           "type": "Polygon",
@@ -8269,7 +10213,7 @@
         "id": "167",
         "type": "Feature",
         "properties": {
-          "score": 0.13224145846862198
+          "score": 0.30600654814473394
         },
         "geometry": {
           "type": "Polygon",
@@ -8309,7 +10253,7 @@
         "id": "168",
         "type": "Feature",
         "properties": {
-          "score": 0.11233284193372578
+          "score": 0.2694700868049603
         },
         "geometry": {
           "type": "Polygon",
@@ -8349,7 +10293,7 @@
         "id": "169",
         "type": "Feature",
         "properties": {
-          "score": 0.11472894448330562
+          "score": 0.2680766593126529
         },
         "geometry": {
           "type": "Polygon",
@@ -8389,7 +10333,7 @@
         "id": "170",
         "type": "Feature",
         "properties": {
-          "score": 0.11069245477508216
+          "score": 0.2580213137835869
         },
         "geometry": {
           "type": "Polygon",
@@ -8429,7 +10373,7 @@
         "id": "171",
         "type": "Feature",
         "properties": {
-          "score": 0.10785493099522925
+          "score": 0.25137878069646963
         },
         "geometry": {
           "type": "Polygon",
@@ -8469,7 +10413,7 @@
         "id": "172",
         "type": "Feature",
         "properties": {
-          "score": 0.11925732970677264
+          "score": 0.290339664572407
         },
         "geometry": {
           "type": "Polygon",
@@ -8509,7 +10453,7 @@
         "id": "173",
         "type": "Feature",
         "properties": {
-          "score": 0.11580744143259988
+          "score": 0.28705694680927296
         },
         "geometry": {
           "type": "Polygon",
@@ -8549,7 +10493,7 @@
         "id": "174",
         "type": "Feature",
         "properties": {
-          "score": 0.11694822174535102
+          "score": 0.2985812116327514
         },
         "geometry": {
           "type": "Polygon",
@@ -8589,7 +10533,7 @@
         "id": "175",
         "type": "Feature",
         "properties": {
-          "score": 0.10727769866833994
+          "score": 0.25912445910954396
         },
         "geometry": {
           "type": "Polygon",
@@ -8629,7 +10573,7 @@
         "id": "176",
         "type": "Feature",
         "properties": {
-          "score": 0.1576263074743374
+          "score": 0.29353664760639975
         },
         "geometry": {
           "type": "Polygon",
@@ -8669,7 +10613,7 @@
         "id": "177",
         "type": "Feature",
         "properties": {
-          "score": 0.18191720393015948
+          "score": 0.33449066176152664
         },
         "geometry": {
           "type": "Polygon",
@@ -8709,7 +10653,7 @@
         "id": "178",
         "type": "Feature",
         "properties": {
-          "score": 0.13997119044655548
+          "score": 0.3096239278370057
         },
         "geometry": {
           "type": "Polygon",
@@ -8749,7 +10693,7 @@
         "id": "179",
         "type": "Feature",
         "properties": {
-          "score": 0.11331546860350034
+          "score": 0.28438423581930045
         },
         "geometry": {
           "type": "Polygon",
@@ -8789,7 +10733,7 @@
         "id": "180",
         "type": "Feature",
         "properties": {
-          "score": 0.1170770899645464
+          "score": 0.27962779951078015
         },
         "geometry": {
           "type": "Polygon",
@@ -8829,7 +10773,7 @@
         "id": "181",
         "type": "Feature",
         "properties": {
-          "score": 0.116748140523387
+          "score": 0.29493851988304587
         },
         "geometry": {
           "type": "Polygon",
@@ -8869,7 +10813,7 @@
         "id": "182",
         "type": "Feature",
         "properties": {
-          "score": 0.11977237442582903
+          "score": 0.295388383555922
         },
         "geometry": {
           "type": "Polygon",
@@ -8909,7 +10853,7 @@
         "id": "183",
         "type": "Feature",
         "properties": {
-          "score": 0.12401723435297206
+          "score": 0.2810749886968767
         },
         "geometry": {
           "type": "Polygon",
@@ -8949,7 +10893,7 @@
         "id": "184",
         "type": "Feature",
         "properties": {
-          "score": 0.11370640052586134
+          "score": 0.24847611826076932
         },
         "geometry": {
           "type": "Polygon",
@@ -8989,7 +10933,7 @@
         "id": "185",
         "type": "Feature",
         "properties": {
-          "score": 0.11633653082872684
+          "score": 0.2855310848860541
         },
         "geometry": {
           "type": "Polygon",
@@ -9029,7 +10973,7 @@
         "id": "186",
         "type": "Feature",
         "properties": {
-          "score": 0.1111127561894395
+          "score": 0.272490893964597
         },
         "geometry": {
           "type": "Polygon",
@@ -9069,7 +11013,7 @@
         "id": "187",
         "type": "Feature",
         "properties": {
-          "score": 0.10498697359253661
+          "score": 0.2866667375961583
         },
         "geometry": {
           "type": "Polygon",
@@ -9109,7 +11053,7 @@
         "id": "188",
         "type": "Feature",
         "properties": {
-          "score": 0.11544914334142711
+          "score": 0.28641463734020467
         },
         "geometry": {
           "type": "Polygon",
@@ -9149,7 +11093,7 @@
         "id": "189",
         "type": "Feature",
         "properties": {
-          "score": 0.11528318468636017
+          "score": 0.26787461726895445
         },
         "geometry": {
           "type": "Polygon",
@@ -9189,7 +11133,7 @@
         "id": "190",
         "type": "Feature",
         "properties": {
-          "score": 0.18580679013929638
+          "score": 0.34814895345271274
         },
         "geometry": {
           "type": "Polygon",
@@ -9229,7 +11173,7 @@
         "id": "191",
         "type": "Feature",
         "properties": {
-          "score": 0.24556464670791744
+          "score": 0.4243980776601806
         },
         "geometry": {
           "type": "Polygon",
@@ -9269,7 +11213,7 @@
         "id": "192",
         "type": "Feature",
         "properties": {
-          "score": 0.1979415324825492
+          "score": 0.3599306586585851
         },
         "geometry": {
           "type": "Polygon",
@@ -9309,7 +11253,7 @@
         "id": "193",
         "type": "Feature",
         "properties": {
-          "score": 0.11707336914011857
+          "score": 0.28534877367811706
         },
         "geometry": {
           "type": "Polygon",
@@ -9349,7 +11293,7 @@
         "id": "194",
         "type": "Feature",
         "properties": {
-          "score": 0.12162606325503184
+          "score": 0.2843456929178916
         },
         "geometry": {
           "type": "Polygon",
@@ -9389,7 +11333,7 @@
         "id": "195",
         "type": "Feature",
         "properties": {
-          "score": 0.11448359766388251
+          "score": 0.2988507091838901
         },
         "geometry": {
           "type": "Polygon",
@@ -9429,7 +11373,7 @@
         "id": "196",
         "type": "Feature",
         "properties": {
-          "score": 0.11848981259031464
+          "score": 0.294136338138035
         },
         "geometry": {
           "type": "Polygon",
@@ -9469,7 +11413,7 @@
         "id": "197",
         "type": "Feature",
         "properties": {
-          "score": 0.11870087208567386
+          "score": 0.2905393917161476
         },
         "geometry": {
           "type": "Polygon",
@@ -9509,7 +11453,7 @@
         "id": "198",
         "type": "Feature",
         "properties": {
-          "score": 0.11471366429156586
+          "score": 0.2619649427778772
         },
         "geometry": {
           "type": "Polygon",
@@ -9549,7 +11493,7 @@
         "id": "199",
         "type": "Feature",
         "properties": {
-          "score": 0.11847638645115079
+          "score": 0.27381103274044494
         },
         "geometry": {
           "type": "Polygon",
@@ -9589,7 +11533,7 @@
         "id": "200",
         "type": "Feature",
         "properties": {
-          "score": 0.10791765925984233
+          "score": 0.247759064413683
         },
         "geometry": {
           "type": "Polygon",
@@ -9629,7 +11573,7 @@
         "id": "201",
         "type": "Feature",
         "properties": {
-          "score": 0.10856326077411418
+          "score": 0.23322962112481732
         },
         "geometry": {
           "type": "Polygon",
@@ -9669,7 +11613,7 @@
         "id": "202",
         "type": "Feature",
         "properties": {
-          "score": 0.12032937114115681
+          "score": 0.24743029867363903
         },
         "geometry": {
           "type": "Polygon",
@@ -9709,7 +11653,7 @@
         "id": "203",
         "type": "Feature",
         "properties": {
-          "score": 0.11572836845564148
+          "score": 0.22473932693840004
         },
         "geometry": {
           "type": "Polygon",
@@ -9749,7 +11693,7 @@
         "id": "204",
         "type": "Feature",
         "properties": {
-          "score": 0.10346458499055984
+          "score": 0.22060137534988689
         },
         "geometry": {
           "type": "Polygon",
@@ -9789,7 +11733,7 @@
         "id": "205",
         "type": "Feature",
         "properties": {
-          "score": 0.11566632062056915
+          "score": 0.25086869313025567
         },
         "geometry": {
           "type": "Polygon",
@@ -9829,7 +11773,7 @@
         "id": "206",
         "type": "Feature",
         "properties": {
-          "score": 0.12020823186211974
+          "score": 0.2864252810118503
         },
         "geometry": {
           "type": "Polygon",
@@ -9869,7 +11813,7 @@
         "id": "207",
         "type": "Feature",
         "properties": {
-          "score": 0.17541543714850938
+          "score": 0.3421659930540109
         },
         "geometry": {
           "type": "Polygon",
@@ -9909,7 +11853,7 @@
         "id": "208",
         "type": "Feature",
         "properties": {
-          "score": 0.20205095331285683
+          "score": 0.3754362931265357
         },
         "geometry": {
           "type": "Polygon",
@@ -9949,7 +11893,7 @@
         "id": "209",
         "type": "Feature",
         "properties": {
-          "score": 0.15954911603264332
+          "score": 0.3249340163334067
         },
         "geometry": {
           "type": "Polygon",
@@ -9989,7 +11933,7 @@
         "id": "210",
         "type": "Feature",
         "properties": {
-          "score": 0.11343145328732768
+          "score": 0.25068262952234577
         },
         "geometry": {
           "type": "Polygon",
@@ -10029,7 +11973,7 @@
         "id": "211",
         "type": "Feature",
         "properties": {
-          "score": 0.11532112291252694
+          "score": 0.2583560273528127
         },
         "geometry": {
           "type": "Polygon",
@@ -10069,7 +12013,7 @@
         "id": "212",
         "type": "Feature",
         "properties": {
-          "score": 0.12102565316068434
+          "score": 0.27175264190883874
         },
         "geometry": {
           "type": "Polygon",
@@ -10109,7 +12053,7 @@
         "id": "213",
         "type": "Feature",
         "properties": {
-          "score": 0.11638916741630988
+          "score": 0.2860438657967984
         },
         "geometry": {
           "type": "Polygon",
@@ -10149,7 +12093,7 @@
         "id": "214",
         "type": "Feature",
         "properties": {
-          "score": 0.10841562344241275
+          "score": 0.2580535860302714
         },
         "geometry": {
           "type": "Polygon",
@@ -10189,7 +12133,7 @@
         "id": "215",
         "type": "Feature",
         "properties": {
-          "score": 0.11698738842545356
+          "score": 0.2861868879553532
         },
         "geometry": {
           "type": "Polygon",
@@ -10229,7 +12173,7 @@
         "id": "216",
         "type": "Feature",
         "properties": {
-          "score": 0.11679027520733277
+          "score": 0.2835780457735023
         },
         "geometry": {
           "type": "Polygon",
@@ -10269,7 +12213,7 @@
         "id": "217",
         "type": "Feature",
         "properties": {
-          "score": 0.19763777215620604
+          "score": 0.36920229395942716
         },
         "geometry": {
           "type": "Polygon",
@@ -10309,7 +12253,7 @@
         "id": "218",
         "type": "Feature",
         "properties": {
-          "score": 0.2666267675750759
+          "score": 0.42590511628059713
         },
         "geometry": {
           "type": "Polygon",
@@ -10349,7 +12293,7 @@
         "id": "219",
         "type": "Feature",
         "properties": {
-          "score": 0.20081066229514394
+          "score": 0.33055375045793606
         },
         "geometry": {
           "type": "Polygon",
@@ -10389,7 +12333,7 @@
         "id": "220",
         "type": "Feature",
         "properties": {
-          "score": 0.11373198460212486
+          "score": 0.24995066985351647
         },
         "geometry": {
           "type": "Polygon",
@@ -10429,7 +12373,7 @@
         "id": "221",
         "type": "Feature",
         "properties": {
-          "score": 0.10984175746034275
+          "score": 0.27429731998285545
         },
         "geometry": {
           "type": "Polygon",
@@ -10469,7 +12413,7 @@
         "id": "222",
         "type": "Feature",
         "properties": {
-          "score": 0.10731571098959526
+          "score": 0.27283497289323944
         },
         "geometry": {
           "type": "Polygon",
@@ -10509,7 +12453,7 @@
         "id": "223",
         "type": "Feature",
         "properties": {
-          "score": 0.1169738324632776
+          "score": 0.2984655584672374
         },
         "geometry": {
           "type": "Polygon",
@@ -10549,7 +12493,7 @@
         "id": "224",
         "type": "Feature",
         "properties": {
-          "score": 0.11966414118568014
+          "score": 0.2870133825675161
         },
         "geometry": {
           "type": "Polygon",
@@ -10589,7 +12533,7 @@
         "id": "225",
         "type": "Feature",
         "properties": {
-          "score": 0.12291961148612283
+          "score": 0.28255847303905063
         },
         "geometry": {
           "type": "Polygon",
@@ -10629,7 +12573,7 @@
         "id": "226",
         "type": "Feature",
         "properties": {
-          "score": 0.12192133202888167
+          "score": 0.2970720013210257
         },
         "geometry": {
           "type": "Polygon",
@@ -10669,7 +12613,7 @@
         "id": "227",
         "type": "Feature",
         "properties": {
-          "score": 0.10996215220063582
+          "score": 0.26248245094733824
         },
         "geometry": {
           "type": "Polygon",
@@ -10709,7 +12653,7 @@
         "id": "228",
         "type": "Feature",
         "properties": {
-          "score": 0.11149199151018283
+          "score": 0.2679833525000724
         },
         "geometry": {
           "type": "Polygon",
@@ -10749,7 +12693,7 @@
         "id": "229",
         "type": "Feature",
         "properties": {
-          "score": 0.11469026430554481
+          "score": 0.27647028420022346
         },
         "geometry": {
           "type": "Polygon",
@@ -10789,7 +12733,7 @@
         "id": "230",
         "type": "Feature",
         "properties": {
-          "score": 0.11208662415575907
+          "score": 0.22606080906191112
         },
         "geometry": {
           "type": "Polygon",
@@ -10829,7 +12773,7 @@
         "id": "231",
         "type": "Feature",
         "properties": {
-          "score": 0.1238801587624932
+          "score": 0.2606739370678091
         },
         "geometry": {
           "type": "Polygon",
@@ -10869,7 +12813,7 @@
         "id": "232",
         "type": "Feature",
         "properties": {
-          "score": 0.22110422359186044
+          "score": 0.3795474021678554
         },
         "geometry": {
           "type": "Polygon",
@@ -10909,7 +12853,7 @@
         "id": "233",
         "type": "Feature",
         "properties": {
-          "score": 0.2994136599396009
+          "score": 0.47904515707886475
         },
         "geometry": {
           "type": "Polygon",
@@ -10949,7 +12893,7 @@
         "id": "234",
         "type": "Feature",
         "properties": {
-          "score": 0.19627638869135075
+          "score": 0.3618690639525919
         },
         "geometry": {
           "type": "Polygon",
@@ -10989,7 +12933,7 @@
         "id": "235",
         "type": "Feature",
         "properties": {
-          "score": 0.1130769050874102
+          "score": 0.273955579774127
         },
         "geometry": {
           "type": "Polygon",
@@ -11029,7 +12973,7 @@
         "id": "236",
         "type": "Feature",
         "properties": {
-          "score": 0.10844655904206074
+          "score": 0.283262104193469
         },
         "geometry": {
           "type": "Polygon",
@@ -11069,7 +13013,7 @@
         "id": "237",
         "type": "Feature",
         "properties": {
-          "score": 0.11388263407297218
+          "score": 0.26300329356018587
         },
         "geometry": {
           "type": "Polygon",
@@ -11109,7 +13053,7 @@
         "id": "238",
         "type": "Feature",
         "properties": {
-          "score": 0.1208586946283989
+          "score": 0.287402210868966
         },
         "geometry": {
           "type": "Polygon",
@@ -11149,7 +13093,7 @@
         "id": "239",
         "type": "Feature",
         "properties": {
-          "score": 0.11901665287904126
+          "score": 0.2895843033588055
         },
         "geometry": {
           "type": "Polygon",
@@ -11189,7 +13133,7 @@
         "id": "240",
         "type": "Feature",
         "properties": {
-          "score": 0.1171455431242788
+          "score": 0.2779172744198205
         },
         "geometry": {
           "type": "Polygon",
@@ -11229,7 +13173,7 @@
         "id": "241",
         "type": "Feature",
         "properties": {
-          "score": 0.11489923603862294
+          "score": 0.2885425256034703
         },
         "geometry": {
           "type": "Polygon",
@@ -11269,7 +13213,7 @@
         "id": "242",
         "type": "Feature",
         "properties": {
-          "score": 0.14154218823921608
+          "score": 0.3176052434541624
         },
         "geometry": {
           "type": "Polygon",
@@ -11309,7 +13253,7 @@
         "id": "243",
         "type": "Feature",
         "properties": {
-          "score": 0.16603278436272717
+          "score": 0.34440095098387113
         },
         "geometry": {
           "type": "Polygon",
@@ -11349,7 +13293,7 @@
         "id": "244",
         "type": "Feature",
         "properties": {
-          "score": 0.1313657106168661
+          "score": 0.2903970804276763
         },
         "geometry": {
           "type": "Polygon",
@@ -11389,7 +13333,7 @@
         "id": "245",
         "type": "Feature",
         "properties": {
-          "score": 0.09662605696392336
+          "score": 0.23569927507706834
         },
         "geometry": {
           "type": "Polygon",
@@ -11429,7 +13373,7 @@
         "id": "246",
         "type": "Feature",
         "properties": {
-          "score": 0.16722234075405587
+          "score": 0.32347609265351485
         },
         "geometry": {
           "type": "Polygon",
@@ -11469,7 +13413,7 @@
         "id": "247",
         "type": "Feature",
         "properties": {
-          "score": 0.19459535428180802
+          "score": 0.3710895841523487
         },
         "geometry": {
           "type": "Polygon",
@@ -11509,7 +13453,7 @@
         "id": "248",
         "type": "Feature",
         "properties": {
-          "score": 0.14862300552310145
+          "score": 0.3131355284702871
         },
         "geometry": {
           "type": "Polygon",
@@ -11549,7 +13493,7 @@
         "id": "249",
         "type": "Feature",
         "properties": {
-          "score": 0.12113795533099662
+          "score": 0.2860944419724979
         },
         "geometry": {
           "type": "Polygon",
@@ -11589,7 +13533,7 @@
         "id": "250",
         "type": "Feature",
         "properties": {
-          "score": 0.11780551876662068
+          "score": 0.27138413277050744
         },
         "geometry": {
           "type": "Polygon",
@@ -11629,7 +13573,7 @@
         "id": "251",
         "type": "Feature",
         "properties": {
-          "score": 0.11413562039570414
+          "score": 0.26902800409799293
         },
         "geometry": {
           "type": "Polygon",
@@ -11669,7 +13613,7 @@
         "id": "252",
         "type": "Feature",
         "properties": {
-          "score": 0.11210846397110735
+          "score": 0.2851845629232865
         },
         "geometry": {
           "type": "Polygon",
@@ -11709,7 +13653,7 @@
         "id": "253",
         "type": "Feature",
         "properties": {
-          "score": 0.12249982620714332
+          "score": 0.3047774427902888
         },
         "geometry": {
           "type": "Polygon",
@@ -11749,7 +13693,7 @@
         "id": "254",
         "type": "Feature",
         "properties": {
-          "score": 0.11514940173268907
+          "score": 0.2805702985285328
         },
         "geometry": {
           "type": "Polygon",
@@ -11789,7 +13733,7 @@
         "id": "255",
         "type": "Feature",
         "properties": {
-          "score": 0.18541137150819248
+          "score": 0.32363581171492384
         },
         "geometry": {
           "type": "Polygon",
@@ -11829,7 +13773,7 @@
         "id": "256",
         "type": "Feature",
         "properties": {
-          "score": 0.2161707107226639
+          "score": 0.3719776536668462
         },
         "geometry": {
           "type": "Polygon",
@@ -11869,7 +13813,7 @@
         "id": "257",
         "type": "Feature",
         "properties": {
-          "score": 0.16382537196170918
+          "score": 0.3365152058456
         },
         "geometry": {
           "type": "Polygon",
@@ -11909,7 +13853,7 @@
         "id": "258",
         "type": "Feature",
         "properties": {
-          "score": 0.12384559343357561
+          "score": 0.2965739541868061
         },
         "geometry": {
           "type": "Polygon",
@@ -11949,7 +13893,7 @@
         "id": "259",
         "type": "Feature",
         "properties": {
-          "score": 0.11345925176715306
+          "score": 0.2669424020235715
         },
         "geometry": {
           "type": "Polygon",
@@ -11989,7 +13933,7 @@
         "id": "260",
         "type": "Feature",
         "properties": {
-          "score": 0.10574871272944616
+          "score": 0.24860030268968494
         },
         "geometry": {
           "type": "Polygon",
@@ -12029,7 +13973,7 @@
         "id": "261",
         "type": "Feature",
         "properties": {
-          "score": 0.12825226504418047
+          "score": 0.2943463732742559
         },
         "geometry": {
           "type": "Polygon",
@@ -12069,7 +14013,7 @@
         "id": "262",
         "type": "Feature",
         "properties": {
-          "score": 0.1151738796360499
+          "score": 0.2881994912937866
         },
         "geometry": {
           "type": "Polygon",
@@ -12109,7 +14053,7 @@
         "id": "263",
         "type": "Feature",
         "properties": {
-          "score": 0.11998728580776058
+          "score": 0.306343406391244
         },
         "geometry": {
           "type": "Polygon",
@@ -12149,7 +14093,7 @@
         "id": "264",
         "type": "Feature",
         "properties": {
-          "score": 0.1174933612464503
+          "score": 0.2906243882030055
         },
         "geometry": {
           "type": "Polygon",
@@ -12189,7 +14133,7 @@
         "id": "265",
         "type": "Feature",
         "properties": {
-          "score": 0.10780925160792298
+          "score": 0.2757632976276486
         },
         "geometry": {
           "type": "Polygon",
@@ -12229,7 +14173,7 @@
         "id": "266",
         "type": "Feature",
         "properties": {
-          "score": 0.1072227675328813
+          "score": 0.26969864609870914
         },
         "geometry": {
           "type": "Polygon",
@@ -12269,7 +14213,7 @@
         "id": "267",
         "type": "Feature",
         "properties": {
-          "score": 0.10224158086251513
+          "score": 0.27088479316714387
         },
         "geometry": {
           "type": "Polygon",
@@ -12309,7 +14253,7 @@
         "id": "268",
         "type": "Feature",
         "properties": {
-          "score": 0.11588308378630476
+          "score": 0.28707567905774384
         },
         "geometry": {
           "type": "Polygon",
@@ -12349,7 +14293,7 @@
         "id": "269",
         "type": "Feature",
         "properties": {
-          "score": 0.21785720744559128
+          "score": 0.37302138146209424
         },
         "geometry": {
           "type": "Polygon",
@@ -12389,7 +14333,7 @@
         "id": "270",
         "type": "Feature",
         "properties": {
-          "score": 0.2752833884094719
+          "score": 0.45756085785496703
         },
         "geometry": {
           "type": "Polygon",
@@ -12429,7 +14373,7 @@
         "id": "271",
         "type": "Feature",
         "properties": {
-          "score": 0.24454659968689768
+          "score": 0.40555059680693745
         },
         "geometry": {
           "type": "Polygon",
@@ -12469,7 +14413,7 @@
         "id": "272",
         "type": "Feature",
         "properties": {
-          "score": 0.17561485508687288
+          "score": 0.341917649541447
         },
         "geometry": {
           "type": "Polygon",
@@ -12509,7 +14453,7 @@
         "id": "273",
         "type": "Feature",
         "properties": {
-          "score": 0.11048410707994927
+          "score": 0.25872944867699554
         },
         "geometry": {
           "type": "Polygon",
@@ -12549,7 +14493,7 @@
         "id": "274",
         "type": "Feature",
         "properties": {
-          "score": 0.10837832161638639
+          "score": 0.229394965355402
         },
         "geometry": {
           "type": "Polygon",
@@ -12589,7 +14533,7 @@
         "id": "275",
         "type": "Feature",
         "properties": {
-          "score": 0.1150467313243766
+          "score": 0.2577693001440966
         },
         "geometry": {
           "type": "Polygon",
@@ -12629,7 +14573,7 @@
         "id": "276",
         "type": "Feature",
         "properties": {
-          "score": 0.11499472190833913
+          "score": 0.2677461757482027
         },
         "geometry": {
           "type": "Polygon",
@@ -12669,7 +14613,7 @@
         "id": "277",
         "type": "Feature",
         "properties": {
-          "score": 0.11410391644258441
+          "score": 0.2771971222142354
         },
         "geometry": {
           "type": "Polygon",
@@ -12709,7 +14653,7 @@
         "id": "278",
         "type": "Feature",
         "properties": {
-          "score": 0.10619444492993554
+          "score": 0.27540549231201317
         },
         "geometry": {
           "type": "Polygon",
@@ -12749,7 +14693,7 @@
         "id": "279",
         "type": "Feature",
         "properties": {
-          "score": 0.11184685905395282
+          "score": 0.2791219532783282
         },
         "geometry": {
           "type": "Polygon",
@@ -12789,7 +14733,7 @@
         "id": "280",
         "type": "Feature",
         "properties": {
-          "score": 0.10753972130806788
+          "score": 0.2506733799330897
         },
         "geometry": {
           "type": "Polygon",
@@ -12829,7 +14773,7 @@
         "id": "281",
         "type": "Feature",
         "properties": {
-          "score": 0.18629501958601602
+          "score": 0.3316071768822215
         },
         "geometry": {
           "type": "Polygon",
@@ -12869,7 +14813,7 @@
         "id": "282",
         "type": "Feature",
         "properties": {
-          "score": 0.22491950319824722
+          "score": 0.3973649498962919
         },
         "geometry": {
           "type": "Polygon",
@@ -12909,7 +14853,7 @@
         "id": "283",
         "type": "Feature",
         "properties": {
-          "score": 0.16996074243729362
+          "score": 0.3520692649503887
         },
         "geometry": {
           "type": "Polygon",
@@ -12949,7 +14893,7 @@
         "id": "284",
         "type": "Feature",
         "properties": {
-          "score": 0.11703056212707123
+          "score": 0.30097138103748206
         },
         "geometry": {
           "type": "Polygon",
@@ -12989,7 +14933,7 @@
         "id": "285",
         "type": "Feature",
         "properties": {
-          "score": 0.11640280797655372
+          "score": 0.2758416651525127
         },
         "geometry": {
           "type": "Polygon",
@@ -13029,7 +14973,7 @@
         "id": "286",
         "type": "Feature",
         "properties": {
-          "score": 0.11564830930740552
+          "score": 0.26176691265793567
         },
         "geometry": {
           "type": "Polygon",
@@ -13069,7 +15013,7 @@
         "id": "287",
         "type": "Feature",
         "properties": {
-          "score": 0.11950441085823499
+          "score": 0.2897402550655894
         },
         "geometry": {
           "type": "Polygon",
@@ -13109,7 +15053,7 @@
         "id": "288",
         "type": "Feature",
         "properties": {
-          "score": 0.10976460871974257
+          "score": 0.2658450446140866
         },
         "geometry": {
           "type": "Polygon",
@@ -13149,7 +15093,7 @@
         "id": "289",
         "type": "Feature",
         "properties": {
-          "score": 0.10200330059445946
+          "score": 0.27322025284909074
         },
         "geometry": {
           "type": "Polygon",
@@ -13189,7 +15133,7 @@
         "id": "290",
         "type": "Feature",
         "properties": {
-          "score": 0.18009131684157553
+          "score": 0.3606588747767887
         },
         "geometry": {
           "type": "Polygon",
@@ -13229,7 +15173,7 @@
         "id": "291",
         "type": "Feature",
         "properties": {
-          "score": 0.2325345768572486
+          "score": 0.3943116830331256
         },
         "geometry": {
           "type": "Polygon",
@@ -13269,7 +15213,7 @@
         "id": "292",
         "type": "Feature",
         "properties": {
-          "score": 0.27160725555505394
+          "score": 0.44704460284974123
         },
         "geometry": {
           "type": "Polygon",
@@ -13309,7 +15253,7 @@
         "id": "293",
         "type": "Feature",
         "properties": {
-          "score": 0.1809788215403954
+          "score": 0.35532425698132586
         },
         "geometry": {
           "type": "Polygon",
@@ -13349,7 +15293,7 @@
         "id": "294",
         "type": "Feature",
         "properties": {
-          "score": 0.10286876389091433
+          "score": 0.25729237363913426
         },
         "geometry": {
           "type": "Polygon",
@@ -13389,7 +15333,7 @@
         "id": "295",
         "type": "Feature",
         "properties": {
-          "score": 0.11141386596166401
+          "score": 0.25302580521027146
         },
         "geometry": {
           "type": "Polygon",
@@ -13429,7 +15373,7 @@
         "id": "296",
         "type": "Feature",
         "properties": {
-          "score": 0.12228515135808828
+          "score": 0.24035999703431182
         },
         "geometry": {
           "type": "Polygon",
@@ -13469,7 +15413,7 @@
         "id": "297",
         "type": "Feature",
         "properties": {
-          "score": 0.09936452499030764
+          "score": 0.26936673983635023
         },
         "geometry": {
           "type": "Polygon",
@@ -13509,7 +15453,7 @@
         "id": "298",
         "type": "Feature",
         "properties": {
-          "score": 0.11998496648416429
+          "score": 0.2941231885897183
         },
         "geometry": {
           "type": "Polygon",
@@ -13549,7 +15493,7 @@
         "id": "299",
         "type": "Feature",
         "properties": {
-          "score": 0.22548486064366224
+          "score": 0.38137315328902854
         },
         "geometry": {
           "type": "Polygon",
@@ -13589,7 +15533,7 @@
         "id": "300",
         "type": "Feature",
         "properties": {
-          "score": 0.28608438424551863
+          "score": 0.461992699922633
         },
         "geometry": {
           "type": "Polygon",
@@ -13629,7 +15573,7 @@
         "id": "301",
         "type": "Feature",
         "properties": {
-          "score": 0.1940661364269931
+          "score": 0.373339427985796
         },
         "geometry": {
           "type": "Polygon",
@@ -13669,7 +15613,7 @@
         "id": "302",
         "type": "Feature",
         "properties": {
-          "score": 0.1194476375339986
+          "score": 0.29289074908985596
         },
         "geometry": {
           "type": "Polygon",
@@ -13709,7 +15653,7 @@
         "id": "303",
         "type": "Feature",
         "properties": {
-          "score": 0.109178559135852
+          "score": 0.27141010844076957
         },
         "geometry": {
           "type": "Polygon",
@@ -13749,7 +15693,7 @@
         "id": "304",
         "type": "Feature",
         "properties": {
-          "score": 0.11654562035676781
+          "score": 0.2618340338992594
         },
         "geometry": {
           "type": "Polygon",
@@ -13789,7 +15733,7 @@
         "id": "305",
         "type": "Feature",
         "properties": {
-          "score": 0.11745858064816761
+          "score": 0.2907815846813333
         },
         "geometry": {
           "type": "Polygon",
@@ -13829,7 +15773,7 @@
         "id": "306",
         "type": "Feature",
         "properties": {
-          "score": 0.11937145165844064
+          "score": 0.2989550357809032
         },
         "geometry": {
           "type": "Polygon",
@@ -13869,7 +15813,7 @@
         "id": "307",
         "type": "Feature",
         "properties": {
-          "score": 0.11448228218495618
+          "score": 0.29640767238798915
         },
         "geometry": {
           "type": "Polygon",
@@ -13909,7 +15853,7 @@
         "id": "308",
         "type": "Feature",
         "properties": {
-          "score": 0.11070321187263259
+          "score": 0.28155974134124423
         },
         "geometry": {
           "type": "Polygon",
@@ -13949,7 +15893,7 @@
         "id": "309",
         "type": "Feature",
         "properties": {
-          "score": 0.16783636298751586
+          "score": 0.346214263664784
         },
         "geometry": {
           "type": "Polygon",
@@ -13989,7 +15933,7 @@
         "id": "310",
         "type": "Feature",
         "properties": {
-          "score": 0.1770911156628966
+          "score": 0.3461381348148808
         },
         "geometry": {
           "type": "Polygon",
@@ -14029,7 +15973,7 @@
         "id": "311",
         "type": "Feature",
         "properties": {
-          "score": 0.12235909623713274
+          "score": 0.28540146195950067
         },
         "geometry": {
           "type": "Polygon",
@@ -14069,7 +16013,7 @@
         "id": "312",
         "type": "Feature",
         "properties": {
-          "score": 0.11159822768452542
+          "score": 0.2880846023581296
         },
         "geometry": {
           "type": "Polygon",
@@ -14109,7 +16053,7 @@
         "id": "313",
         "type": "Feature",
         "properties": {
-          "score": 0.11881381408872746
+          "score": 0.28818763023221106
         },
         "geometry": {
           "type": "Polygon",
@@ -14149,7 +16093,7 @@
         "id": "314",
         "type": "Feature",
         "properties": {
-          "score": 0.11052829342952834
+          "score": 0.24286765098804725
         },
         "geometry": {
           "type": "Polygon",
@@ -14189,7 +16133,7 @@
         "id": "315",
         "type": "Feature",
         "properties": {
-          "score": 0.16475495441364008
+          "score": 0.31235209469747793
         },
         "geometry": {
           "type": "Polygon",
@@ -14229,7 +16173,7 @@
         "id": "316",
         "type": "Feature",
         "properties": {
-          "score": 0.19348964390548812
+          "score": 0.35366550730780344
         },
         "geometry": {
           "type": "Polygon",
@@ -14269,7 +16213,7 @@
         "id": "317",
         "type": "Feature",
         "properties": {
-          "score": 0.15255601835315047
+          "score": 0.3101129035482391
         },
         "geometry": {
           "type": "Polygon",
@@ -14309,7 +16253,7 @@
         "id": "318",
         "type": "Feature",
         "properties": {
-          "score": 0.11488682405733336
+          "score": 0.25688242259561606
         },
         "geometry": {
           "type": "Polygon",
@@ -14349,7 +16293,7 @@
         "id": "319",
         "type": "Feature",
         "properties": {
-          "score": 0.15372473535853792
+          "score": 0.28695606094887205
         },
         "geometry": {
           "type": "Polygon",
@@ -14389,7 +16333,7 @@
         "id": "320",
         "type": "Feature",
         "properties": {
-          "score": 0.18367276734615495
+          "score": 0.3281363859221329
         },
         "geometry": {
           "type": "Polygon",
@@ -14429,7 +16373,7 @@
         "id": "321",
         "type": "Feature",
         "properties": {
-          "score": 0.14637565273052516
+          "score": 0.32101999018758215
         },
         "geometry": {
           "type": "Polygon",
@@ -14469,7 +16413,7 @@
         "id": "322",
         "type": "Feature",
         "properties": {
-          "score": 0.11578750380601247
+          "score": 0.27593047443143526
         },
         "geometry": {
           "type": "Polygon",
@@ -14509,7 +16453,7 @@
         "id": "323",
         "type": "Feature",
         "properties": {
-          "score": 0.12278717544188614
+          "score": 0.29770023076768637
         },
         "geometry": {
           "type": "Polygon",
@@ -14549,7 +16493,7 @@
         "id": "324",
         "type": "Feature",
         "properties": {
-          "score": 0.12113838536069338
+          "score": 0.2668281298812897
         },
         "geometry": {
           "type": "Polygon",
@@ -14589,7 +16533,7 @@
         "id": "325",
         "type": "Feature",
         "properties": {
-          "score": 0.11223964417782348
+          "score": 0.2606260626993526
         },
         "geometry": {
           "type": "Polygon",
@@ -14629,7 +16573,7 @@
         "id": "326",
         "type": "Feature",
         "properties": {
-          "score": 0.10688694438013491
+          "score": 0.2742462166551367
         },
         "geometry": {
           "type": "Polygon",
@@ -14669,7 +16613,7 @@
         "id": "327",
         "type": "Feature",
         "properties": {
-          "score": 0.1078967109540769
+          "score": 0.293611317022225
         },
         "geometry": {
           "type": "Polygon",
@@ -14709,7 +16653,7 @@
         "id": "328",
         "type": "Feature",
         "properties": {
-          "score": 0.11651637913553153
+          "score": 0.28277978875730014
         },
         "geometry": {
           "type": "Polygon",
@@ -14749,7 +16693,7 @@
         "id": "329",
         "type": "Feature",
         "properties": {
-          "score": 0.11862938106550468
+          "score": 0.27443034120091464
         },
         "geometry": {
           "type": "Polygon",
@@ -14789,7 +16733,7 @@
         "id": "330",
         "type": "Feature",
         "properties": {
-          "score": 0.11323013037624743
+          "score": 0.2776267677966948
         },
         "geometry": {
           "type": "Polygon",
@@ -14829,7 +16773,7 @@
         "id": "331",
         "type": "Feature",
         "properties": {
-          "score": 0.11586335309852555
+          "score": 0.2772147958554683
         },
         "geometry": {
           "type": "Polygon",
@@ -14869,7 +16813,7 @@
         "id": "332",
         "type": "Feature",
         "properties": {
-          "score": 0.10848306525823262
+          "score": 0.2355990547148395
         },
         "geometry": {
           "type": "Polygon",
@@ -14909,7 +16853,7 @@
         "id": "333",
         "type": "Feature",
         "properties": {
-          "score": 0.21078881234589164
+          "score": 0.34523418153690705
         },
         "geometry": {
           "type": "Polygon",
@@ -14949,7 +16893,7 @@
         "id": "334",
         "type": "Feature",
         "properties": {
-          "score": 0.2784367404576843
+          "score": 0.43542351736306883
         },
         "geometry": {
           "type": "Polygon",
@@ -14989,7 +16933,7 @@
         "id": "335",
         "type": "Feature",
         "properties": {
-          "score": 0.19552462778502194
+          "score": 0.35754755512978087
         },
         "geometry": {
           "type": "Polygon",
@@ -15029,7 +16973,7 @@
         "id": "336",
         "type": "Feature",
         "properties": {
-          "score": 0.12021260720217374
+          "score": 0.270937750595555
         },
         "geometry": {
           "type": "Polygon",
@@ -15069,7 +17013,7 @@
         "id": "337",
         "type": "Feature",
         "properties": {
-          "score": 0.11530284762932809
+          "score": 0.28124498475840454
         },
         "geometry": {
           "type": "Polygon",
@@ -15109,7 +17053,7 @@
         "id": "338",
         "type": "Feature",
         "properties": {
-          "score": 0.12180714583482272
+          "score": 0.2932943186347236
         },
         "geometry": {
           "type": "Polygon",
@@ -15149,7 +17093,7 @@
         "id": "339",
         "type": "Feature",
         "properties": {
-          "score": 0.12430140972416667
+          "score": 0.3040113245045577
         },
         "geometry": {
           "type": "Polygon",
@@ -15189,7 +17133,7 @@
         "id": "340",
         "type": "Feature",
         "properties": {
-          "score": 0.1158665443597677
+          "score": 0.26401540628354314
         },
         "geometry": {
           "type": "Polygon",
@@ -15229,7 +17173,7 @@
         "id": "341",
         "type": "Feature",
         "properties": {
-          "score": 0.10972362113513982
+          "score": 0.2659156820906306
         },
         "geometry": {
           "type": "Polygon",
@@ -15269,7 +17213,7 @@
         "id": "342",
         "type": "Feature",
         "properties": {
-          "score": 0.11988987235104515
+          "score": 0.2886642297038685
         },
         "geometry": {
           "type": "Polygon",
@@ -15309,7 +17253,7 @@
         "id": "343",
         "type": "Feature",
         "properties": {
-          "score": 0.09919850745453139
+          "score": 0.20766759166217866
         },
         "geometry": {
           "type": "Polygon",
@@ -15349,7 +17293,7 @@
         "id": "344",
         "type": "Feature",
         "properties": {
-          "score": 0.18058896325307044
+          "score": 0.3235589787263413
         },
         "geometry": {
           "type": "Polygon",
@@ -15389,7 +17333,7 @@
         "id": "345",
         "type": "Feature",
         "properties": {
-          "score": 0.22876480401953156
+          "score": 0.4063057651454809
         },
         "geometry": {
           "type": "Polygon",
@@ -15429,7 +17373,7 @@
         "id": "346",
         "type": "Feature",
         "properties": {
-          "score": 0.185075841731544
+          "score": 0.3495357339474455
         },
         "geometry": {
           "type": "Polygon",
@@ -15469,7 +17413,7 @@
         "id": "347",
         "type": "Feature",
         "properties": {
-          "score": 0.12327240750152435
+          "score": 0.2955055070272975
         },
         "geometry": {
           "type": "Polygon",
@@ -15509,7 +17453,7 @@
         "id": "348",
         "type": "Feature",
         "properties": {
-          "score": 0.1168237473068317
+          "score": 0.26206792376440424
         },
         "geometry": {
           "type": "Polygon",
@@ -15549,7 +17493,7 @@
         "id": "349",
         "type": "Feature",
         "properties": {
-          "score": 0.11203238188091173
+          "score": 0.2913586626274255
         },
         "geometry": {
           "type": "Polygon",
@@ -15589,7 +17533,7 @@
         "id": "350",
         "type": "Feature",
         "properties": {
-          "score": 0.11332008086278846
+          "score": 0.27147497701567647
         },
         "geometry": {
           "type": "Polygon",
@@ -15629,7 +17573,7 @@
         "id": "351",
         "type": "Feature",
         "properties": {
-          "score": 0.12162056053052865
+          "score": 0.29730900942365546
         },
         "geometry": {
           "type": "Polygon",
@@ -15669,7 +17613,7 @@
         "id": "352",
         "type": "Feature",
         "properties": {
-          "score": 0.12098141371696804
+          "score": 0.2827928817838121
         },
         "geometry": {
           "type": "Polygon",
@@ -15709,7 +17653,7 @@
         "id": "353",
         "type": "Feature",
         "properties": {
-          "score": 0.11335511873734817
+          "score": 0.2455124894701483
         },
         "geometry": {
           "type": "Polygon",
@@ -15749,7 +17693,7 @@
         "id": "354",
         "type": "Feature",
         "properties": {
-          "score": 0.13695249019660616
+          "score": 0.2788475767884225
         },
         "geometry": {
           "type": "Polygon",
@@ -15789,7 +17733,7 @@
         "id": "355",
         "type": "Feature",
         "properties": {
-          "score": 0.12090201428238866
+          "score": 0.2612423414850138
         },
         "geometry": {
           "type": "Polygon",
@@ -15829,7 +17773,7 @@
         "id": "356",
         "type": "Feature",
         "properties": {
-          "score": 0.11749472636234018
+          "score": 0.26110547458308864
         },
         "geometry": {
           "type": "Polygon",
@@ -15869,7 +17813,7 @@
         "id": "357",
         "type": "Feature",
         "properties": {
-          "score": 0.11856224421124809
+          "score": 0.2472876436192655
         },
         "geometry": {
           "type": "Polygon",
@@ -15909,7 +17853,7 @@
         "id": "358",
         "type": "Feature",
         "properties": {
-          "score": 0.12151390136973712
+          "score": 0.27111562821501345
         },
         "geometry": {
           "type": "Polygon",
@@ -15949,7 +17893,7 @@
         "id": "359",
         "type": "Feature",
         "properties": {
-          "score": 0.10901391203220881
+          "score": 0.24928463571472723
         },
         "geometry": {
           "type": "Polygon",
@@ -15989,7 +17933,7 @@
         "id": "360",
         "type": "Feature",
         "properties": {
-          "score": 0.11337693522302338
+          "score": 0.26159572583219043
         },
         "geometry": {
           "type": "Polygon",
@@ -16029,7 +17973,7 @@
         "id": "361",
         "type": "Feature",
         "properties": {
-          "score": 0.11921694182568193
+          "score": 0.26129226412141027
         },
         "geometry": {
           "type": "Polygon",
@@ -16069,7 +18013,7 @@
         "id": "362",
         "type": "Feature",
         "properties": {
-          "score": 0.11408073411355987
+          "score": 0.21419410414980444
         },
         "geometry": {
           "type": "Polygon",
@@ -16109,7 +18053,7 @@
         "id": "363",
         "type": "Feature",
         "properties": {
-          "score": 0.11374871621574528
+          "score": 0.22629373953116955
         },
         "geometry": {
           "type": "Polygon",
@@ -16149,7 +18093,7 @@
         "id": "364",
         "type": "Feature",
         "properties": {
-          "score": 0.1047010154812766
+          "score": 0.2121224667734718
         },
         "geometry": {
           "type": "Polygon",
@@ -16189,7 +18133,7 @@
         "id": "365",
         "type": "Feature",
         "properties": {
-          "score": 0.10437922280954422
+          "score": 0.21599105454292544
         },
         "geometry": {
           "type": "Polygon",
@@ -16229,7 +18173,7 @@
         "id": "366",
         "type": "Feature",
         "properties": {
-          "score": 0.09616415552047838
+          "score": 0.16787536770048475
         },
         "geometry": {
           "type": "Polygon",
@@ -16269,7 +18213,7 @@
         "id": "367",
         "type": "Feature",
         "properties": {
-          "score": 0.09294009873584996
+          "score": 0.167358204718643
         },
         "geometry": {
           "type": "Polygon",
