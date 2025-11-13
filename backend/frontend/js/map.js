@@ -2,14 +2,14 @@ function getCategoryIconClass(category) {
     const icons = {
         metro: 'fa-subway',
         bus: 'fa-bus',
+        bixi: 'fa-bicycle',
+        park: 'fa-tree',
         grocery: 'fa-shopping-cart',
-        restaurants: 'fa-utensils',
-        parks: 'fa-tree',
-        schools: 'fa-graduation-cap',
-        healthcare: 'fa-hospital',
+        restaurant: 'fa-utensils'
     };
     return icons[category] || 'fa-map-marker-alt';
 }
+
 
 function initWalkabilityMap(DATA) {
     const center = [DATA.center.lat, DATA.center.lon];

@@ -143,8 +143,8 @@
                                     <div class="col-md-6">
                                         <label for="location" class="form-label">Location Name</label>
                                         <input type="text" class="form-control border-orange" id="location"
-                                            name="location" placeholder="e.g., Downtown Montreal" value="Montréal, QC, CAN" 
-                                            required>
+                                            name="location" placeholder="e.g., Downtown Montreal"
+                                            value="Montréal, QC, CAN" required>
                                     </div>
                                     <div class="col-md-3">
                                         <label for="lat" class="form-label">Latitude</label>
@@ -166,6 +166,8 @@
                                     Maximum Walking Distances (meters)
                                 </h4>
                                 <div class="row g-3">
+
+                                    <!-- METRO -->
                                     <div class="col-md-6">
                                         <label for="metro_m" class="form-label">
                                             <i class="fas fa-subway me-2"></i>Metro Station
@@ -176,6 +178,8 @@
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
+
+                                    <!-- BUS -->
                                     <div class="col-md-6">
                                         <label for="bus_m" class="form-label">
                                             <i class="fas fa-bus me-2"></i>Bus Stop
@@ -186,26 +190,20 @@
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
+
+                                    <!-- BIXI -->
                                     <div class="col-md-6">
-                                        <label for="grocery_m" class="form-label">
-                                            <i class="fas fa-shopping-cart me-2"></i>Grocery Stores
+                                        <label for="bixi_m" class="form-label">
+                                            <i class="fas fa-bicycle me-2"></i>BIXI Stations
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="grocery_m"
-                                                name="grocery_m" step="50" min="0" placeholder="500">
+                                            <input type="number" class="form-control border-orange" id="bixi_m"
+                                                name="bixi_m" step="50" min="0" placeholder="300">
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="restaurants_m" class="form-label">
-                                            <i class="fas fa-utensils me-2"></i>Restaurants
-                                        </label>
-                                        <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="restaurants_m"
-                                                name="restaurants_m" step="50" min="0" placeholder="300">
-                                            <span class="input-group-text">meters</span>
-                                        </div>
-                                    </div>
+
+                                    <!-- PARK -->
                                     <div class="col-md-6">
                                         <label for="parks_m" class="form-label">
                                             <i class="fas fa-tree me-2"></i>Parks & Recreation
@@ -216,140 +214,143 @@
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
+
+                                    <!-- GROCERY -->
                                     <div class="col-md-6">
-                                        <label for="schools_m" class="form-label">
-                                            <i class="fas fa-graduation-cap me-2"></i>Schools
+                                        <label for="grocery_m" class="form-label">
+                                            <i class="fas fa-shopping-cart me-2"></i>Grocery Stores
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="schools_m"
-                                                name="schools_m" step="50" min="0" placeholder="800">
+                                            <input type="number" class="form-control border-orange" id="grocery_m"
+                                                name="grocery_m" step="50" min="0" placeholder="500">
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
+
+                                    <!-- RESTAURANT -->
                                     <div class="col-md-6">
-                                        <label for="healthcare_m" class="form-label">
-                                            <i class="fas fa-hospital me-2"></i>Healthcare
+                                        <label for="restaurants_m" class="form-label">
+                                            <i class="fas fa-utensils me-2"></i>Restaurants
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control border-orange" id="healthcare_m"
-                                                name="healthcare_m" step="50" min="0" placeholder="1000">
+                                            <input type="number" class="form-control border-orange" id="restaurants_m"
+                                                name="restaurants_m" step="50" min="0" placeholder="300">
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
+
                                 </div>
-                            </div>
 
-                            <!-- Weights Section -->
-                            <div class="mb-5">
-                                <h4 class="section-title">
-                                    <i class="fas fa-balance-scale me-2"></i>
-                                    Importance Weights (1-5 scale)
-                                </h4>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="w_metro" class="form-label">
-                                            <i class="fas fa-subway me-2"></i>Metro Station Weight
-                                        </label>
-                                        <select class="form-select border-orange" id="w_metro" name="w_metro">
-                                            <option value="0">0 - Doesn't matter</option>
-                                            <option value="1">1 - Low importance</option>
-                                            <option value="2">2 - Below average</option>
-                                            <option value="3" selected>3 - Average importance</option>
-                                            <option value="4">4 - High importance</option>
-                                            <option value="5">5 - Critical importance</option>
-                                        </select>
+                                <!-- Weights Section -->
+                                <div class="mb-5">
+                                    <h4 class="section-title">
+                                        <i class="fas fa-balance-scale me-2"></i>
+                                        Importance Weights (1-5 scale)
+                                    </h4>
+                                    <div class="row g-3">
+
+                                        <!-- METRO -->
+                                        <div class="col-md-6">
+                                            <label for="w_metro" class="form-label">
+                                                <i class="fas fa-subway me-2"></i>Metro Station Weight
+                                            </label>
+                                            <select class="form-select border-orange" id="w_metro" name="w_metro">
+                                                <option value="0">0 - Doesn't matter</option>
+                                                <option value="1">1 - Low importance</option>
+                                                <option value="2">2 - Below average</option>
+                                                <option value="3" selected>3 - Average importance</option>
+                                                <option value="4">4 - High importance</option>
+                                                <option value="5">5 - Critical importance</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- BUS -->
+                                        <div class="col-md-6">
+                                            <label for="w_bus" class="form-label">
+                                                <i class="fas fa-bus me-2"></i>Bus Stop Weight
+                                            </label>
+                                            <select class="form-select border-orange" id="w_bus" name="w_bus">
+                                                <option value="0">0 - Doesn't matter</option>
+                                                <option value="1">1 - Low importance</option>
+                                                <option value="2" selected>2 - Below average</option>
+                                                <option value="3">3 - Average importance</option>
+                                                <option value="4">4 - High importance</option>
+                                                <option value="5">5 - Critical importance</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- BIXI -->
+                                        <div class="col-md-6">
+                                            <label for="w_bixi" class="form-label">
+                                                <i class="fas fa-bicycle me-2"></i>BIXI Weight
+                                            </label>
+                                            <select class="form-select border-orange" id="w_bixi" name="w_bixi">
+                                                <option value="0">0 - Doesn't matter</option>
+                                                <option value="1">1 - Low importance</option>
+                                                <option value="2" selected>2 - Below average</option>
+                                                <option value="3">3 - Average importance</option>
+                                                <option value="4">4 - High importance</option>
+                                                <option value="5">5 - Critical importance</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- PARK -->
+                                        <div class="col-md-6">
+                                            <label for="w_parks" class="form-label">
+                                                <i class="fas fa-tree me-2"></i>Parks Weight
+                                            </label>
+                                            <select class="form-select border-orange" id="w_parks" name="w_parks">
+                                                <option value="0">0 - Doesn't matter</option>
+                                                <option value="1">1 - Low importance</option>
+                                                <option value="2" selected>2 - Below average</option>
+                                                <option value="3">3 - Average importance</option>
+                                                <option value="4">4 - High importance</option>
+                                                <option value="5">5 - Critical importance</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- GROCERY -->
+                                        <div class="col-md-6">
+                                            <label for="w_grocery" class="form-label">
+                                                <i class="fas fa-shopping-cart me-2"></i>Grocery Stores Weight
+                                            </label>
+                                            <select class="form-select border-orange" id="w_grocery" name="w_grocery">
+                                                <option value="0">0 - Doesn't matter</option>
+                                                <option value="1">1 - Low importance</option>
+                                                <option value="2">2 - Below average</option>
+                                                <option value="3" selected>3 - Average importance</option>
+                                                <option value="4">4 - High importance</option>
+                                                <option value="5">5 - Critical importance</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- RESTAURANT -->
+                                        <div class="col-md-6">
+                                            <label for="w_restaurants" class="form-label">
+                                                <i class="fas fa-utensils me-2"></i>Restaurants Weight
+                                            </label>
+                                            <select class="form-select border-orange" id="w_restaurants"
+                                                name="w_restaurants">
+                                                <option value="0">0 - Doesn't matter</option>
+                                                <option value="1">1 - Low importance</option>
+                                                <option value="2" selected>2 - Below average</option>
+                                                <option value="3">3 - Average importance</option>
+                                                <option value="4">4 - High importance</option>
+                                                <option value="5">5 - Critical importance</option>
+                                            </select>
+                                        </div>
+
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="w_bus" class="form-label">
-                                            <i class="fas fa-bus me-2"></i>Bus Stop Weight
-                                        </label>
-                                        <select class="form-select border-orange" id="w_bus" name="w_bus">
-                                            <option value="0">0 - Doesn't matter</option>
-                                            <option value="1">1 - Low importance</option>
-                                            <option value="2" selected>2 - Below average</option>
-                                            <option value="3">3 - Average importance</option>
-                                            <option value="4">4 - High importance</option>
-                                            <option value="5">5 - Critical importance</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="w_grocery" class="form-label">
-                                            <i class="fas fa-shopping-cart me-2"></i>Grocery Stores Weight
-                                        </label>
-                                        <select class="form-select border-orange" id="w_grocery" name="w_grocery">
-                                            <option value="0">0 - Doesn't matter</option>
-                                            <option value="1">1 - Low importance</option>
-                                            <option value="2">2 - Below average</option>
-                                            <option value="3" selected>3 - Average importance</option>
-                                            <option value="4">4 - High importance</option>
-                                            <option value="5">5 - Critical importance</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="w_restaurants" class="form-label">
-                                            <i class="fas fa-utensils me-2"></i>Restaurants Weight
-                                        </label>
-                                        <select class="form-select border-orange" id="w_restaurants"
-                                            name="w_restaurants">
-                                            <option value="0">0 - Doesn't matter</option>
-                                            <option value="1">1 - Low importance</option>
-                                            <option value="2" selected>2 - Below average</option>
-                                            <option value="3">3 - Average importance</option>
-                                            <option value="4">4 - High importance</option>
-                                            <option value="5">5 - Critical importance</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="w_parks" class="form-label">
-                                            <i class="fas fa-tree me-2"></i>Parks Weight
-                                        </label>
-                                        <select class="form-select border-orange" id="w_parks" name="w_parks">
-                                            <option value="0">0 - Doesn't matter</option>
-                                            <option value="1">1 - Low importance</option>
-                                            <option value="2" selected>2 - Below average</option>
-                                            <option value="3">3 - Average importance</option>
-                                            <option value="4">4 - High importance</option>
-                                            <option value="5">5 - Critical importance</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="w_schools" class="form-label">
-                                            <i class="fas fa-graduation-cap me-2"></i>Schools Weight
-                                        </label>
-                                        <select class="form-select border-orange" id="w_schools" name="w_schools">
-                                            <option value="0">0 - Doesn't matter</option>
-                                            <option value="1">1 - Low importance</option>
-                                            <option value="2" selected>2 - Below average</option>
-                                            <option value="3">3 - Average importance</option>
-                                            <option value="4">4 - High importance</option>
-                                            <option value="5">5 - Critical importance</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="w_healthcare" class="form-label">
-                                            <i class="fas fa-hospital me-2"></i>Healthcare Weight
-                                        </label>
-                                        <select class="form-select border-orange" id="w_healthcare" name="w_healthcare">
-                                            <option value="0">0 - Doesn't matter</option>
-                                            <option value="1">1 - Low importance</option>
-                                            <option value="2" selected>2 - Below average</option>
-                                            <option value="3">3 - Average importance</option>
-                                            <option value="4">4 - High importance</option>
-                                            <option value="5">5 - Critical importance</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
 
 
 
-                            <!-- Submit Button -->
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-orange btn-lg px-5">
-                                    <i class="fas fa-calculator me-2"></i>
-                                    Calculate Walkability Index
-                                </button>
-                            </div>
+                                    <!-- Submit Button -->
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-orange btn-lg px-5">
+                                            <i class="fas fa-calculator me-2"></i>
+                                            Calculate Walkability Index
+                                        </button>
+                                    </div>
                         </form>
                     </div>
                 </div>
@@ -371,28 +372,27 @@
 
             try {
                 // Define consistent category order
-                const categories = ["metro", "bus", "grocery", "restaurants", "parks", "schools", "healthcare"];
+                const categories = ["metro", "bus", "bixi", "park", "grocery", "restaurant"];
 
                 // Build arrays in the same order
                 const thresholds = [
-                    parseInt(document.getElementById('metro_m').value) || 200,
-                    parseInt(document.getElementById('bus_m').value) || 1000,
-                    parseInt(document.getElementById('grocery_m').value) || 500,
-                    parseInt(document.getElementById('restaurants_m').value) || 300,
+                    parseInt(document.getElementById('metro_m').value) || 400,
+                    parseInt(document.getElementById('bus_m').value) || 500,
+                    parseInt(document.getElementById('bixi_m').value) || 300,
                     parseInt(document.getElementById('parks_m').value) || 400,
-                    parseInt(document.getElementById('schools_m').value) || 800,
-                    parseInt(document.getElementById('healthcare_m').value) || 1000
+                    parseInt(document.getElementById('grocery_m').value) || 500,
+                    parseInt(document.getElementById('restaurants_m').value) || 300
                 ];
 
                 const weights = [
                     parseInt(document.getElementById('w_metro').value),
                     parseInt(document.getElementById('w_bus').value),
-                    parseInt(document.getElementById('w_grocery').value),
-                    parseInt(document.getElementById('w_restaurants').value),
+                    parseInt(document.getElementById('w_bixi').value),
                     parseInt(document.getElementById('w_parks').value),
-                    parseInt(document.getElementById('w_schools').value),
-                    parseInt(document.getElementById('w_healthcare').value)
+                    parseInt(document.getElementById('w_grocery').value),
+                    parseInt(document.getElementById('w_restaurants').value)
                 ];
+
 
                 // Build the payload in backend's expected format
                 const payload = {
