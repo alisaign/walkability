@@ -186,7 +186,7 @@
                                         </label>
                                         <div class="input-group">
                                             <input type="number" class="form-control border-orange" id="bus_m"
-                                                name="bus_m" step="50" min="0" placeholder="500">
+                                                name="bus_m" step="50" min="0" placeholder="100">
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@
                                         </label>
                                         <div class="input-group">
                                             <input type="number" class="form-control border-orange" id="parks_m"
-                                                name="parks_m" step="50" min="0" placeholder="400">
+                                                name="parks_m" step="50" min="0" placeholder="500">
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
@@ -222,7 +222,7 @@
                                         </label>
                                         <div class="input-group">
                                             <input type="number" class="form-control border-orange" id="grocery_m"
-                                                name="grocery_m" step="50" min="0" placeholder="500">
+                                                name="grocery_m" step="50" min="0" placeholder="100">
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@
                                         </label>
                                         <div class="input-group">
                                             <input type="number" class="form-control border-orange" id="restaurants_m"
-                                                name="restaurants_m" step="50" min="0" placeholder="300">
+                                                name="restaurants_m" step="50" min="0" placeholder="50">
                                             <span class="input-group-text">meters</span>
                                         </div>
                                     </div>
@@ -377,11 +377,11 @@
                 // Build arrays in the same order
                 const thresholds = [
                     parseInt(document.getElementById('metro_m').value) || 400,
-                    parseInt(document.getElementById('bus_m').value) || 500,
+                    parseInt(document.getElementById('bus_m').value) || 100,
                     parseInt(document.getElementById('bixi_m').value) || 300,
-                    parseInt(document.getElementById('parks_m').value) || 400,
-                    parseInt(document.getElementById('grocery_m').value) || 500,
-                    parseInt(document.getElementById('restaurants_m').value) || 300
+                    parseInt(document.getElementById('parks_m').value) || 500,
+                    parseInt(document.getElementById('grocery_m').value) || 100,
+                    parseInt(document.getElementById('restaurants_m').value) || 50
                 ];
 
                 const weights = [

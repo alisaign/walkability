@@ -153,7 +153,7 @@ def analyze_walkability_api(data: WalkabilityInput):
         "neighborhood": neighborhood_name,
         "gradient_layer": gradient_layer.__geo_interface__,  # optional: if you return gradient map too
     }
-    print("formatted output: ", formatted_output)
+    #print("formatted output: ", formatted_output)
     output_path = Path("sample_data.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(formatted_output, f, indent=2)
