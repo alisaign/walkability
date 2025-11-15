@@ -29,17 +29,21 @@
 
 
 .result-topbar {
-    background: white;
-    border-bottom: 1px solid var(--orange-200);
     width: 100%;
+    border-bottom: 2px solid var(--orange-200);
+    background: linear-gradient(135deg, var(--orange-50), #fff7e6);
 }
 
-.score-badge-small {
-    padding: 6px 14px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: white;
-    min-width: 50px;
-    text-align: center;
+.topbar-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 2px;
+}
+
+.score-circle-topbar {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 2rem !important;
+    border-width: 3px !important;
 }

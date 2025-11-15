@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="/static/css/site.css">
+
     <style>
         :root {
             --orange-50: #fff7ed;
@@ -154,22 +157,30 @@
 </head>
 
 <body>
-    <div class="container py-4">
+    <div class="container-fluid py-0 px-4">
         <!-- Header -->
-        <div class="result-topbar d-flex justify-content-between align-items-center px-3 py-2 mb-3">
-            <a href="/index" class="btn btn-sm btn-outline-orange">
+        <!-- Top Bar -->
+        <div class="result-topbar d-flex align-items-center justify-content-between px-3 py-2 mb-4">
+        
+            <!-- Left: back button style -->
+            <a href="/static/index.html" class="btn btn-outline-orange" style="padding: 10px 14px; font-size: 2rem;">
                 <i class="fas fa-arrow-left"></i>
             </a>
-
-            <div id="topbarText" class="fw-semibold text-orange-700 text-center flex-grow-1 mx-3">
+        
+            <!-- Center: Large header text -->
+            <div id="topbarText" class="topbar-title text-orange-gradient text-center flex-grow-1 mx-4">
+                <!-- JS fills -->
             </div>
-
-            <div id="topbarScore" class="score-badge-small">--</div>
+        
+            <!-- Right: Large score circle -->
+            <div id="topbarScore" class="score-circle score-circle-topbar">--</div>
+        
         </div>
 
 
 
-        <<!-- Main Content -->
+
+        <!-- Main Content -->
             <div class="row gx-4 w-100 mx-0">
                 <!-- Map Column - 2/3 width -->
                 <div class="col-lg-8 mb-4">
@@ -345,26 +356,20 @@
 
 
 
-            // Topbar text
+            
+            // Topbar title
             document.getElementById("topbarText").textContent =
-                `Walkability results for ${data.location}`;
+                `Walkability results for ${data.location.toUpperCase() }`;
 
-            // Topbar score color
+            // Topbar score
             const tb = document.getElementById("topbarScore");
             tb.textContent = score;
 
-            if (score >= 80) tb.style.background = "#16a34a";
-            else if (score >= 60) tb.style.background = "#84cc16";
-            else if (score >= 40) tb.style.background = "#f59e0b";
-            else if (score >= 20) tb.style.background = "#f97316";
-            else tb.style.background = "#ef4444";
+            // Same coloring as the circle
+            tb.style.background = "linear-gradient(135deg, var(--orange-500), var(--amber-500))";
+            tb.style.borderColor = "var(--orange-300)";
 
 
-            document.getElementById('scoreValue').textContent = score;
-
-            const scoreLabel = document.getElementById('scoreLabel');
-            scoreLabel.textContent = scoreInfo.label;
-            scoreLabel.className = `badge fs-6 mb-2 ${scoreInfo.class}`;
 
             // Update category breakdown
             if (data.breakdown) {
