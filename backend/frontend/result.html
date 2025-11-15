@@ -156,119 +156,112 @@
 <body>
     <div class="container py-4">
         <!-- Header -->
-        <div class="d-flex align-items-center gap-3 mb-4">
-            <a href="/" class="btn btn-outline-orange">
-                <i class="fas fa-arrow-left me-2"></i>Back
+        <div class="result-topbar d-flex justify-content-between align-items-center px-3 py-2 mb-3">
+            <a href="/index" class="btn btn-sm btn-outline-orange">
+                <i class="fas fa-arrow-left"></i>
             </a>
-            <div class="d-flex align-items-center gap-2">
-                <i class="fas fa-award fa-2x icon-orange"></i>
-                <h1 class="text-orange-gradient mb-0">Your Walkability Results</h1>
-            </div>
-        </div>
 
-        <!-- Location Info -->
-        <div class="text-center mb-4" id="locationInfo">
-            <!-- Will be populated by JavaScript -->
-        </div>
-
-        <!-- Main Content -->
-        <div class="row">
-            <!-- Map Column - 2/3 width -->
-            <div class="col-lg-8 mb-4">
-                <!-- Location Map Section -->
-                <div class="card border-orange shadow-lg mb-4">
-                    <div class="card-header card-header-orange">
-                        <h4 class="card-title mb-0">
-                            <i class="fas fa-map-marker-alt me-2"></i>
-                            Walkability Map
-                        </h4>
-                        <p class="mb-0 opacity-75">Visualization of nearby amenities and walking routes</p>
-                    </div>
-                    <div class="card-body">
-                        <div id="map"></div>
-                    </div>
-                </div>
-
-                <!-- Neighborhood Gradient Map Section -->
-                <div class="card border-orange shadow-lg mb-4">
-                    <div class="card-header card-header-orange">
-                        <h4 class="card-title mb-0">
-                            <i class="fas fa-map me-2"></i>
-                            Neighborhood Walkability Map
-                        </h4>
-                        <p class="mb-0 opacity-75">Gradient view of walkability across your neighborhood</p>
-                    </div>
-                    <div class="card-body">
-                        <h5 id="neighborhoodTitle" class="text-orange-700 mb-3"></h5>
-                        <div id="gradientMap"></div>
-                    </div>
-                </div>
-                <style>
-                    #gradientMap {
-                        height: 400px;
-                        border-radius: 0.5rem;
-                        border: 2px solid var(--orange-200);
-                    }
-                </style>
-
-                <!-- Distance Summary Section -->
-                <div class="card border-orange mb-4 shadow-lg">
-                    <div class="card-header bg-orange-50 border-bottom border-orange-200">
-                        <h5 class="card-title mb-0 text-orange-700">
-                            Distance Summary
-                        </h5>
-                    </div>
-                    <div class="card-body" id="distanceSummary">
-                        <!-- Will be populated by JavaScript -->
-                    </div>
-                </div>
-
-                <!-- Recommendations -->
-                <div class="card border-orange shadow-lg">
-                    <div class="card-header bg-orange-50 border-bottom border-orange-200">
-                        <h5 class="card-title mb-0 text-orange-700">
-                            Recommendations
-                        </h5>
-                    </div>
-                    <div class="card-body" id="recommendationsSection">
-                        <!-- Will be populated by JavaScript -->
-                    </div>
-                </div>
+            <div id="topbarText" class="fw-semibold text-orange-700 text-center flex-grow-1 mx-3">
             </div>
 
-            <!-- Results Column - 1/3 width -->
-            <div class="col-lg-4">
-                <!-- Overall Walkability Score -->
-                <div class="card border-orange shadow-lg mb-4">
-                    <div class="card-header card-header-orange text-center">
-                        <h4 class="card-title mb-0">
-                            <i class="fas fa-trophy me-2"></i>
-                            Overall Walkability Score
-                        </h4>
-                        <p class="mb-0 opacity-75">Based on your location and nearby amenities</p>
-                    </div>
-                    <div class="card-body text-center">
-                        <div class="score-circle mx-auto mb-3" id="mainScoreCircle">
-                            <span id="scoreValue">--</span>
+            <div id="topbarScore" class="score-badge-small">--</div>
+        </div>
+
+
+
+        <<!-- Main Content -->
+            <div class="row gx-4 w-100 mx-0">
+                <!-- Map Column - 2/3 width -->
+                <div class="col-lg-8 mb-4">
+                    <!-- Location Map Section -->
+                    <div class="card border-orange shadow-lg mb-4">
+                        <div class="card-header card-header-orange">
+                            <h4 class="card-title mb-0">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                Walkability Map
+                            </h4>
+                            <p class="mb-0 opacity-75">Visualization of nearby amenities and walking routes</p>
                         </div>
-                        <div id="scoreLabel" class="badge fs-6 mb-2">Calculating...</div>
-                        <p class="text-muted mb-0">Based on proximity to essential amenities</p>
+                        <div class="card-body">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+
+                    <!-- Neighborhood Gradient Map Section -->
+                    <div class="card border-orange shadow-lg mb-4">
+                        <div class="card-header card-header-orange">
+                            <h4 class="card-title mb-0">
+                                <i class="fas fa-map me-2"></i>
+                                Neighborhood Walkability Map
+                            </h4>
+                            <p class="mb-0 opacity-75">Gradient view of walkability across your neighborhood</p>
+                        </div>
+                        <div class="card-body">
+                            <h5 id="neighborhoodTitle" class="text-orange-700 mb-3"></h5>
+                            <div id="gradientMap"></div>
+                        </div>
+                    </div>
+                    <style>
+                        #gradientMap {
+                            height: 400px;
+                            border-radius: 0.5rem;
+                            border: 2px solid var(--orange-200);
+                        }
+                    </style>
+
+                    <!-- Distance Summary Section -->
+                    <div class="card border-orange mb-4 shadow-lg">
+                        <div class="card-header bg-orange-50 border-bottom border-orange-200">
+                            <h5 class="card-title mb-0 text-orange-700">
+                                Distance Summary
+                            </h5>
+                        </div>
+                        <div class="card-body" id="distanceSummary">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="card border-orange shadow-lg">
+                        <div class="card-header bg-orange-50 border-bottom border-orange-200">
+                            <h5 class="card-title mb-0 text-orange-700">
+                                Recommendations
+                            </h5>
+                        </div>
+                        <div class="card-body" id="recommendationsSection">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
                     </div>
                 </div>
 
-                <!-- Category Breakdown -->
-                <div class="card border-orange shadow-lg mb-4">
-                    <div class="card-header bg-orange-50 border-bottom border-orange-200">
-                        <h5 class="card-title mb-0 text-orange-700">
-                            Category Breakdown
-                        </h5>
-                    </div>
-                    <div class="card-body" id="categoryBreakdown">
-                        <!-- Will be populated by JavaScript -->
-                    </div>
-                </div>
+                <!-- Results Column - 1/3 width -->
+                <div class="col-lg-4">
 
-                
+                    <!-- Category Breakdown -->
+                    <div class="card border-orange shadow-lg mb-4">
+                        <div class="card-header bg-orange-50 border-bottom border-orange-200">
+                            <h5 class="card-title mb-0 text-orange-700">
+                                Category Breakdown
+                            </h5>
+                        </div>
+                        <div class="card-body" id="categoryBreakdown">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+    </div>
+
+    <!-- Score -->
+    <div class="modal fade" id="scoreModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 text-center">
+                <h4 class="mb-3">Overall Walkability Score</h4>
+                <div id="modalScoreValue" class="score-circle mx-auto mb-3">--</div>
+                <div id="modalScoreLabel" class="fw-semibold mb-2"></div>
+                <button class="btn btn-orange mt-3" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -335,19 +328,37 @@
 
             const data = JSON.parse(resultData);
 
-            // Update location info
-            if (data.center) {
-                document.getElementById('locationInfo').innerHTML = `
-                    <p class="text-muted lead">
-                        Results for your location at 
-                        <span class="text-orange-600">${data.location}</span>
-                    </p>
-                `;
-            }
 
             // Update score
             const score = Math.round(data.index || 0);
+
             const scoreInfo = getScoreLabel(score);
+
+
+            // Fill modal values
+            document.getElementById("modalScoreValue").textContent = score;
+            document.getElementById("modalScoreLabel").textContent = scoreInfo.label;
+
+            // Show popup immediately
+            const modal = new bootstrap.Modal(document.getElementById("scoreModal"));
+            modal.show();
+
+
+
+            // Topbar text
+            document.getElementById("topbarText").textContent =
+                `Walkability results for ${data.location}`;
+
+            // Topbar score color
+            const tb = document.getElementById("topbarScore");
+            tb.textContent = score;
+
+            if (score >= 80) tb.style.background = "#16a34a";
+            else if (score >= 60) tb.style.background = "#84cc16";
+            else if (score >= 40) tb.style.background = "#f59e0b";
+            else if (score >= 20) tb.style.background = "#f97316";
+            else tb.style.background = "#ef4444";
+
 
             document.getElementById('scoreValue').textContent = score;
 
@@ -374,7 +385,6 @@
                             <div class="progress progress-orange" style="height: 8px;">
                                 <div class="progress-bar" style="width: ${percentage}%"></div>
                             </div>
-                            <small class="text-muted">Weight: ${item.weight}</small>
                         </div>
                     `;
                 });
@@ -397,9 +407,7 @@
                     const item = data.breakdown && data.breakdown.find(b => b.name === category);
                     if (item) {
                         const nearest = item.nearest_name || 'N/A';
-                        const distance = (item.score > 0)
-                            ? `${(400 * (1 - item.score)).toFixed(0)} m`
-                            : 'Not specified';
+                        const distance = `${(400 * (1 - item.score)).toFixed(0)} m`;
                         const countText = item.nearby_count !== undefined
                             ? `${item.nearby_count} within buffer`
                             : '';
@@ -428,71 +436,6 @@
 
             distanceSummary.innerHTML = distanceHTML || '<p class="text-muted">No distance data available</p>';
 
-
-            // // Transit section
-            // const transitCategories = ['metro', 'bus'];
-            // const transitFound = transitCategories.some(cat =>
-            //     data.breakdown && data.breakdown.find(item => item.name === cat)
-            // );
-
-            // if (transitFound) {
-            //     distanceHTML += `
-            //         <div class="mb-4">
-            //             <h6 class="text-orange-600 mb-3">Transit</h6>
-            //             <div class="ms-3">
-            //     `;
-
-            //     transitCategories.forEach(category => {
-            //         const item = data.breakdown && data.breakdown.find(b => b.name === category);
-            //         if (item) {
-            //             const distance = item.nearest_dist || 'Not specified';
-            //             const nearbyCount = item.nearby_count || 0;
-            //             const nearestName = item.nearest_name || 'N/A';
-            //             distanceHTML += `
-            //                 <div class="d-flex justify-content-between mb-2">
-            //                     <span>${formatCategoryName(category)}:</span>
-            //                     <span class="text-orange-700">
-            //                         ${distance}
-            //                         <br><small>${nearbyCount} within buffer | nearest: ${nearestName}</small>
-            //                     </span>
-            //                 </div>
-            //             `;
-            //         }
-            //     });
-
-            //     distanceHTML += '</div></div>';
-            // }
-
-            // // Amenities section
-            // const amenityCategories = ['grocery', 'restaurants', 'parks', 'schools', 'healthcare'];
-            // const amenitiesFound = amenityCategories.some(cat =>
-            // //     data.breakdown && data.breakdown.find(item => item.name === cat)
-            // // );
-
-            // // if (amenitiesFound) {
-            // //     distanceHTML += `
-            // //         <div class="mb-4">
-            // //             <h6 class="text-orange-600 mb-3">Amenities</h6>
-            // //             <div class="ms-3">
-            // //     `;
-
-            // //     amenityCategories.forEach(category => {
-            //         // const item = data.breakdown && data.breakdown.find(b => b.name === category);
-            //         // if (item) {
-            //         //     const distance = item.score > 0 ? `${(800 * (1 - item.score)).toFixed(0)}m` : 'Not specified';
-            //         //     distanceHTML += `
-            // //                 <div class="d-flex justify-content-between mb-2">
-            // //                     <span>${formatCategoryName(category)}:</span>
-            // //                     <span class="text-orange-700">${distance}</span>
-            // //                 </div>
-            // //             `;
-            // //         }
-            // //     });
-
-            // //     distanceHTML += '</div></div>';
-            // // }
-
-            // distanceSummary.innerHTML = distanceHTML || '<p class="text-muted">No distance data available</p>';
 
             // Update recommendations section
             const recommendationsSection = document.getElementById('recommendationsSection');
