@@ -404,9 +404,10 @@
                     }
                 }
 
+
                 const payload = {
                     location: {
-                        name: addrInput.value.trim(),
+                        name: shortenAddress(addrInput.value.trim()),
                         lat: lat,
                         lon: lon
                     },

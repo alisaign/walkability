@@ -144,7 +144,7 @@ def analyze_walkability_api(data: WalkabilityInput):
         })
     print("formatted breakdown: ", breakdown)
     formatted_output = {
-        "location": neighborhood_name,                   # name of neighborhood you found earlier
+        "location": data.location.name,                
         "center": {"lat": data.location.lat, "lon": data.location.lon},
         "index": result_point["walkability_index"],
         "breakdown": breakdown,

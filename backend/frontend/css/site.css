@@ -47,3 +47,29 @@
     font-size: 2rem !important;
     border-width: 3px !important;
 }
+
+.category-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--orange-200);
+}
+
+.category-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.category-top-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-right {
+    text-align: right;
+    min-width: 150px;
+}
