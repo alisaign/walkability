@@ -109,6 +109,11 @@ def read_index(request: Request):
 def read_result(request: Request):
     return templates.TemplateResponse("result.html", {"request": request})
 
+@app.get("/about", response_class=HTMLResponse)
+def about():
+    return templates.TemplateResponse("about.html", {"request": {}})
+
+
 # 2. Endpoint that runs your scoring logic
 @app.post("/api/analyze")
 def analyze_walkability_api(data: WalkabilityInput):

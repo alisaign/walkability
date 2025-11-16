@@ -100,6 +100,30 @@
         .icon-orange {
             color: var(--orange-500);
         }
+
+                
+        /* ABOUT floating button */
+        .about-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--orange-500);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            z-index: 2000;
+        }
+
+        .about-btn:hover {
+            background: var(--orange-600);
+        }
     </style>
 </head>
 
@@ -419,6 +443,15 @@
 
                 // Resolve coordinates (autocomplete OR typed OR manual)
                 let addrInput = document.getElementById("address_input");
+                if (!addrInput.value.trim()) {
+                    const missingModal = new bootstrap.Modal(document.getElementById('addressMissingModal'));
+                    missingModal.show();
+                    if (submitButton) {
+                        submitButton.innerHTML = originalText || 'Calculate Walkability';
+                        submitButton.disabled = false;
+                    }
+                    return;
+                }
                 let lat = addrInput.dataset.lat ? parseFloat(addrInput.dataset.lat) : null;
                 let lon = addrInput.dataset.lon ? parseFloat(addrInput.dataset.lon) : null;
 
@@ -502,6 +535,28 @@
         });
 
     </script>
+
+    <a href="/about" class="about-btn">?</a>
+
+    <!-- Address Missing Modal -->
+    <div class="modal fade" id="addressMissingModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-orange" style="border-width:2px;">
+                <div class="modal-header bg-orange-gradient text-white">
+                    <h5 class="modal-title">Address Required</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Please enter an address before calculating the walkability score.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-orange" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     
 </body>
 

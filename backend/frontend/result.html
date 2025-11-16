@@ -321,6 +321,18 @@
             return icons[category] || 'fas fa-map-marker-alt';
         }
 
+        function getScoreColor(score) {
+            // Clamp between 0 and 100
+            const s = Math.max(0, Math.min(100, score));
+
+            // 0 → red (hue 0), 100 → green (hue 120)
+            const hue = (s / 100) * 120;
+
+            // Bright, saturated color
+            return `hsl(${hue}, 85%, 50%)`;
+        }
+
+
 
         // Initialize page
         function initializePage() {
@@ -352,6 +364,10 @@
             // Fill modal values
             document.getElementById("modalScoreValue").textContent = score;
             document.getElementById("modalScoreLabel").textContent = scoreInfo.label;
+            const modalCircle = document.getElementById("modalScoreValue");
+            const scoreColor = getScoreColor(score);
+            modalCircle.style.background = scoreColor;
+            modalCircle.style.borderColor = scoreColor;
 
             // Show popup immediately
             const modal = new bootstrap.Modal(document.getElementById("scoreModal"));
@@ -370,8 +386,9 @@
             tb.textContent = score;
 
             // Same coloring as the circle
-            tb.style.background = "linear-gradient(135deg, var(--orange-500), var(--amber-500))";
-            tb.style.borderColor = "var(--orange-300)";
+            tb.style.background = scoreColor;
+            tb.style.borderColor = scoreColor;
+
 
 
             // Combined category + distance rows
