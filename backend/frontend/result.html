@@ -135,7 +135,7 @@
 
         #map {
             width: 100%;
-            aspect-ratio: 1 / 1; /* square map */
+            aspect-ratio: 1 / 0.6; /* square map */
             border-radius: 0.5rem;
             border: 2px solid var(--orange-200);
         }
@@ -184,7 +184,7 @@
         <!-- Main Content -->
             <div class="row gx-4 w-100 mx-0">
                 <!-- Map Column -->
-                <div class="col-lg-8 mb-4">
+                <div class="col-lg-6 mb-4">
                     <!-- Location Map Section -->
                     <div class="card border-orange shadow-lg mb-4">
                         <div class="card-header card-header-orange">
@@ -196,6 +196,8 @@
                         </div>
                         <div class="card-body">
                             <div id="map"></div>
+                            <div id="bufferScaleBar" class="mt-2"></div>
+
                         </div>
                     </div>
 
@@ -246,7 +248,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                 
                     <div class="card border-orange shadow-lg mb-4">
                         <div class="card-header bg-orange-50 border-bottom border-orange-200">
@@ -319,6 +321,7 @@
             return icons[category] || 'fas fa-map-marker-alt';
         }
 
+
         // Initialize page
         function initializePage() {
             // Get data from sessionStorage
@@ -355,6 +358,7 @@
             modal.show();
 
 
+            
 
             
             // Topbar title
@@ -405,6 +409,8 @@
                     </div>
                 `;
             });
+
+
 
             combined.innerHTML = combinedHTML;
 

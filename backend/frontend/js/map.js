@@ -78,6 +78,35 @@ function initWalkabilityMap(DATA) {
             }
         });
     }
+    // === BUFFER SCALE CONTROL ===
+    if (DATA.breakdown && DATA.buffers_m) {
+
+        const categories = DATA.breakdown.map(b => b.name);
+        const thresholds = DATA.buffers_m;
+
+        const BufferScale = L.Control.extend({
+            onAdd: function () {
+                const div = L.DomUtil.create("div", "leaflet-buffer-scale");
+
+                let html = "";
+                categories.forEach((cat, i) => {
+                    html += `
+                    <div class="scale-tick">
+                        <span class="scale-label">${cat.charAt(0).toUpperCase() + cat.slice(1)}</span>
+                        <span class="scale-dist">${thresholds[i]} m</span>
+                    </div>
+                `;
+                });
+
+                div.innerHTML = html;
+                return div;
+            }
+        });
+
+        map.addControl(new BufferScale({ position: "topright" }));
+    }
+    // === END BUFFER SCALE CONTROL ===
+
 }
 
 function initNeighborhoodGradientMap(DATA) {
