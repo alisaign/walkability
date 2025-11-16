@@ -104,12 +104,12 @@
 </head>
 
 <body>
-    <div class="container py-5">
+    <div class="container-fluid py-5">
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <!-- Header -->
                 <div class="text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
+                    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
                         <i class="fas fa-map-marker-alt fa-2x icon-orange"></i>
                         <h1 class="text-orange-gradient mb-0">Walkability Index Calculator</h1>
                     </div>
@@ -121,35 +121,56 @@
                     </p>
                 </div>
 
-                <!-- Main Form Card -->
+             
                 <div class="card shadow-lg border-orange">
                     <div class="card-header card-header-orange">
                         <h3 class="card-title mb-1">
-                            <i class="fas fa-walking me-2"></i>
-                            Location & Walking Distances
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Location Information
                         </h3>
-                        <p class="card-text mb-0 opacity-75">Enter your location details and walking distances to nearby
-                            amenities.</p>
                     </div>
                     <div class="card-body">
                         <form id="walkabilityForm">
                             <!-- Location Section -->
                             <div class="mb-5">
                                 <h4 class="section-title">
-                                    <i class="fas fa-map-marker-alt me-2"></i>
-                                    Location Information
+                                    Enter the location you wish to learn the walkability information about:
                                 </h4>
                                 <!-- Address Autocomplete -->
                                 <div class="mb-3 position-relative">
-                                    <label for="address_input" class="form-label">
-                                        <i class="fas fa-map-marker-alt me-2"></i>Search Address
-                                    </label>
                                     <input type="text" class="form-control border-orange" id="address_input"
                                         name="address_input" placeholder="Start typing an address...">
                                 </div>
                             </div>
 
-                            <!-- Cutoff Distances Section -->
+                            <div class="text-center mt-3">
+                                <button id="quickCalcBtn" type="button" class="btn btn-orange btn-lg px-5">
+                                    <i class="fas fa-bolt me-2"></i>
+                                    Calculate Walkability
+                                </button>
+                            </div>
+                            
+                            <div class="text-center my-3 fw-bold" style="color: var(--orange-700); font-size: 1.1rem;">
+                                or personalize your walkability settings below
+                            </div>
+
+
+
+                    </div>
+                </div>
+
+                
+
+                <div class="card shadow-lg border-orange mt-4">
+                    <div class="card-header card-header-orange">
+                        <h3 class="card-title mb-1">
+                            <i class="fas fa-sliders-h me-2"></i>
+                            Walkability Settings
+                        </h3>
+                        <p class="card-text mb-0 opacity-75">Adjust distances and importance weights to customize your score.</p>
+                    </div>
+                    <div class="card-body">
+                             <!-- Cutoff Distances Section -->
                             <div class="mb-5">
                                 <h4 class="section-title">
                                     <i class="fas fa-ruler me-2"></i>
@@ -233,7 +254,7 @@
 
                                 <!-- Weights Section -->
                                 <div class="mb-5">
-                                    <h4 class="section-title">
+                                    <h4 class="section-title mt-4">
                                         <i class="fas fa-balance-scale me-2"></i>
                                         Importance Weights (1-5 scale)
                                     </h4>
@@ -335,16 +356,19 @@
 
 
                                     <!-- Submit Button -->
-                                    <div class="text-center">
+                                    <div class="text-center mt-5">
                                         <button type="submit" class="btn btn-orange btn-lg px-5">
                                             <i class="fas fa-calculator me-2"></i>
-                                            Calculate Walkability Index
+                                            Calculate Walkability
                                         </button>
                                     </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
+
+            </form>
+        
         </div>
     </div>
 
@@ -356,11 +380,18 @@
         document.getElementById('walkabilityForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            // Show loading state
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Calculating...';
-            submitButton.disabled = true;
+            // Always target the REAL submit button in the second card
+            const submitButton = document.querySelector('button[type="submit"]');
+
+            // Only show loading if this event was triggered BY that button
+            const triggeredByFullButton = (e.submitter && e.submitter.type === "submit");
+
+            let originalText = "";
+            if (triggeredByFullButton) {
+                originalText = submitButton.innerHTML;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Calculating...';
+                submitButton.disabled = true;
+            }
 
             try {
                 // Define consistent category order
@@ -443,13 +474,35 @@
             } catch (error) {
                 console.error('Error calling backend API:', error);
                 alert('Sorry, there was an error calculating the walkability score. Please check that the backend is running and try again.');
-
-                // Reset button state
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
+            } finally {
+                // Re-enable the full submit button ALWAYS
+                if (submitButton) {
+                    submitButton.innerHTML = originalText || 'Calculate Walkability Index';
+                    submitButton.disabled = false;
+                }
             }
         });
+
+        document.getElementById("quickCalcBtn").addEventListener("click", () => {
+            document.getElementById("metro_m").value = 400;
+            document.getElementById("bus_m").value = 100;
+            document.getElementById("bixi_m").value = 300;
+            document.getElementById("parks_m").value = 500;
+            document.getElementById("grocery_m").value = 100;
+            document.getElementById("restaurants_m").value = 50;
+
+            document.getElementById("w_metro").value = 3;
+            document.getElementById("w_bus").value = 2;
+            document.getElementById("w_bixi").value = 2;
+            document.getElementById("w_parks").value = 2;
+            document.getElementById("w_grocery").value = 3;
+            document.getElementById("w_restaurants").value = 2;
+
+            document.getElementById("walkabilityForm").dispatchEvent(new Event("submit"));
+        });
+
     </script>
+    
 </body>
 
 </html>
