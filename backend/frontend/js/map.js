@@ -13,7 +13,7 @@ function getCategoryIconClass(category) {
 
 function initWalkabilityMap(DATA) {
     const center = [DATA.center.lat, DATA.center.lon];
-    const map = L.map('map').setView(center, 15); // zoom like fallback
+    const map = L.map('map', { fullscreenControl: true }).setView(center, 15);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -33,6 +33,30 @@ function initWalkabilityMap(DATA) {
                     opacity: 0.3,
                     fillOpacity: 0.1
                 }).addTo(map).bindPopup(`${item.name} buffer (${DATA.buffers_m[i]} m)`);
+
+                // // after you draw the buffer circle:
+
+                // const labelIcon = L.divIcon({
+                //     html: `<div style="
+                //         background: white;
+                //         padding: 2px 6px;
+                //         border: 1px solid #f97316;
+                //         border-radius: 4px;
+                //         color: #ea580c;
+                //         font-size: 12px;
+                //         font-weight: 600;
+                //         white-space: nowrap;
+                //     ">${item.name}</div>`,
+                //     className: '',
+                //     iconSize: 'auto'
+                // });
+
+                // // position label slightly above the center
+                // const labelLat = center[0] + 0.0008;
+                // const labelLon = center[1];
+
+                // L.marker([labelLat, labelLon], { icon: labelIcon, interactive: false }).addTo(map);
+
 
                 const iconClass = getCategoryIconClass(item.name);
                 const nearby = DATA.nearby.filter(poi => poi.category === item.name);
@@ -78,34 +102,34 @@ function initWalkabilityMap(DATA) {
             }
         });
     }
-    // === BUFFER SCALE CONTROL ===
-    if (DATA.breakdown && DATA.buffers_m) {
+    // // === BUFFER SCALE CONTROL ===
+    // if (DATA.breakdown && DATA.buffers_m) {
 
-        const categories = DATA.breakdown.map(b => b.name);
-        const thresholds = DATA.buffers_m;
+    //     const categories = DATA.breakdown.map(b => b.name);
+    //     const thresholds = DATA.buffers_m;
 
-        const BufferScale = L.Control.extend({
-            onAdd: function () {
-                const div = L.DomUtil.create("div", "leaflet-buffer-scale");
+    //     const BufferScale = L.Control.extend({
+    //         onAdd: function () {
+    //             const div = L.DomUtil.create("div", "leaflet-buffer-scale");
 
-                let html = "";
-                categories.forEach((cat, i) => {
-                    html += `
-                    <div class="scale-tick">
-                        <span class="scale-label">${cat.charAt(0).toUpperCase() + cat.slice(1)}</span>
-                        <span class="scale-dist">${thresholds[i]} m</span>
-                    </div>
-                `;
-                });
+    //             let html = "";
+    //             categories.forEach((cat, i) => {
+    //                 html += `
+    //                 <div class="scale-tick">
+    //                     <span class="scale-label">${cat.charAt(0).toUpperCase() + cat.slice(1)}</span>
+    //                     <span class="scale-dist">${thresholds[i]} m</span>
+    //                 </div>
+    //             `;
+    //             });
 
-                div.innerHTML = html;
-                return div;
-            }
-        });
+    //             div.innerHTML = html;
+    //             return div;
+    //         }
+    //     });
 
-        map.addControl(new BufferScale({ position: "topright" }));
-    }
-    // === END BUFFER SCALE CONTROL ===
+    //     map.addControl(new BufferScale({ position: "topright" }));
+    // }
+    // // === END BUFFER SCALE CONTROL ===
 
 }
 
@@ -116,12 +140,12 @@ function initNeighborhoodGradientMap(DATA) {
 
     const geojson = DATA.gradient_layer;
     const center = [DATA.center.lat, DATA.center.lon];
-    const map2 = L.map('gradientMap').setView(center, 14);
+    const map2 = L.map('gradientMap', { fullscreenControl: true }).setView(center, 14);
 
     // --- Base map ---
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '© OpenStreetMap contributors'
+        attribution: '&copy; CartoDB'
     }).addTo(map2);
 
     // --- Stronger color contrast 
@@ -169,4 +193,33 @@ function initNeighborhoodGradientMap(DATA) {
         style: styleFeature,
         onEachFeature: onEachFeature
     }).addTo(map2);
+
+    // === GRADIENT LEGEND WITH VALUE MARKER ===
+    const legend = L.control({ position: "bottomright" });
+
+    legend.onAdd = function () {
+        const div = L.DomUtil.create("div", "gradient-legend");
+
+        div.innerHTML = `
+        <div class="legend-title">Walkability Score</div>
+        <div class="legend-bar-container">
+            <div class="legend-bar"></div>
+            <div id="legend-marker"></div>
+        </div>
+        <div class="legend-scale">
+            <span>0</span>
+            <span>50</span>
+            <span>100</span>
+        </div>
+    `;
+        return div;
+    };
+
+    legend.addTo(map2);
+
+    // Move the marker to the correct score
+    const userScore = DATA.index ?? 0;
+    const marker = document.getElementById("legend-marker");
+    marker.style.left = (userScore) + "%";
+
 }
