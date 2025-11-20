@@ -18,9 +18,9 @@ function initWalkabilityMap(DATA) {
         fullscreenControlOptions: {
             position: 'topright'
         }
-    }).setView(center, 15);
+    }).setView(center, 16);
 
-    map.addControl(new L.Control.Fullscreen());
+    //map.addControl(new L.Control.FullScreen());
 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
