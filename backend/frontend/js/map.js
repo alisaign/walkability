@@ -13,7 +13,15 @@ function getCategoryIconClass(category) {
 
 function initWalkabilityMap(DATA) {
     const center = [DATA.center.lat, DATA.center.lon];
-    const map = L.map('map', { fullscreenControl: true }).setView(center, 15);
+    const map = L.map('map', {
+        fullscreenControl: true,
+        fullscreenControlOptions: {
+            position: 'topright'
+        }
+    }).setView(center, 15);
+
+    map.addControl(new L.Control.Fullscreen());
+
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -102,6 +110,10 @@ function initWalkabilityMap(DATA) {
             }
         });
     }
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 500);
+
     // // === BUFFER SCALE CONTROL ===
     // if (DATA.breakdown && DATA.buffers_m) {
 

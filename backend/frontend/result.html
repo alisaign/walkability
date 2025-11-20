@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/leaflet.fullscreen.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Leaflet.fullscreen.min.js"></script>
-
     <link rel="stylesheet" href="/static/css/site.css">
 
     <style>
@@ -136,7 +136,7 @@
 
         #map {
             width: 100%;
-            aspect-ratio: 1 / 0.6; /* square map */
+            aspect-ratio: 1 / 0.7; /* square map */
             border-radius: 0.5rem;
             border: 2px solid var(--orange-200);
         }
@@ -185,7 +185,7 @@
         <!-- Main Content -->
             <div class="row gx-4 w-100 mx-0">
                 <!-- Map Column -->
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-8 mb-4">
                     <!-- Location Map Section -->
                     <div class="card border-orange shadow-lg mb-4">
                         <div class="card-header card-header-orange">
@@ -227,7 +227,7 @@
     
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                 
                     <div class="card border-orange shadow-lg mb-4">
                         <div class="card-header bg-orange-50 border-bottom border-orange-200">
@@ -277,6 +277,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Leaflet.fullscreen.min.js"></script>
     <script src="/static/js/map.js"></script>
     <script>
         let map;
@@ -388,7 +390,13 @@
 
             // Combined category + distance rows
             const combined = document.getElementById("combinedCategorySummary");
-            let combinedHTML = '';
+            let combinedHTML = `
+                <div class="d-flex justify-content-between px-1 mb-2 fw-bold text-orange-700" style="font-size: 0.9rem;">
+                    <div>Category</div>
+                    <div>Nearest</div>
+                </div>
+            `;
+
 
             data.breakdown.forEach(item => {
                 const percentage = Math.round(item.score * 100);
